@@ -8,7 +8,7 @@
   </columns>
  </systemtable>
  <library
-   expandedCategories="Library/Processors and Peripherals,Project,Library,Library/Basic Functions,Library/Processors and Peripherals/Embedded Processors" />
+   expandedCategories="Library,Library/Processors and Peripherals/Embedded Processors,Library/Basic Functions,Library/Processors and Peripherals,Project" />
  <window width="1936" height="1056" x="-8" y="-8" />
  <generation block_symbol_file="0" synthesis="VHDL" />
  <hdlexample language="VHDL" />

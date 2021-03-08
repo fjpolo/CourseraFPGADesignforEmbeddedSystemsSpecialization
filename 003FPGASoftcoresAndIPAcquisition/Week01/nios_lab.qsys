@@ -106,7 +106,7 @@
   <parameter name="debug_datatrigger" value="0" />
   <parameter name="debug_debugReqSignals" value="false" />
   <parameter name="debug_enabled" value="true" />
-  <parameter name="debug_hwbreakpoint" value="0" />
+  <parameter name="debug_hwbreakpoint" value="2" />
   <parameter name="debug_jtagInstanceID" value="0" />
   <parameter name="debug_traceStorage" value="onchip_trace" />
   <parameter name="debug_traceType" value="none" />
@@ -125,9 +125,9 @@
   <parameter name="icache_burstType" value="None" />
   <parameter name="icache_numTCIM" value="0" />
   <parameter name="icache_ramBlockType" value="Automatic" />
-  <parameter name="icache_size" value="4096" />
+  <parameter name="icache_size" value="2048" />
   <parameter name="icache_tagramBlockType" value="Automatic" />
-  <parameter name="impl" value="Tiny" />
+  <parameter name="impl" value="Fast" />
   <parameter name="instAddrWidth" value="12" />
   <parameter name="instSlaveMapParam"><![CDATA[<address-map><slave name='nios.debug_mem_slave' start='0x800' end='0x1000' type='altera_nios2_gen2.debug_mem_slave' /></address-map>]]></parameter>
   <parameter name="instructionMasterHighPerformanceAddrWidth" value="1" />

@@ -26,11 +26,13 @@ architecture rtl of nios_lab is
 			d_waitrequest                       : in  std_logic                     := 'X';             -- waitrequest
 			d_write                             : out std_logic;                                        -- write
 			d_writedata                         : out std_logic_vector(31 downto 0);                    -- writedata
+			d_readdatavalid                     : in  std_logic                     := 'X';             -- readdatavalid
 			debug_mem_slave_debugaccess_to_roms : out std_logic;                                        -- debugaccess
 			i_address                           : out std_logic_vector(11 downto 0);                    -- address
 			i_read                              : out std_logic;                                        -- read
 			i_readdata                          : in  std_logic_vector(31 downto 0) := (others => 'X'); -- readdata
 			i_waitrequest                       : in  std_logic                     := 'X';             -- waitrequest
+			i_readdatavalid                     : in  std_logic                     := 'X';             -- readdatavalid
 			irq                                 : in  std_logic_vector(31 downto 0) := (others => 'X'); -- irq
 			debug_reset_request                 : out std_logic;                                        -- reset
 			debug_mem_slave_address             : in  std_logic_vector(8 downto 0)  := (others => 'X'); -- address
@@ -83,6 +85,7 @@ architecture rtl of nios_lab is
 			nios_data_master_byteenable            : in  std_logic_vector(3 downto 0)  := (others => 'X'); -- byteenable
 			nios_data_master_read                  : in  std_logic                     := 'X';             -- read
 			nios_data_master_readdata              : out std_logic_vector(31 downto 0);                    -- readdata
+			nios_data_master_readdatavalid         : out std_logic;                                        -- readdatavalid
 			nios_data_master_write                 : in  std_logic                     := 'X';             -- write
 			nios_data_master_writedata             : in  std_logic_vector(31 downto 0) := (others => 'X'); -- writedata
 			nios_data_master_debugaccess           : in  std_logic                     := 'X';             -- debugaccess
@@ -90,6 +93,7 @@ architecture rtl of nios_lab is
 			nios_instruction_master_waitrequest    : out std_logic;                                        -- waitrequest
 			nios_instruction_master_read           : in  std_logic                     := 'X';             -- read
 			nios_instruction_master_readdata       : out std_logic_vector(31 downto 0);                    -- readdata
+			nios_instruction_master_readdatavalid  : out std_logic;                                        -- readdatavalid
 			nios_debug_mem_slave_address           : out std_logic_vector(8 downto 0);                     -- address
 			nios_debug_mem_slave_write             : out std_logic;                                        -- write
 			nios_debug_mem_slave_read              : out std_logic;                                        -- read
@@ -248,12 +252,14 @@ architecture rtl of nios_lab is
 	signal nios_data_master_address                           : std_logic_vector(11 downto 0); -- nios:d_address -> mm_interconnect_0:nios_data_master_address
 	signal nios_data_master_byteenable                        : std_logic_vector(3 downto 0);  -- nios:d_byteenable -> mm_interconnect_0:nios_data_master_byteenable
 	signal nios_data_master_read                              : std_logic;                     -- nios:d_read -> mm_interconnect_0:nios_data_master_read
+	signal nios_data_master_readdatavalid                     : std_logic;                     -- mm_interconnect_0:nios_data_master_readdatavalid -> nios:d_readdatavalid
 	signal nios_data_master_write                             : std_logic;                     -- nios:d_write -> mm_interconnect_0:nios_data_master_write
 	signal nios_data_master_writedata                         : std_logic_vector(31 downto 0); -- nios:d_writedata -> mm_interconnect_0:nios_data_master_writedata
 	signal nios_instruction_master_readdata                   : std_logic_vector(31 downto 0); -- mm_interconnect_0:nios_instruction_master_readdata -> nios:i_readdata
 	signal nios_instruction_master_waitrequest                : std_logic;                     -- mm_interconnect_0:nios_instruction_master_waitrequest -> nios:i_waitrequest
 	signal nios_instruction_master_address                    : std_logic_vector(11 downto 0); -- nios:i_address -> mm_interconnect_0:nios_instruction_master_address
 	signal nios_instruction_master_read                       : std_logic;                     -- nios:i_read -> mm_interconnect_0:nios_instruction_master_read
+	signal nios_instruction_master_readdatavalid              : std_logic;                     -- mm_interconnect_0:nios_instruction_master_readdatavalid -> nios:i_readdatavalid
 	signal mm_interconnect_0_nios_debug_mem_slave_readdata    : std_logic_vector(31 downto 0); -- nios:debug_mem_slave_readdata -> mm_interconnect_0:nios_debug_mem_slave_readdata
 	signal mm_interconnect_0_nios_debug_mem_slave_waitrequest : std_logic;                     -- nios:debug_mem_slave_waitrequest -> mm_interconnect_0:nios_debug_mem_slave_waitrequest
 	signal mm_interconnect_0_nios_debug_mem_slave_debugaccess : std_logic;                     -- mm_interconnect_0:nios_debug_mem_slave_debugaccess -> nios:debug_mem_slave_debugaccess
@@ -284,11 +290,13 @@ begin
 			d_waitrequest                       => nios_data_master_waitrequest,                       --                          .waitrequest
 			d_write                             => nios_data_master_write,                             --                          .write
 			d_writedata                         => nios_data_master_writedata,                         --                          .writedata
+			d_readdatavalid                     => nios_data_master_readdatavalid,                     --                          .readdatavalid
 			debug_mem_slave_debugaccess_to_roms => nios_data_master_debugaccess,                       --                          .debugaccess
 			i_address                           => nios_instruction_master_address,                    --        instruction_master.address
 			i_read                              => nios_instruction_master_read,                       --                          .read
 			i_readdata                          => nios_instruction_master_readdata,                   --                          .readdata
 			i_waitrequest                       => nios_instruction_master_waitrequest,                --                          .waitrequest
+			i_readdatavalid                     => nios_instruction_master_readdatavalid,              --                          .readdatavalid
 			irq                                 => nios_irq_irq,                                       --                       irq.irq
 			debug_reset_request                 => nios_debug_reset_request_reset,                     --       debug_reset_request.reset
 			debug_mem_slave_address             => mm_interconnect_0_nios_debug_mem_slave_address,     --           debug_mem_slave.address
@@ -339,6 +347,7 @@ begin
 			nios_data_master_byteenable            => nios_data_master_byteenable,                        --                                 .byteenable
 			nios_data_master_read                  => nios_data_master_read,                              --                                 .read
 			nios_data_master_readdata              => nios_data_master_readdata,                          --                                 .readdata
+			nios_data_master_readdatavalid         => nios_data_master_readdatavalid,                     --                                 .readdatavalid
 			nios_data_master_write                 => nios_data_master_write,                             --                                 .write
 			nios_data_master_writedata             => nios_data_master_writedata,                         --                                 .writedata
 			nios_data_master_debugaccess           => nios_data_master_debugaccess,                       --                                 .debugaccess
@@ -346,6 +355,7 @@ begin
 			nios_instruction_master_waitrequest    => nios_instruction_master_waitrequest,                --                                 .waitrequest
 			nios_instruction_master_read           => nios_instruction_master_read,                       --                                 .read
 			nios_instruction_master_readdata       => nios_instruction_master_readdata,                   --                                 .readdata
+			nios_instruction_master_readdatavalid  => nios_instruction_master_readdatavalid,              --                                 .readdatavalid
 			nios_debug_mem_slave_address           => mm_interconnect_0_nios_debug_mem_slave_address,     --             nios_debug_mem_slave.address
 			nios_debug_mem_slave_write             => mm_interconnect_0_nios_debug_mem_slave_write,       --                                 .write
 			nios_debug_mem_slave_read              => mm_interconnect_0_nios_debug_mem_slave_read,        --                                 .read

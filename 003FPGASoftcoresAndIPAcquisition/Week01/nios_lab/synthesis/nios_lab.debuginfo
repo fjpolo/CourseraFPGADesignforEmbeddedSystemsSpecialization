@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="nios_lab" kind="system" version="18.1" fabric="QSYS">
  <!-- Format version 18.1 625 (Future versions may contain additional information.) -->
- <!-- 2021.03.08.11:38:58 -->
+ <!-- 2021.03.08.11:45:53 -->
  <!-- A collection of modules and connections -->
  <parameter name="clockCrossingAdapter">
   <type>com.altera.sopcmodel.ensemble.EClockAdapter</type>
@@ -53,7 +53,7 @@
  </parameter>
  <parameter name="generationId">
   <type>int</type>
-  <value>1615199858</value>
+  <value>1615200271</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>true</visible>
@@ -490,23 +490,27 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.CPU_IMPLEMENTATION</name>
-   <value>"tiny"</value>
+   <value>"fast"</value>
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.DATA_ADDR_WIDTH</name>
    <value>12</value>
   </assignment>
   <assignment>
+   <name>embeddedsw.CMacro.DCACHE_BYPASS_MASK</name>
+   <value>0x80000000</value>
+  </assignment>
+  <assignment>
    <name>embeddedsw.CMacro.DCACHE_LINE_SIZE</name>
-   <value>0</value>
+   <value>32</value>
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.DCACHE_LINE_SIZE_LOG2</name>
-   <value>0</value>
+   <value>5</value>
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.DCACHE_SIZE</name>
-   <value>0</value>
+   <value>2048</value>
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.EXCEPTION_ADDR</name>
@@ -530,7 +534,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.HARDWARE_MULTIPLY_PRESENT</name>
-   <value>0</value>
+   <value>1</value>
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.HARDWARE_MULX_PRESENT</name>
@@ -545,6 +549,10 @@ the requested settings for a module instance. -->
    <value></value>
   </assignment>
   <assignment>
+   <name>embeddedsw.CMacro.HAS_EXTRA_EXCEPTION_INFO</name>
+   <value></value>
+  </assignment>
+  <assignment>
    <name>embeddedsw.CMacro.HAS_ILLEGAL_INSTRUCTION_EXCEPTION</name>
    <value></value>
   </assignment>
@@ -554,19 +562,27 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.ICACHE_LINE_SIZE</name>
-   <value>0</value>
+   <value>32</value>
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.ICACHE_LINE_SIZE_LOG2</name>
-   <value>0</value>
+   <value>5</value>
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.ICACHE_SIZE</name>
-   <value>0</value>
+   <value>2048</value>
+  </assignment>
+  <assignment>
+   <name>embeddedsw.CMacro.INITDA_SUPPORTED</name>
+   <value></value>
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.INST_ADDR_WIDTH</name>
    <value>12</value>
+  </assignment>
+  <assignment>
+   <name>embeddedsw.CMacro.NUM_OF_SHADOW_REG_SETS</name>
+   <value>0</value>
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.OCI_VERSION</name>
@@ -629,8 +645,16 @@ the requested settings for a module instance. -->
    <value>0x00000820</value>
   </assignment>
   <assignment>
+   <name>embeddedsw.dts.params.altr,has-initda</name>
+   <value>1</value>
+  </assignment>
+  <assignment>
+   <name>embeddedsw.dts.params.altr,has-mul</name>
+   <value>1</value>
+  </assignment>
+  <assignment>
    <name>embeddedsw.dts.params.altr,implementation</name>
-   <value>"tiny"</value>
+   <value>"fast"</value>
   </assignment>
   <assignment>
    <name>embeddedsw.dts.params.altr,reset-addr</name>
@@ -642,19 +666,19 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.dts.params.dcache-line-size</name>
-   <value>0</value>
+   <value>32</value>
   </assignment>
   <assignment>
    <name>embeddedsw.dts.params.dcache-size</name>
-   <value>0</value>
+   <value>2048</value>
   </assignment>
   <assignment>
    <name>embeddedsw.dts.params.icache-line-size</name>
-   <value>0</value>
+   <value>32</value>
   </assignment>
   <assignment>
    <name>embeddedsw.dts.params.icache-size</name>
-   <value>0</value>
+   <value>2048</value>
   </assignment>
   <assignment>
    <name>embeddedsw.dts.vendor</name>
@@ -696,7 +720,7 @@ the requested settings for a module instance. -->
    <type>boolean</type>
    <value>false</value>
    <derived>false</derived>
-   <enabled>false</enabled>
+   <enabled>true</enabled>
    <visible>true</visible>
    <valid>true</valid>
   </parameter>
@@ -840,7 +864,7 @@ the requested settings for a module instance. -->
    <type>int</type>
    <value>0</value>
    <derived>false</derived>
-   <enabled>false</enabled>
+   <enabled>true</enabled>
    <visible>true</visible>
    <valid>true</valid>
   </parameter>
@@ -848,7 +872,7 @@ the requested settings for a module instance. -->
    <type>boolean</type>
    <value>true</value>
    <derived>false</derived>
-   <enabled>false</enabled>
+   <enabled>true</enabled>
    <visible>true</visible>
    <valid>true</valid>
   </parameter>
@@ -936,7 +960,7 @@ the requested settings for a module instance. -->
    <type>boolean</type>
    <value>false</value>
    <derived>false</derived>
-   <enabled>false</enabled>
+   <enabled>true</enabled>
    <visible>true</visible>
    <valid>true</valid>
   </parameter>
@@ -944,7 +968,7 @@ the requested settings for a module instance. -->
    <type>boolean</type>
    <value>false</value>
    <derived>false</derived>
-   <enabled>false</enabled>
+   <enabled>true</enabled>
    <visible>true</visible>
    <valid>true</valid>
   </parameter>
@@ -992,7 +1016,7 @@ the requested settings for a module instance. -->
    <type>int</type>
    <value>0</value>
    <derived>false</derived>
-   <enabled>false</enabled>
+   <enabled>true</enabled>
    <visible>true</visible>
    <valid>true</valid>
   </parameter>
@@ -1104,7 +1128,7 @@ the requested settings for a module instance. -->
    <type>java.lang.String</type>
    <value>Internal</value>
    <derived>false</derived>
-   <enabled>false</enabled>
+   <enabled>true</enabled>
    <visible>true</visible>
    <valid>true</valid>
   </parameter>
@@ -1112,7 +1136,7 @@ the requested settings for a module instance. -->
    <type>java.lang.String</type>
    <value>Dynamic</value>
    <derived>false</derived>
-   <enabled>false</enabled>
+   <enabled>true</enabled>
    <visible>true</visible>
    <valid>true</valid>
   </parameter>
@@ -1120,7 +1144,7 @@ the requested settings for a module instance. -->
    <type>int</type>
    <value>8</value>
    <derived>false</derived>
-   <enabled>false</enabled>
+   <enabled>true</enabled>
    <visible>true</visible>
    <valid>true</valid>
   </parameter>
@@ -1142,7 +1166,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="shifterType">
    <type>java.lang.String</type>
-   <value>medium_le_shift</value>
+   <value>fast_le_shift</value>
    <derived>true</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -1150,7 +1174,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="multiplierType">
    <type>java.lang.String</type>
-   <value>no_mul</value>
+   <value>mul_fast32</value>
    <derived>true</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -1160,7 +1184,7 @@ the requested settings for a module instance. -->
    <type>int</type>
    <value>0</value>
    <derived>false</derived>
-   <enabled>false</enabled>
+   <enabled>true</enabled>
    <visible>true</visible>
    <valid>true</valid>
   </parameter>
@@ -1192,7 +1216,7 @@ the requested settings for a module instance. -->
    <type>java.lang.String</type>
    <value>no_div</value>
    <derived>false</derived>
-   <enabled>false</enabled>
+   <enabled>true</enabled>
    <visible>true</visible>
    <valid>true</valid>
   </parameter>
@@ -1254,7 +1278,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="impl">
    <type>java.lang.String</type>
-   <value>Tiny</value>
+   <value>Fast</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -1262,9 +1286,9 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="icache_size">
    <type>int</type>
-   <value>4096</value>
+   <value>2048</value>
    <derived>false</derived>
-   <enabled>false</enabled>
+   <enabled>true</enabled>
    <visible>true</visible>
    <valid>true</valid>
   </parameter>
@@ -1280,7 +1304,7 @@ the requested settings for a module instance. -->
    <type>int</type>
    <value>0</value>
    <derived>false</derived>
-   <enabled>false</enabled>
+   <enabled>true</enabled>
    <visible>true</visible>
    <valid>true</valid>
   </parameter>
@@ -1304,7 +1328,7 @@ the requested settings for a module instance. -->
    <type>int</type>
    <value>0</value>
    <derived>false</derived>
-   <enabled>false</enabled>
+   <enabled>true</enabled>
    <visible>true</visible>
    <valid>true</valid>
   </parameter>
@@ -1312,7 +1336,7 @@ the requested settings for a module instance. -->
    <type>java.lang.String</type>
    <value>None</value>
    <derived>false</derived>
-   <enabled>false</enabled>
+   <enabled>true</enabled>
    <visible>true</visible>
    <valid>true</valid>
   </parameter>
@@ -1320,7 +1344,7 @@ the requested settings for a module instance. -->
    <type>java.lang.String</type>
    <value>false</value>
    <derived>false</derived>
-   <enabled>false</enabled>
+   <enabled>true</enabled>
    <visible>true</visible>
    <valid>true</valid>
   </parameter>
@@ -1328,7 +1352,7 @@ the requested settings for a module instance. -->
    <type>java.lang.String</type>
    <value>ram</value>
    <derived>false</derived>
-   <enabled>false</enabled>
+   <enabled>true</enabled>
    <visible>true</visible>
    <valid>true</valid>
   </parameter>
@@ -1336,7 +1360,7 @@ the requested settings for a module instance. -->
    <type>int</type>
    <value>2048</value>
    <derived>false</derived>
-   <enabled>false</enabled>
+   <enabled>true</enabled>
    <visible>true</visible>
    <valid>true</valid>
   </parameter>
@@ -1360,7 +1384,7 @@ the requested settings for a module instance. -->
    <type>int</type>
    <value>0</value>
    <derived>false</derived>
-   <enabled>false</enabled>
+   <enabled>true</enabled>
    <visible>true</visible>
    <valid>true</valid>
   </parameter>
@@ -1512,7 +1536,7 @@ the requested settings for a module instance. -->
    <type>boolean</type>
    <value>false</value>
    <derived>false</derived>
-   <enabled>false</enabled>
+   <enabled>true</enabled>
    <visible>true</visible>
    <valid>true</valid>
   </parameter>
@@ -1542,9 +1566,9 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="debug_hwbreakpoint">
    <type>int</type>
-   <value>0</value>
+   <value>2</value>
    <derived>false</derived>
-   <enabled>false</enabled>
+   <enabled>true</enabled>
    <visible>true</visible>
    <valid>true</valid>
   </parameter>
@@ -1552,7 +1576,7 @@ the requested settings for a module instance. -->
    <type>int</type>
    <value>0</value>
    <derived>false</derived>
-   <enabled>false</enabled>
+   <enabled>true</enabled>
    <visible>true</visible>
    <valid>true</valid>
   </parameter>
@@ -1560,7 +1584,7 @@ the requested settings for a module instance. -->
    <type>java.lang.String</type>
    <value>none</value>
    <derived>false</derived>
-   <enabled>false</enabled>
+   <enabled>true</enabled>
    <visible>true</visible>
    <valid>true</valid>
   </parameter>
@@ -1862,7 +1886,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="setting_bit31BypassDCache">
    <type>boolean</type>
-   <value>false</value>
+   <value>true</value>
    <derived>true</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -2630,7 +2654,7 @@ parameters are a RESULT of the module parameters. -->
    </parameter>
    <parameter name="registerIncomingSignals">
     <type>boolean</type>
-    <value>true</value>
+    <value>false</value>
     <derived>false</derived>
     <enabled>true</enabled>
     <visible>false</visible>
@@ -2727,6 +2751,12 @@ parameters are a RESULT of the module parameters. -->
     <direction>Output</direction>
     <width>32</width>
     <role>writedata</role>
+   </port>
+   <port>
+    <name>d_readdatavalid</name>
+    <direction>Input</direction>
+    <width>1</width>
+    <role>readdatavalid</role>
    </port>
    <port>
     <name>debug_mem_slave_debugaccess_to_roms</name>
@@ -3028,6 +3058,12 @@ parameters are a RESULT of the module parameters. -->
     <direction>Input</direction>
     <width>1</width>
     <role>waitrequest</role>
+   </port>
+   <port>
+    <name>i_readdatavalid</name>
+    <direction>Input</direction>
+    <width>1</width>
+    <role>readdatavalid</role>
    </port>
    <memoryBlock>
     <isBridge>false</isBridge>
@@ -5822,7 +5858,7 @@ the requested settings for a module instance. -->
   </assignment>
   <parameter name="COMPOSE_CONTENTS">
    <type>java.lang.String</type>
-   <value><![CDATA[add_instance {nios_data_master_translator} {altera_merlin_master_translator};set_instance_parameter_value {nios_data_master_translator} {AV_ADDRESS_W} {12};set_instance_parameter_value {nios_data_master_translator} {AV_DATA_W} {32};set_instance_parameter_value {nios_data_master_translator} {AV_BURSTCOUNT_W} {1};set_instance_parameter_value {nios_data_master_translator} {AV_BYTEENABLE_W} {4};set_instance_parameter_value {nios_data_master_translator} {UAV_ADDRESS_W} {12};set_instance_parameter_value {nios_data_master_translator} {UAV_BURSTCOUNT_W} {3};set_instance_parameter_value {nios_data_master_translator} {AV_READLATENCY} {0};set_instance_parameter_value {nios_data_master_translator} {AV_WRITE_WAIT} {0};set_instance_parameter_value {nios_data_master_translator} {AV_READ_WAIT} {1};set_instance_parameter_value {nios_data_master_translator} {AV_DATA_HOLD} {0};set_instance_parameter_value {nios_data_master_translator} {AV_SETUP_WAIT} {0};set_instance_parameter_value {nios_data_master_translator} {USE_READDATA} {1};set_instance_parameter_value {nios_data_master_translator} {USE_WRITEDATA} {1};set_instance_parameter_value {nios_data_master_translator} {USE_READ} {1};set_instance_parameter_value {nios_data_master_translator} {USE_WRITE} {1};set_instance_parameter_value {nios_data_master_translator} {USE_BEGINBURSTTRANSFER} {0};set_instance_parameter_value {nios_data_master_translator} {USE_BEGINTRANSFER} {0};set_instance_parameter_value {nios_data_master_translator} {USE_BYTEENABLE} {1};set_instance_parameter_value {nios_data_master_translator} {USE_CHIPSELECT} {0};set_instance_parameter_value {nios_data_master_translator} {USE_ADDRESS} {1};set_instance_parameter_value {nios_data_master_translator} {USE_BURSTCOUNT} {0};set_instance_parameter_value {nios_data_master_translator} {USE_DEBUGACCESS} {1};set_instance_parameter_value {nios_data_master_translator} {USE_CLKEN} {0};set_instance_parameter_value {nios_data_master_translator} {USE_READDATAVALID} {0};set_instance_parameter_value {nios_data_master_translator} {USE_WAITREQUEST} {1};set_instance_parameter_value {nios_data_master_translator} {USE_LOCK} {0};set_instance_parameter_value {nios_data_master_translator} {USE_READRESPONSE} {0};set_instance_parameter_value {nios_data_master_translator} {USE_WRITERESPONSE} {0};set_instance_parameter_value {nios_data_master_translator} {AV_SYMBOLS_PER_WORD} {4};set_instance_parameter_value {nios_data_master_translator} {AV_ADDRESS_SYMBOLS} {1};set_instance_parameter_value {nios_data_master_translator} {AV_BURSTCOUNT_SYMBOLS} {0};set_instance_parameter_value {nios_data_master_translator} {AV_CONSTANT_BURST_BEHAVIOR} {0};set_instance_parameter_value {nios_data_master_translator} {UAV_CONSTANT_BURST_BEHAVIOR} {0};set_instance_parameter_value {nios_data_master_translator} {AV_LINEWRAPBURSTS} {0};set_instance_parameter_value {nios_data_master_translator} {AV_MAX_PENDING_READ_TRANSACTIONS} {64};set_instance_parameter_value {nios_data_master_translator} {AV_BURSTBOUNDARIES} {1};set_instance_parameter_value {nios_data_master_translator} {AV_INTERLEAVEBURSTS} {0};set_instance_parameter_value {nios_data_master_translator} {AV_BITS_PER_SYMBOL} {8};set_instance_parameter_value {nios_data_master_translator} {AV_ISBIGENDIAN} {0};set_instance_parameter_value {nios_data_master_translator} {AV_ADDRESSGROUP} {0};set_instance_parameter_value {nios_data_master_translator} {UAV_ADDRESSGROUP} {0};set_instance_parameter_value {nios_data_master_translator} {AV_REGISTEROUTGOINGSIGNALS} {0};set_instance_parameter_value {nios_data_master_translator} {AV_REGISTERINCOMINGSIGNALS} {1};set_instance_parameter_value {nios_data_master_translator} {AV_ALWAYSBURSTMAXBURST} {0};set_instance_parameter_value {nios_data_master_translator} {SYNC_RESET} {0};add_instance {nios_instruction_master_translator} {altera_merlin_master_translator};set_instance_parameter_value {nios_instruction_master_translator} {AV_ADDRESS_W} {12};set_instance_parameter_value {nios_instruction_master_translator} {AV_DATA_W} {32};set_instance_parameter_value {nios_instruction_master_translator} {AV_BURSTCOUNT_W} {1};set_instance_parameter_value {nios_instruction_master_translator} {AV_BYTEENABLE_W} {4};set_instance_parameter_value {nios_instruction_master_translator} {UAV_ADDRESS_W} {12};set_instance_parameter_value {nios_instruction_master_translator} {UAV_BURSTCOUNT_W} {3};set_instance_parameter_value {nios_instruction_master_translator} {AV_READLATENCY} {0};set_instance_parameter_value {nios_instruction_master_translator} {AV_WRITE_WAIT} {0};set_instance_parameter_value {nios_instruction_master_translator} {AV_READ_WAIT} {1};set_instance_parameter_value {nios_instruction_master_translator} {AV_DATA_HOLD} {0};set_instance_parameter_value {nios_instruction_master_translator} {AV_SETUP_WAIT} {0};set_instance_parameter_value {nios_instruction_master_translator} {USE_READDATA} {1};set_instance_parameter_value {nios_instruction_master_translator} {USE_WRITEDATA} {0};set_instance_parameter_value {nios_instruction_master_translator} {USE_READ} {1};set_instance_parameter_value {nios_instruction_master_translator} {USE_WRITE} {0};set_instance_parameter_value {nios_instruction_master_translator} {USE_BEGINBURSTTRANSFER} {0};set_instance_parameter_value {nios_instruction_master_translator} {USE_BEGINTRANSFER} {0};set_instance_parameter_value {nios_instruction_master_translator} {USE_BYTEENABLE} {0};set_instance_parameter_value {nios_instruction_master_translator} {USE_CHIPSELECT} {0};set_instance_parameter_value {nios_instruction_master_translator} {USE_ADDRESS} {1};set_instance_parameter_value {nios_instruction_master_translator} {USE_BURSTCOUNT} {0};set_instance_parameter_value {nios_instruction_master_translator} {USE_DEBUGACCESS} {0};set_instance_parameter_value {nios_instruction_master_translator} {USE_CLKEN} {0};set_instance_parameter_value {nios_instruction_master_translator} {USE_READDATAVALID} {0};set_instance_parameter_value {nios_instruction_master_translator} {USE_WAITREQUEST} {1};set_instance_parameter_value {nios_instruction_master_translator} {USE_LOCK} {0};set_instance_parameter_value {nios_instruction_master_translator} {USE_READRESPONSE} {0};set_instance_parameter_value {nios_instruction_master_translator} {USE_WRITERESPONSE} {0};set_instance_parameter_value {nios_instruction_master_translator} {AV_SYMBOLS_PER_WORD} {4};set_instance_parameter_value {nios_instruction_master_translator} {AV_ADDRESS_SYMBOLS} {1};set_instance_parameter_value {nios_instruction_master_translator} {AV_BURSTCOUNT_SYMBOLS} {0};set_instance_parameter_value {nios_instruction_master_translator} {AV_CONSTANT_BURST_BEHAVIOR} {0};set_instance_parameter_value {nios_instruction_master_translator} {UAV_CONSTANT_BURST_BEHAVIOR} {0};set_instance_parameter_value {nios_instruction_master_translator} {AV_LINEWRAPBURSTS} {1};set_instance_parameter_value {nios_instruction_master_translator} {AV_MAX_PENDING_READ_TRANSACTIONS} {64};set_instance_parameter_value {nios_instruction_master_translator} {AV_BURSTBOUNDARIES} {0};set_instance_parameter_value {nios_instruction_master_translator} {AV_INTERLEAVEBURSTS} {0};set_instance_parameter_value {nios_instruction_master_translator} {AV_BITS_PER_SYMBOL} {8};set_instance_parameter_value {nios_instruction_master_translator} {AV_ISBIGENDIAN} {0};set_instance_parameter_value {nios_instruction_master_translator} {AV_ADDRESSGROUP} {0};set_instance_parameter_value {nios_instruction_master_translator} {UAV_ADDRESSGROUP} {0};set_instance_parameter_value {nios_instruction_master_translator} {AV_REGISTEROUTGOINGSIGNALS} {0};set_instance_parameter_value {nios_instruction_master_translator} {AV_REGISTERINCOMINGSIGNALS} {0};set_instance_parameter_value {nios_instruction_master_translator} {AV_ALWAYSBURSTMAXBURST} {0};set_instance_parameter_value {nios_instruction_master_translator} {SYNC_RESET} {0};add_instance {nios_debug_mem_slave_translator} {altera_merlin_slave_translator};set_instance_parameter_value {nios_debug_mem_slave_translator} {AV_ADDRESS_W} {9};set_instance_parameter_value {nios_debug_mem_slave_translator} {AV_DATA_W} {32};set_instance_parameter_value {nios_debug_mem_slave_translator} {UAV_DATA_W} {32};set_instance_parameter_value {nios_debug_mem_slave_translator} {AV_BURSTCOUNT_W} {1};set_instance_parameter_value {nios_debug_mem_slave_translator} {AV_BYTEENABLE_W} {4};set_instance_parameter_value {nios_debug_mem_slave_translator} {UAV_BYTEENABLE_W} {4};set_instance_parameter_value {nios_debug_mem_slave_translator} {UAV_ADDRESS_W} {12};set_instance_parameter_value {nios_debug_mem_slave_translator} {UAV_BURSTCOUNT_W} {3};set_instance_parameter_value {nios_debug_mem_slave_translator} {AV_READLATENCY} {0};set_instance_parameter_value {nios_debug_mem_slave_translator} {AV_SETUP_WAIT} {0};set_instance_parameter_value {nios_debug_mem_slave_translator} {AV_WRITE_WAIT} {0};set_instance_parameter_value {nios_debug_mem_slave_translator} {AV_READ_WAIT} {1};set_instance_parameter_value {nios_debug_mem_slave_translator} {AV_DATA_HOLD} {0};set_instance_parameter_value {nios_debug_mem_slave_translator} {AV_TIMING_UNITS} {1};set_instance_parameter_value {nios_debug_mem_slave_translator} {USE_READDATA} {1};set_instance_parameter_value {nios_debug_mem_slave_translator} {USE_WRITEDATA} {1};set_instance_parameter_value {nios_debug_mem_slave_translator} {USE_READ} {1};set_instance_parameter_value {nios_debug_mem_slave_translator} {USE_WRITE} {1};set_instance_parameter_value {nios_debug_mem_slave_translator} {USE_BEGINBURSTTRANSFER} {0};set_instance_parameter_value {nios_debug_mem_slave_translator} {USE_BEGINTRANSFER} {0};set_instance_parameter_value {nios_debug_mem_slave_translator} {USE_BYTEENABLE} {1};set_instance_parameter_value {nios_debug_mem_slave_translator} {USE_CHIPSELECT} {0};set_instance_parameter_value {nios_debug_mem_slave_translator} {USE_ADDRESS} {1};set_instance_parameter_value {nios_debug_mem_slave_translator} {USE_BURSTCOUNT} {0};set_instance_parameter_value {nios_debug_mem_slave_translator} {USE_READDATAVALID} {0};set_instance_parameter_value {nios_debug_mem_slave_translator} {USE_WAITREQUEST} {1};set_instance_parameter_value {nios_debug_mem_slave_translator} {USE_WRITEBYTEENABLE} {0};set_instance_parameter_value {nios_debug_mem_slave_translator} {USE_LOCK} {0};set_instance_parameter_value {nios_debug_mem_slave_translator} {USE_AV_CLKEN} {0};set_instance_parameter_value {nios_debug_mem_slave_translator} {USE_UAV_CLKEN} {0};set_instance_parameter_value {nios_debug_mem_slave_translator} {USE_OUTPUTENABLE} {0};set_instance_parameter_value {nios_debug_mem_slave_translator} {USE_DEBUGACCESS} {1};set_instance_parameter_value {nios_debug_mem_slave_translator} {USE_READRESPONSE} {0};set_instance_parameter_value {nios_debug_mem_slave_translator} {USE_WRITERESPONSE} {0};set_instance_parameter_value {nios_debug_mem_slave_translator} {AV_SYMBOLS_PER_WORD} {4};set_instance_parameter_value {nios_debug_mem_slave_translator} {AV_ADDRESS_SYMBOLS} {0};set_instance_parameter_value {nios_debug_mem_slave_translator} {AV_BURSTCOUNT_SYMBOLS} {0};set_instance_parameter_value {nios_debug_mem_slave_translator} {AV_CONSTANT_BURST_BEHAVIOR} {0};set_instance_parameter_value {nios_debug_mem_slave_translator} {UAV_CONSTANT_BURST_BEHAVIOR} {0};set_instance_parameter_value {nios_debug_mem_slave_translator} {AV_REQUIRE_UNALIGNED_ADDRESSES} {0};set_instance_parameter_value {nios_debug_mem_slave_translator} {AV_LINEWRAPBURSTS} {0};set_instance_parameter_value {nios_debug_mem_slave_translator} {AV_MAX_PENDING_READ_TRANSACTIONS} {1};set_instance_parameter_value {nios_debug_mem_slave_translator} {AV_MAX_PENDING_WRITE_TRANSACTIONS} {0};set_instance_parameter_value {nios_debug_mem_slave_translator} {AV_BURSTBOUNDARIES} {0};set_instance_parameter_value {nios_debug_mem_slave_translator} {AV_INTERLEAVEBURSTS} {0};set_instance_parameter_value {nios_debug_mem_slave_translator} {AV_BITS_PER_SYMBOL} {8};set_instance_parameter_value {nios_debug_mem_slave_translator} {AV_ISBIGENDIAN} {0};set_instance_parameter_value {nios_debug_mem_slave_translator} {AV_ADDRESSGROUP} {0};set_instance_parameter_value {nios_debug_mem_slave_translator} {UAV_ADDRESSGROUP} {0};set_instance_parameter_value {nios_debug_mem_slave_translator} {AV_REGISTEROUTGOINGSIGNALS} {0};set_instance_parameter_value {nios_debug_mem_slave_translator} {AV_REGISTERINCOMINGSIGNALS} {1};set_instance_parameter_value {nios_debug_mem_slave_translator} {AV_ALWAYSBURSTMAXBURST} {0};set_instance_parameter_value {nios_debug_mem_slave_translator} {CHIPSELECT_THROUGH_READLATENCY} {0};add_instance {nios_data_master_agent} {altera_merlin_master_agent};set_instance_parameter_value {nios_data_master_agent} {PKT_ORI_BURST_SIZE_H} {83};set_instance_parameter_value {nios_data_master_agent} {PKT_ORI_BURST_SIZE_L} {81};set_instance_parameter_value {nios_data_master_agent} {PKT_RESPONSE_STATUS_H} {80};set_instance_parameter_value {nios_data_master_agent} {PKT_RESPONSE_STATUS_L} {79};set_instance_parameter_value {nios_data_master_agent} {PKT_QOS_H} {68};set_instance_parameter_value {nios_data_master_agent} {PKT_QOS_L} {68};set_instance_parameter_value {nios_data_master_agent} {PKT_DATA_SIDEBAND_H} {66};set_instance_parameter_value {nios_data_master_agent} {PKT_DATA_SIDEBAND_L} {66};set_instance_parameter_value {nios_data_master_agent} {PKT_ADDR_SIDEBAND_H} {65};set_instance_parameter_value {nios_data_master_agent} {PKT_ADDR_SIDEBAND_L} {65};set_instance_parameter_value {nios_data_master_agent} {PKT_BURST_TYPE_H} {64};set_instance_parameter_value {nios_data_master_agent} {PKT_BURST_TYPE_L} {63};set_instance_parameter_value {nios_data_master_agent} {PKT_CACHE_H} {78};set_instance_parameter_value {nios_data_master_agent} {PKT_CACHE_L} {75};set_instance_parameter_value {nios_data_master_agent} {PKT_THREAD_ID_H} {71};set_instance_parameter_value {nios_data_master_agent} {PKT_THREAD_ID_L} {71};set_instance_parameter_value {nios_data_master_agent} {PKT_BURST_SIZE_H} {62};set_instance_parameter_value {nios_data_master_agent} {PKT_BURST_SIZE_L} {60};set_instance_parameter_value {nios_data_master_agent} {PKT_TRANS_EXCLUSIVE} {53};set_instance_parameter_value {nios_data_master_agent} {PKT_TRANS_LOCK} {52};set_instance_parameter_value {nios_data_master_agent} {PKT_BEGIN_BURST} {67};set_instance_parameter_value {nios_data_master_agent} {PKT_PROTECTION_H} {74};set_instance_parameter_value {nios_data_master_agent} {PKT_PROTECTION_L} {72};set_instance_parameter_value {nios_data_master_agent} {PKT_BURSTWRAP_H} {59};set_instance_parameter_value {nios_data_master_agent} {PKT_BURSTWRAP_L} {57};set_instance_parameter_value {nios_data_master_agent} {PKT_BYTE_CNT_H} {56};set_instance_parameter_value {nios_data_master_agent} {PKT_BYTE_CNT_L} {54};set_instance_parameter_value {nios_data_master_agent} {PKT_ADDR_H} {47};set_instance_parameter_value {nios_data_master_agent} {PKT_ADDR_L} {36};set_instance_parameter_value {nios_data_master_agent} {PKT_TRANS_COMPRESSED_READ} {48};set_instance_parameter_value {nios_data_master_agent} {PKT_TRANS_POSTED} {49};set_instance_parameter_value {nios_data_master_agent} {PKT_TRANS_WRITE} {50};set_instance_parameter_value {nios_data_master_agent} {PKT_TRANS_READ} {51};set_instance_parameter_value {nios_data_master_agent} {PKT_DATA_H} {31};set_instance_parameter_value {nios_data_master_agent} {PKT_DATA_L} {0};set_instance_parameter_value {nios_data_master_agent} {PKT_BYTEEN_H} {35};set_instance_parameter_value {nios_data_master_agent} {PKT_BYTEEN_L} {32};set_instance_parameter_value {nios_data_master_agent} {PKT_SRC_ID_H} {69};set_instance_parameter_value {nios_data_master_agent} {PKT_SRC_ID_L} {69};set_instance_parameter_value {nios_data_master_agent} {PKT_DEST_ID_H} {70};set_instance_parameter_value {nios_data_master_agent} {PKT_DEST_ID_L} {70};set_instance_parameter_value {nios_data_master_agent} {ST_DATA_W} {84};set_instance_parameter_value {nios_data_master_agent} {ST_CHANNEL_W} {2};set_instance_parameter_value {nios_data_master_agent} {AV_BURSTCOUNT_W} {3};set_instance_parameter_value {nios_data_master_agent} {AV_LINEWRAPBURSTS} {0};set_instance_parameter_value {nios_data_master_agent} {AV_BURSTBOUNDARIES} {1};set_instance_parameter_value {nios_data_master_agent} {MERLIN_PACKET_FORMAT} {ori_burst_size(83:81) response_status(80:79) cache(78:75) protection(74:72) thread_id(71) dest_id(70) src_id(69) qos(68) begin_burst(67) data_sideband(66) addr_sideband(65) burst_type(64:63) burst_size(62:60) burstwrap(59:57) byte_cnt(56:54) trans_exclusive(53) trans_lock(52) trans_read(51) trans_write(50) trans_posted(49) trans_compressed_read(48) addr(47:36) byteen(35:32) data(31:0)};set_instance_parameter_value {nios_data_master_agent} {ADDR_MAP} {<?xml version="1.0" encoding="UTF-8"?>
+   <value><![CDATA[add_instance {nios_data_master_translator} {altera_merlin_master_translator};set_instance_parameter_value {nios_data_master_translator} {AV_ADDRESS_W} {12};set_instance_parameter_value {nios_data_master_translator} {AV_DATA_W} {32};set_instance_parameter_value {nios_data_master_translator} {AV_BURSTCOUNT_W} {1};set_instance_parameter_value {nios_data_master_translator} {AV_BYTEENABLE_W} {4};set_instance_parameter_value {nios_data_master_translator} {UAV_ADDRESS_W} {12};set_instance_parameter_value {nios_data_master_translator} {UAV_BURSTCOUNT_W} {3};set_instance_parameter_value {nios_data_master_translator} {AV_READLATENCY} {0};set_instance_parameter_value {nios_data_master_translator} {AV_WRITE_WAIT} {0};set_instance_parameter_value {nios_data_master_translator} {AV_READ_WAIT} {1};set_instance_parameter_value {nios_data_master_translator} {AV_DATA_HOLD} {0};set_instance_parameter_value {nios_data_master_translator} {AV_SETUP_WAIT} {0};set_instance_parameter_value {nios_data_master_translator} {USE_READDATA} {1};set_instance_parameter_value {nios_data_master_translator} {USE_WRITEDATA} {1};set_instance_parameter_value {nios_data_master_translator} {USE_READ} {1};set_instance_parameter_value {nios_data_master_translator} {USE_WRITE} {1};set_instance_parameter_value {nios_data_master_translator} {USE_BEGINBURSTTRANSFER} {0};set_instance_parameter_value {nios_data_master_translator} {USE_BEGINTRANSFER} {0};set_instance_parameter_value {nios_data_master_translator} {USE_BYTEENABLE} {1};set_instance_parameter_value {nios_data_master_translator} {USE_CHIPSELECT} {0};set_instance_parameter_value {nios_data_master_translator} {USE_ADDRESS} {1};set_instance_parameter_value {nios_data_master_translator} {USE_BURSTCOUNT} {0};set_instance_parameter_value {nios_data_master_translator} {USE_DEBUGACCESS} {1};set_instance_parameter_value {nios_data_master_translator} {USE_CLKEN} {0};set_instance_parameter_value {nios_data_master_translator} {USE_READDATAVALID} {1};set_instance_parameter_value {nios_data_master_translator} {USE_WAITREQUEST} {1};set_instance_parameter_value {nios_data_master_translator} {USE_LOCK} {0};set_instance_parameter_value {nios_data_master_translator} {USE_READRESPONSE} {0};set_instance_parameter_value {nios_data_master_translator} {USE_WRITERESPONSE} {0};set_instance_parameter_value {nios_data_master_translator} {AV_SYMBOLS_PER_WORD} {4};set_instance_parameter_value {nios_data_master_translator} {AV_ADDRESS_SYMBOLS} {1};set_instance_parameter_value {nios_data_master_translator} {AV_BURSTCOUNT_SYMBOLS} {0};set_instance_parameter_value {nios_data_master_translator} {AV_CONSTANT_BURST_BEHAVIOR} {0};set_instance_parameter_value {nios_data_master_translator} {UAV_CONSTANT_BURST_BEHAVIOR} {0};set_instance_parameter_value {nios_data_master_translator} {AV_LINEWRAPBURSTS} {0};set_instance_parameter_value {nios_data_master_translator} {AV_MAX_PENDING_READ_TRANSACTIONS} {64};set_instance_parameter_value {nios_data_master_translator} {AV_BURSTBOUNDARIES} {1};set_instance_parameter_value {nios_data_master_translator} {AV_INTERLEAVEBURSTS} {0};set_instance_parameter_value {nios_data_master_translator} {AV_BITS_PER_SYMBOL} {8};set_instance_parameter_value {nios_data_master_translator} {AV_ISBIGENDIAN} {0};set_instance_parameter_value {nios_data_master_translator} {AV_ADDRESSGROUP} {0};set_instance_parameter_value {nios_data_master_translator} {UAV_ADDRESSGROUP} {0};set_instance_parameter_value {nios_data_master_translator} {AV_REGISTEROUTGOINGSIGNALS} {0};set_instance_parameter_value {nios_data_master_translator} {AV_REGISTERINCOMINGSIGNALS} {0};set_instance_parameter_value {nios_data_master_translator} {AV_ALWAYSBURSTMAXBURST} {0};set_instance_parameter_value {nios_data_master_translator} {SYNC_RESET} {0};add_instance {nios_instruction_master_translator} {altera_merlin_master_translator};set_instance_parameter_value {nios_instruction_master_translator} {AV_ADDRESS_W} {12};set_instance_parameter_value {nios_instruction_master_translator} {AV_DATA_W} {32};set_instance_parameter_value {nios_instruction_master_translator} {AV_BURSTCOUNT_W} {1};set_instance_parameter_value {nios_instruction_master_translator} {AV_BYTEENABLE_W} {4};set_instance_parameter_value {nios_instruction_master_translator} {UAV_ADDRESS_W} {12};set_instance_parameter_value {nios_instruction_master_translator} {UAV_BURSTCOUNT_W} {3};set_instance_parameter_value {nios_instruction_master_translator} {AV_READLATENCY} {0};set_instance_parameter_value {nios_instruction_master_translator} {AV_WRITE_WAIT} {0};set_instance_parameter_value {nios_instruction_master_translator} {AV_READ_WAIT} {1};set_instance_parameter_value {nios_instruction_master_translator} {AV_DATA_HOLD} {0};set_instance_parameter_value {nios_instruction_master_translator} {AV_SETUP_WAIT} {0};set_instance_parameter_value {nios_instruction_master_translator} {USE_READDATA} {1};set_instance_parameter_value {nios_instruction_master_translator} {USE_WRITEDATA} {0};set_instance_parameter_value {nios_instruction_master_translator} {USE_READ} {1};set_instance_parameter_value {nios_instruction_master_translator} {USE_WRITE} {0};set_instance_parameter_value {nios_instruction_master_translator} {USE_BEGINBURSTTRANSFER} {0};set_instance_parameter_value {nios_instruction_master_translator} {USE_BEGINTRANSFER} {0};set_instance_parameter_value {nios_instruction_master_translator} {USE_BYTEENABLE} {0};set_instance_parameter_value {nios_instruction_master_translator} {USE_CHIPSELECT} {0};set_instance_parameter_value {nios_instruction_master_translator} {USE_ADDRESS} {1};set_instance_parameter_value {nios_instruction_master_translator} {USE_BURSTCOUNT} {0};set_instance_parameter_value {nios_instruction_master_translator} {USE_DEBUGACCESS} {0};set_instance_parameter_value {nios_instruction_master_translator} {USE_CLKEN} {0};set_instance_parameter_value {nios_instruction_master_translator} {USE_READDATAVALID} {1};set_instance_parameter_value {nios_instruction_master_translator} {USE_WAITREQUEST} {1};set_instance_parameter_value {nios_instruction_master_translator} {USE_LOCK} {0};set_instance_parameter_value {nios_instruction_master_translator} {USE_READRESPONSE} {0};set_instance_parameter_value {nios_instruction_master_translator} {USE_WRITERESPONSE} {0};set_instance_parameter_value {nios_instruction_master_translator} {AV_SYMBOLS_PER_WORD} {4};set_instance_parameter_value {nios_instruction_master_translator} {AV_ADDRESS_SYMBOLS} {1};set_instance_parameter_value {nios_instruction_master_translator} {AV_BURSTCOUNT_SYMBOLS} {0};set_instance_parameter_value {nios_instruction_master_translator} {AV_CONSTANT_BURST_BEHAVIOR} {0};set_instance_parameter_value {nios_instruction_master_translator} {UAV_CONSTANT_BURST_BEHAVIOR} {0};set_instance_parameter_value {nios_instruction_master_translator} {AV_LINEWRAPBURSTS} {1};set_instance_parameter_value {nios_instruction_master_translator} {AV_MAX_PENDING_READ_TRANSACTIONS} {64};set_instance_parameter_value {nios_instruction_master_translator} {AV_BURSTBOUNDARIES} {0};set_instance_parameter_value {nios_instruction_master_translator} {AV_INTERLEAVEBURSTS} {0};set_instance_parameter_value {nios_instruction_master_translator} {AV_BITS_PER_SYMBOL} {8};set_instance_parameter_value {nios_instruction_master_translator} {AV_ISBIGENDIAN} {0};set_instance_parameter_value {nios_instruction_master_translator} {AV_ADDRESSGROUP} {0};set_instance_parameter_value {nios_instruction_master_translator} {UAV_ADDRESSGROUP} {0};set_instance_parameter_value {nios_instruction_master_translator} {AV_REGISTEROUTGOINGSIGNALS} {0};set_instance_parameter_value {nios_instruction_master_translator} {AV_REGISTERINCOMINGSIGNALS} {0};set_instance_parameter_value {nios_instruction_master_translator} {AV_ALWAYSBURSTMAXBURST} {0};set_instance_parameter_value {nios_instruction_master_translator} {SYNC_RESET} {0};add_instance {nios_debug_mem_slave_translator} {altera_merlin_slave_translator};set_instance_parameter_value {nios_debug_mem_slave_translator} {AV_ADDRESS_W} {9};set_instance_parameter_value {nios_debug_mem_slave_translator} {AV_DATA_W} {32};set_instance_parameter_value {nios_debug_mem_slave_translator} {UAV_DATA_W} {32};set_instance_parameter_value {nios_debug_mem_slave_translator} {AV_BURSTCOUNT_W} {1};set_instance_parameter_value {nios_debug_mem_slave_translator} {AV_BYTEENABLE_W} {4};set_instance_parameter_value {nios_debug_mem_slave_translator} {UAV_BYTEENABLE_W} {4};set_instance_parameter_value {nios_debug_mem_slave_translator} {UAV_ADDRESS_W} {12};set_instance_parameter_value {nios_debug_mem_slave_translator} {UAV_BURSTCOUNT_W} {3};set_instance_parameter_value {nios_debug_mem_slave_translator} {AV_READLATENCY} {0};set_instance_parameter_value {nios_debug_mem_slave_translator} {AV_SETUP_WAIT} {0};set_instance_parameter_value {nios_debug_mem_slave_translator} {AV_WRITE_WAIT} {0};set_instance_parameter_value {nios_debug_mem_slave_translator} {AV_READ_WAIT} {1};set_instance_parameter_value {nios_debug_mem_slave_translator} {AV_DATA_HOLD} {0};set_instance_parameter_value {nios_debug_mem_slave_translator} {AV_TIMING_UNITS} {1};set_instance_parameter_value {nios_debug_mem_slave_translator} {USE_READDATA} {1};set_instance_parameter_value {nios_debug_mem_slave_translator} {USE_WRITEDATA} {1};set_instance_parameter_value {nios_debug_mem_slave_translator} {USE_READ} {1};set_instance_parameter_value {nios_debug_mem_slave_translator} {USE_WRITE} {1};set_instance_parameter_value {nios_debug_mem_slave_translator} {USE_BEGINBURSTTRANSFER} {0};set_instance_parameter_value {nios_debug_mem_slave_translator} {USE_BEGINTRANSFER} {0};set_instance_parameter_value {nios_debug_mem_slave_translator} {USE_BYTEENABLE} {1};set_instance_parameter_value {nios_debug_mem_slave_translator} {USE_CHIPSELECT} {0};set_instance_parameter_value {nios_debug_mem_slave_translator} {USE_ADDRESS} {1};set_instance_parameter_value {nios_debug_mem_slave_translator} {USE_BURSTCOUNT} {0};set_instance_parameter_value {nios_debug_mem_slave_translator} {USE_READDATAVALID} {0};set_instance_parameter_value {nios_debug_mem_slave_translator} {USE_WAITREQUEST} {1};set_instance_parameter_value {nios_debug_mem_slave_translator} {USE_WRITEBYTEENABLE} {0};set_instance_parameter_value {nios_debug_mem_slave_translator} {USE_LOCK} {0};set_instance_parameter_value {nios_debug_mem_slave_translator} {USE_AV_CLKEN} {0};set_instance_parameter_value {nios_debug_mem_slave_translator} {USE_UAV_CLKEN} {0};set_instance_parameter_value {nios_debug_mem_slave_translator} {USE_OUTPUTENABLE} {0};set_instance_parameter_value {nios_debug_mem_slave_translator} {USE_DEBUGACCESS} {1};set_instance_parameter_value {nios_debug_mem_slave_translator} {USE_READRESPONSE} {0};set_instance_parameter_value {nios_debug_mem_slave_translator} {USE_WRITERESPONSE} {0};set_instance_parameter_value {nios_debug_mem_slave_translator} {AV_SYMBOLS_PER_WORD} {4};set_instance_parameter_value {nios_debug_mem_slave_translator} {AV_ADDRESS_SYMBOLS} {0};set_instance_parameter_value {nios_debug_mem_slave_translator} {AV_BURSTCOUNT_SYMBOLS} {0};set_instance_parameter_value {nios_debug_mem_slave_translator} {AV_CONSTANT_BURST_BEHAVIOR} {0};set_instance_parameter_value {nios_debug_mem_slave_translator} {UAV_CONSTANT_BURST_BEHAVIOR} {0};set_instance_parameter_value {nios_debug_mem_slave_translator} {AV_REQUIRE_UNALIGNED_ADDRESSES} {0};set_instance_parameter_value {nios_debug_mem_slave_translator} {AV_LINEWRAPBURSTS} {0};set_instance_parameter_value {nios_debug_mem_slave_translator} {AV_MAX_PENDING_READ_TRANSACTIONS} {1};set_instance_parameter_value {nios_debug_mem_slave_translator} {AV_MAX_PENDING_WRITE_TRANSACTIONS} {0};set_instance_parameter_value {nios_debug_mem_slave_translator} {AV_BURSTBOUNDARIES} {0};set_instance_parameter_value {nios_debug_mem_slave_translator} {AV_INTERLEAVEBURSTS} {0};set_instance_parameter_value {nios_debug_mem_slave_translator} {AV_BITS_PER_SYMBOL} {8};set_instance_parameter_value {nios_debug_mem_slave_translator} {AV_ISBIGENDIAN} {0};set_instance_parameter_value {nios_debug_mem_slave_translator} {AV_ADDRESSGROUP} {0};set_instance_parameter_value {nios_debug_mem_slave_translator} {UAV_ADDRESSGROUP} {0};set_instance_parameter_value {nios_debug_mem_slave_translator} {AV_REGISTEROUTGOINGSIGNALS} {0};set_instance_parameter_value {nios_debug_mem_slave_translator} {AV_REGISTERINCOMINGSIGNALS} {1};set_instance_parameter_value {nios_debug_mem_slave_translator} {AV_ALWAYSBURSTMAXBURST} {0};set_instance_parameter_value {nios_debug_mem_slave_translator} {CHIPSELECT_THROUGH_READLATENCY} {0};add_instance {nios_data_master_agent} {altera_merlin_master_agent};set_instance_parameter_value {nios_data_master_agent} {PKT_ORI_BURST_SIZE_H} {83};set_instance_parameter_value {nios_data_master_agent} {PKT_ORI_BURST_SIZE_L} {81};set_instance_parameter_value {nios_data_master_agent} {PKT_RESPONSE_STATUS_H} {80};set_instance_parameter_value {nios_data_master_agent} {PKT_RESPONSE_STATUS_L} {79};set_instance_parameter_value {nios_data_master_agent} {PKT_QOS_H} {68};set_instance_parameter_value {nios_data_master_agent} {PKT_QOS_L} {68};set_instance_parameter_value {nios_data_master_agent} {PKT_DATA_SIDEBAND_H} {66};set_instance_parameter_value {nios_data_master_agent} {PKT_DATA_SIDEBAND_L} {66};set_instance_parameter_value {nios_data_master_agent} {PKT_ADDR_SIDEBAND_H} {65};set_instance_parameter_value {nios_data_master_agent} {PKT_ADDR_SIDEBAND_L} {65};set_instance_parameter_value {nios_data_master_agent} {PKT_BURST_TYPE_H} {64};set_instance_parameter_value {nios_data_master_agent} {PKT_BURST_TYPE_L} {63};set_instance_parameter_value {nios_data_master_agent} {PKT_CACHE_H} {78};set_instance_parameter_value {nios_data_master_agent} {PKT_CACHE_L} {75};set_instance_parameter_value {nios_data_master_agent} {PKT_THREAD_ID_H} {71};set_instance_parameter_value {nios_data_master_agent} {PKT_THREAD_ID_L} {71};set_instance_parameter_value {nios_data_master_agent} {PKT_BURST_SIZE_H} {62};set_instance_parameter_value {nios_data_master_agent} {PKT_BURST_SIZE_L} {60};set_instance_parameter_value {nios_data_master_agent} {PKT_TRANS_EXCLUSIVE} {53};set_instance_parameter_value {nios_data_master_agent} {PKT_TRANS_LOCK} {52};set_instance_parameter_value {nios_data_master_agent} {PKT_BEGIN_BURST} {67};set_instance_parameter_value {nios_data_master_agent} {PKT_PROTECTION_H} {74};set_instance_parameter_value {nios_data_master_agent} {PKT_PROTECTION_L} {72};set_instance_parameter_value {nios_data_master_agent} {PKT_BURSTWRAP_H} {59};set_instance_parameter_value {nios_data_master_agent} {PKT_BURSTWRAP_L} {57};set_instance_parameter_value {nios_data_master_agent} {PKT_BYTE_CNT_H} {56};set_instance_parameter_value {nios_data_master_agent} {PKT_BYTE_CNT_L} {54};set_instance_parameter_value {nios_data_master_agent} {PKT_ADDR_H} {47};set_instance_parameter_value {nios_data_master_agent} {PKT_ADDR_L} {36};set_instance_parameter_value {nios_data_master_agent} {PKT_TRANS_COMPRESSED_READ} {48};set_instance_parameter_value {nios_data_master_agent} {PKT_TRANS_POSTED} {49};set_instance_parameter_value {nios_data_master_agent} {PKT_TRANS_WRITE} {50};set_instance_parameter_value {nios_data_master_agent} {PKT_TRANS_READ} {51};set_instance_parameter_value {nios_data_master_agent} {PKT_DATA_H} {31};set_instance_parameter_value {nios_data_master_agent} {PKT_DATA_L} {0};set_instance_parameter_value {nios_data_master_agent} {PKT_BYTEEN_H} {35};set_instance_parameter_value {nios_data_master_agent} {PKT_BYTEEN_L} {32};set_instance_parameter_value {nios_data_master_agent} {PKT_SRC_ID_H} {69};set_instance_parameter_value {nios_data_master_agent} {PKT_SRC_ID_L} {69};set_instance_parameter_value {nios_data_master_agent} {PKT_DEST_ID_H} {70};set_instance_parameter_value {nios_data_master_agent} {PKT_DEST_ID_L} {70};set_instance_parameter_value {nios_data_master_agent} {ST_DATA_W} {84};set_instance_parameter_value {nios_data_master_agent} {ST_CHANNEL_W} {2};set_instance_parameter_value {nios_data_master_agent} {AV_BURSTCOUNT_W} {3};set_instance_parameter_value {nios_data_master_agent} {AV_LINEWRAPBURSTS} {0};set_instance_parameter_value {nios_data_master_agent} {AV_BURSTBOUNDARIES} {1};set_instance_parameter_value {nios_data_master_agent} {MERLIN_PACKET_FORMAT} {ori_burst_size(83:81) response_status(80:79) cache(78:75) protection(74:72) thread_id(71) dest_id(70) src_id(69) qos(68) begin_burst(67) data_sideband(66) addr_sideband(65) burst_type(64:63) burst_size(62:60) burstwrap(59:57) byte_cnt(56:54) trans_exclusive(53) trans_lock(52) trans_read(51) trans_write(50) trans_posted(49) trans_compressed_read(48) addr(47:36) byteen(35:32) data(31:0)};set_instance_parameter_value {nios_data_master_agent} {ADDR_MAP} {<?xml version="1.0" encoding="UTF-8"?>
 <address_map>
  <slave
    id="0"
@@ -6179,7 +6215,7 @@ parameters are a RESULT of the module parameters. -->
    </parameter>
    <parameter name="maximumPendingReadTransactions">
     <type>int</type>
-    <value>0</value>
+    <value>64</value>
     <derived>false</derived>
     <enabled>false</enabled>
     <visible>true</visible>
@@ -6235,7 +6271,7 @@ parameters are a RESULT of the module parameters. -->
    </parameter>
    <parameter name="registerIncomingSignals">
     <type>boolean</type>
-    <value>true</value>
+    <value>false</value>
     <derived>false</derived>
     <enabled>true</enabled>
     <visible>false</visible>
@@ -6352,6 +6388,12 @@ parameters are a RESULT of the module parameters. -->
     <direction>Output</direction>
     <width>32</width>
     <role>readdata</role>
+   </port>
+   <port>
+    <name>nios_data_master_readdatavalid</name>
+    <direction>Output</direction>
+    <width>1</width>
+    <role>readdatavalid</role>
    </port>
    <port>
     <name>nios_data_master_write</name>
@@ -6566,7 +6608,7 @@ parameters are a RESULT of the module parameters. -->
    </parameter>
    <parameter name="maximumPendingReadTransactions">
     <type>int</type>
-    <value>0</value>
+    <value>64</value>
     <derived>false</derived>
     <enabled>false</enabled>
     <visible>true</visible>
@@ -6733,6 +6775,12 @@ parameters are a RESULT of the module parameters. -->
     <direction>Output</direction>
     <width>32</width>
     <role>readdata</role>
+   </port>
+   <port>
+    <name>nios_instruction_master_readdatavalid</name>
+    <direction>Output</direction>
+    <width>1</width>
+    <role>readdatavalid</role>
    </port>
   </interface>
   <interface name="nios_debug_mem_slave" kind="avalon_master" version="18.1">
@@ -9187,5 +9235,5 @@ parameters are a RESULT of the module parameters. -->
   <version>18.1</version>
  </plugin>
  <reportVersion>18.1 625</reportVersion>
- <uniqueIdentifier>B4859247505200000178116A2D94</uniqueIdentifier>
+ <uniqueIdentifier>B485924750520000017811707388</uniqueIdentifier>
 </EnsembleReport>

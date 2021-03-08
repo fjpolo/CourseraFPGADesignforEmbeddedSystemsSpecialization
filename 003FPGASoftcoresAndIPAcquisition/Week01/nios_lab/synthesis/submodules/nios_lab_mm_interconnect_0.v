@@ -14,6 +14,7 @@ module nios_lab_mm_interconnect_0 (
 		input  wire [3:0]  nios_data_master_byteenable,            //                                 .byteenable
 		input  wire        nios_data_master_read,                  //                                 .read
 		output wire [31:0] nios_data_master_readdata,              //                                 .readdata
+		output wire        nios_data_master_readdatavalid,         //                                 .readdatavalid
 		input  wire        nios_data_master_write,                 //                                 .write
 		input  wire [31:0] nios_data_master_writedata,             //                                 .writedata
 		input  wire        nios_data_master_debugaccess,           //                                 .debugaccess
@@ -21,6 +22,7 @@ module nios_lab_mm_interconnect_0 (
 		output wire        nios_instruction_master_waitrequest,    //                                 .waitrequest
 		input  wire        nios_instruction_master_read,           //                                 .read
 		output wire [31:0] nios_instruction_master_readdata,       //                                 .readdata
+		output wire        nios_instruction_master_readdatavalid,  //                                 .readdatavalid
 		output wire [8:0]  nios_debug_mem_slave_address,           //             nios_debug_mem_slave.address
 		output wire        nios_debug_mem_slave_write,             //                                 .write
 		output wire        nios_debug_mem_slave_read,              //                                 .read
@@ -170,7 +172,7 @@ module nios_lab_mm_interconnect_0 (
 		.USE_BEGINTRANSFER           (0),
 		.USE_CHIPSELECT              (0),
 		.USE_BURSTCOUNT              (0),
-		.USE_READDATAVALID           (0),
+		.USE_READDATAVALID           (1),
 		.USE_WAITREQUEST             (1),
 		.USE_READRESPONSE            (0),
 		.USE_WRITERESPONSE           (0),
@@ -180,7 +182,7 @@ module nios_lab_mm_interconnect_0 (
 		.AV_CONSTANT_BURST_BEHAVIOR  (0),
 		.UAV_CONSTANT_BURST_BEHAVIOR (0),
 		.AV_LINEWRAPBURSTS           (0),
-		.AV_REGISTERINCOMINGSIGNALS  (1)
+		.AV_REGISTERINCOMINGSIGNALS  (0)
 	) nios_data_master_translator (
 		.clk                    (pll_c0_clk),                                                          //                       clk.clk
 		.reset                  (nios_reset_reset_bridge_in_reset_reset),                              //                     reset.reset
@@ -200,6 +202,7 @@ module nios_lab_mm_interconnect_0 (
 		.av_byteenable          (nios_data_master_byteenable),                                         //                          .byteenable
 		.av_read                (nios_data_master_read),                                               //                          .read
 		.av_readdata            (nios_data_master_readdata),                                           //                          .readdata
+		.av_readdatavalid       (nios_data_master_readdatavalid),                                      //                          .readdatavalid
 		.av_write               (nios_data_master_write),                                              //                          .write
 		.av_writedata           (nios_data_master_writedata),                                          //                          .writedata
 		.av_debugaccess         (nios_data_master_debugaccess),                                        //                          .debugaccess
@@ -207,7 +210,6 @@ module nios_lab_mm_interconnect_0 (
 		.av_beginbursttransfer  (1'b0),                                                                //               (terminated)
 		.av_begintransfer       (1'b0),                                                                //               (terminated)
 		.av_chipselect          (1'b0),                                                                //               (terminated)
-		.av_readdatavalid       (),                                                                    //               (terminated)
 		.av_lock                (1'b0),                                                                //               (terminated)
 		.uav_clken              (),                                                                    //               (terminated)
 		.av_clken               (1'b1),                                                                //               (terminated)
@@ -230,7 +232,7 @@ module nios_lab_mm_interconnect_0 (
 		.USE_BEGINTRANSFER           (0),
 		.USE_CHIPSELECT              (0),
 		.USE_BURSTCOUNT              (0),
-		.USE_READDATAVALID           (0),
+		.USE_READDATAVALID           (1),
 		.USE_WAITREQUEST             (1),
 		.USE_READRESPONSE            (0),
 		.USE_WRITERESPONSE           (0),
@@ -259,12 +261,12 @@ module nios_lab_mm_interconnect_0 (
 		.av_waitrequest         (nios_instruction_master_waitrequest),                                        //                          .waitrequest
 		.av_read                (nios_instruction_master_read),                                               //                          .read
 		.av_readdata            (nios_instruction_master_readdata),                                           //                          .readdata
+		.av_readdatavalid       (nios_instruction_master_readdatavalid),                                      //                          .readdatavalid
 		.av_burstcount          (1'b1),                                                                       //               (terminated)
 		.av_byteenable          (4'b1111),                                                                    //               (terminated)
 		.av_beginbursttransfer  (1'b0),                                                                       //               (terminated)
 		.av_begintransfer       (1'b0),                                                                       //               (terminated)
 		.av_chipselect          (1'b0),                                                                       //               (terminated)
-		.av_readdatavalid       (),                                                                           //               (terminated)
 		.av_write               (1'b0),                                                                       //               (terminated)
 		.av_writedata           (32'b00000000000000000000000000000000),                                       //               (terminated)
 		.av_lock                (1'b0),                                                                       //               (terminated)
