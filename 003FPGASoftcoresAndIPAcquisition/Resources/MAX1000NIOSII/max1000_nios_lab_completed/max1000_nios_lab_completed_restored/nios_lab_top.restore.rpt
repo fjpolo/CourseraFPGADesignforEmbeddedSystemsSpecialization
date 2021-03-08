@@ -1,0 +1,144 @@
+Restore Archived Project report for nios_lab_top
+Sun Mar 07 19:38:51 2021
+Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Restore Archived Project Summary
+  3. Restore Archived Project Messages
+  4. Files Restored
+  5. Files Not Restored
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++---------------------------------------------------------------------+
+; Restore Archived Project Summary                                    ;
++---------------------------------+-----------------------------------+
+; Restore Archived Project Status ; Failed - Sun Mar 07 19:38:51 2021 ;
+; Revision Name                   ; nios_lab_top                      ;
+; Top-level Entity Name           ; nios_lab_top                      ;
+; Family                          ; MAX 10                            ;
++---------------------------------+-----------------------------------+
+
+
++-----------------------------------+
+; Restore Archived Project Messages ;
++-----------------------------------+
+Error: Failed to restore D:/Franco/Dokumenten/FPGA_VHDL_Verilog/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/Resources/MAX1000NIOSII/max1000_nios_lab_completed/max1000_nios_lab_completed.qar
+Info: Generated report 'nios_lab_top.restore.rpt'
+Error (23031): Evaluation of Tcl script c:/intelfpga_lite/20.1/quartus/common/tcl/apps/qpm/qar.tcl unsuccessful
+Error: Quartus Prime Shell was unsuccessful. 93 errors, 0 warnings
+    Error: Peak virtual memory: 4818 megabytes
+    Error: Processing ended: Sun Mar 07 19:38:51 2021
+    Error: Elapsed time: 00:00:03
+    Error: Total CPU time (on all processors): 00:00:01
+
+
++---------------------------------------------------+
+; Files Restored                                    ;
++---------------------------------------------------+
+; File Name                                         ;
++---------------------------------------------------+
+; qar_info.json                                     ;
+; RESET_GEN.vhd                                     ;
+; max1000_nios_lab.qpf                              ;
+; nios_lab_top.qsf                                  ;
+; nios_lab_top.sdc                                  ;
+; nios_lab_top.vhd                                  ;
+; nios_sys.qsys                                     ;
+; nios_sys.sopcinfo                                 ;
+; nios_sys/nios_sys.cmp                             ;
+; nios_sys/synthesis/nios_sys.debuginfo             ;
+; nios_sys/synthesis/nios_sys.qip                   ;
+; nios_sys/synthesis/nios_sys.regmap                ;
+; nios_sys/synthesis/nios_sys.vhd                   ;
+; nios_sys/synthesis/nios_sys_rst_controller.vhd    ;
+; nios_sys/synthesis/submodules/nios_sys_nios.v     ;
+; nios_sys/synthesis/submodules/nios_sys_nios_cpu.v ;
+; nios_sys/synthesis/submodules/nios_sys_pio_leds.v ;
+; nios_sys/synthesis/submodules/nios_sys_pll.v      ;
+; nios_sys/synthesis/submodules/nios_sys_sys_id.v   ;
+; output_files/nios_lab_top.jdi                     ;
+; output_files/nios_lab_top.pof                     ;
+; output_files/nios_lab_top.sld                     ;
+; output_files/nios_lab_top.sof                     ;
+; assignment_defaults.qdf                           ;
++---------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------+
+; Files Not Restored                                                                            ;
++-----------------------------------------------------------------------------------------------+
+; File Name                                                                                     ;
++-----------------------------------------------------------------------------------------------+
+; nios_sys/synthesis/nios_sys_rst_controller_001.vhd                                            ;
+; nios_sys/synthesis/submodules/altera_avalon_sc_fifo.v                                         ;
+; nios_sys/synthesis/submodules/altera_avalon_st_clock_crosser.v                                ;
+; nios_sys/synthesis/submodules/altera_avalon_st_handshake_clock_crosser.sdc                    ;
+; nios_sys/synthesis/submodules/altera_avalon_st_handshake_clock_crosser.v                      ;
+; nios_sys/synthesis/submodules/altera_avalon_st_pipeline_base.v                                ;
+; nios_sys/synthesis/submodules/altera_merlin_arbitrator.sv                                     ;
+; nios_sys/synthesis/submodules/altera_merlin_burst_uncompressor.sv                             ;
+; nios_sys/synthesis/submodules/altera_merlin_master_agent.sv                                   ;
+; nios_sys/synthesis/submodules/altera_merlin_master_translator.sv                              ;
+; nios_sys/synthesis/submodules/altera_merlin_slave_agent.sv                                    ;
+; nios_sys/synthesis/submodules/altera_merlin_slave_translator.sv                               ;
+; nios_sys/synthesis/submodules/altera_reset_controller.sdc                                     ;
+; nios_sys/synthesis/submodules/altera_reset_controller.v                                       ;
+; nios_sys/synthesis/submodules/altera_reset_synchronizer.v                                     ;
+; nios_sys/synthesis/submodules/altera_std_synchronizer_nocut.v                                 ;
+; nios_sys/synthesis/submodules/nios_sys_irq_mapper.sv                                          ;
+; nios_sys/synthesis/submodules/nios_sys_jtag_uart.v                                            ;
+; nios_sys/synthesis/submodules/nios_sys_mm_interconnect_0.v                                    ;
+; nios_sys/synthesis/submodules/nios_sys_mm_interconnect_0_avalon_st_adapter.v                  ;
+; nios_sys/synthesis/submodules/nios_sys_mm_interconnect_0_avalon_st_adapter_error_adapter_0.sv ;
+; nios_sys/synthesis/submodules/nios_sys_mm_interconnect_0_cmd_demux.sv                         ;
+; nios_sys/synthesis/submodules/nios_sys_mm_interconnect_0_cmd_demux_001.sv                     ;
+; nios_sys/synthesis/submodules/nios_sys_mm_interconnect_0_cmd_mux.sv                           ;
+; nios_sys/synthesis/submodules/nios_sys_mm_interconnect_0_cmd_mux_002.sv                       ;
+; nios_sys/synthesis/submodules/nios_sys_mm_interconnect_0_router.sv                            ;
+; nios_sys/synthesis/submodules/nios_sys_mm_interconnect_0_router_001.sv                        ;
+; nios_sys/synthesis/submodules/nios_sys_mm_interconnect_0_router_002.sv                        ;
+; nios_sys/synthesis/submodules/nios_sys_mm_interconnect_0_router_004.sv                        ;
+; nios_sys/synthesis/submodules/nios_sys_mm_interconnect_0_rsp_demux.sv                         ;
+; nios_sys/synthesis/submodules/nios_sys_mm_interconnect_0_rsp_demux_003.sv                     ;
+; nios_sys/synthesis/submodules/nios_sys_mm_interconnect_0_rsp_mux.sv                           ;
+; nios_sys/synthesis/submodules/nios_sys_mm_interconnect_0_rsp_mux_001.sv                       ;
+; nios_sys/synthesis/submodules/nios_sys_nios_cpu.sdc                                           ;
+; nios_sys/synthesis/submodules/nios_sys_nios_cpu_debug_slave_sysclk.v                          ;
+; nios_sys/synthesis/submodules/nios_sys_nios_cpu_debug_slave_tck.v                             ;
+; nios_sys/synthesis/submodules/nios_sys_nios_cpu_debug_slave_wrapper.v                         ;
+; nios_sys/synthesis/submodules/nios_sys_nios_cpu_ociram_default_contents.mif                   ;
+; nios_sys/synthesis/submodules/nios_sys_nios_cpu_rf_ram_a.mif                                  ;
+; nios_sys/synthesis/submodules/nios_sys_nios_cpu_rf_ram_b.mif                                  ;
+; nios_sys/synthesis/submodules/nios_sys_nios_cpu_test_bench.v                                  ;
+; nios_sys/synthesis/submodules/nios_sys_onchip_ram.hex                                         ;
+; nios_sys/synthesis/submodules/nios_sys_onchip_ram.v                                           ;
+; nios_sys/synthesis/submodules/nios_sys_pio_lis3dh.v                                           ;
+; nios_sys/synthesis/submodules/nios_sys_spi_lis3dh.v                                           ;
++-----------------------------------------------------------------------------------------------+
+
+

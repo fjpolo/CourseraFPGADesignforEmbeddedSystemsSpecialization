@@ -1,0 +1,120 @@
+16:20:04 **** Build of configuration Nios II for project nios_lab ****
+make all 
+Info: Building ../nios_lab_bsp/
+C:/intelFPGA_lite/17.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../nios_lab_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../nios_lab_bsp//HAL/inc -I../nios_lab_bsp/ -I../nios_lab_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_CLEAN_EXIT -D'exit(a)=_exit(a)' -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
+Info: Linking nios_lab.elf
+nios2-elf-g++  -T'../nios_lab_bsp//linker.x' -msys-crt0='../nios_lab_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../nios_lab_bsp/  -msmallc  -Wl,-Map=nios_lab.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o nios_lab.elf obj/default/main.o -lm -msys-lib=m
+nios2-elf-insert nios_lab.elf --thread_model hal --cpu_name nios --qsys true --simulation_enabled false --id 4660 --sidp 0x10050 --timestamp 1502959301 --stderr_dev jtag_uart --stdin_dev jtag_uart --stdout_dev jtag_uart --sopc_system_name nios_sys --quartus_project_dir "C:/FPGA_Projects/MAX1000/MAX1000_nios_lab" --jdi ../..//output_files/nios_lab_top.jdi --sopcinfo C:/FPGA_Projects/MAX1000/MAX1000_nios_lab/software/nios_lab_bsp/../../nios_sys.sopcinfo
+Picked up JAVA_TOOL_OPTIONS: -Djava.net.preferIPv4Stack=true
+Picked up _JAVA_OPTIONS: -Djava.net.preferIPv4Stack=true
+Info: (nios_lab.elf) 9120 Bytes program size (code + initialized data).
+Info:                22 KBytes free for stack + heap.
+Info: Creating nios_lab.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source nios_lab.elf >nios_lab.objdump
+[nios_lab build complete]
+16:20:19 **** Build of configuration Nios II for project nios_lab ****
+make all 
+Info: Building ../nios_lab_bsp/
+C:/intelFPGA_lite/17.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../nios_lab_bsp/
+[BSP build complete]
+[nios_lab build complete]
+16:20:22 **** Incremental Build of configuration Nios II for project nios_lab ****
+make all 
+Info: Building ../nios_lab_bsp/
+C:/intelFPGA_lite/17.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../nios_lab_bsp/
+[BSP build complete]
+[nios_lab build complete]
+16:21:12 **** Incremental Build of configuration Nios II for project nios_lab ****
+make all 
+Info: Building ../nios_lab_bsp/
+C:/intelFPGA_lite/17.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../nios_lab_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../nios_lab_bsp//HAL/inc -I../nios_lab_bsp/ -I../nios_lab_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_CLEAN_EXIT -D'exit(a)=_exit(a)' -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
+Info: Linking nios_lab.elf
+nios2-elf-g++  -T'../nios_lab_bsp//linker.x' -msys-crt0='../nios_lab_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../nios_lab_bsp/  -msmallc  -Wl,-Map=nios_lab.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o nios_lab.elf obj/default/main.o -lm -msys-lib=m
+nios2-elf-insert nios_lab.elf --thread_model hal --cpu_name nios --qsys true --simulation_enabled false --id 4660 --sidp 0x10050 --timestamp 1502959301 --stderr_dev jtag_uart --stdin_dev jtag_uart --stdout_dev jtag_uart --sopc_system_name nios_sys --quartus_project_dir "C:/FPGA_Projects/MAX1000/MAX1000_nios_lab" --jdi ../..//output_files/nios_lab_top.jdi --sopcinfo C:/FPGA_Projects/MAX1000/MAX1000_nios_lab/software/nios_lab_bsp/../../nios_sys.sopcinfo
+Picked up JAVA_TOOL_OPTIONS: -Djava.net.preferIPv4Stack=true
+Picked up _JAVA_OPTIONS: -Djava.net.preferIPv4Stack=true
+Info: (nios_lab.elf) 9120 Bytes program size (code + initialized data).
+Info:                22 KBytes free for stack + heap.
+Info: Creating nios_lab.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source nios_lab.elf >nios_lab.objdump
+[nios_lab build complete]
+16:29:54 **** Incremental Build of configuration Nios II for project nios_lab ****
+make all 
+Info: Building ../nios_lab_bsp/
+C:/intelFPGA_lite/17.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../nios_lab_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../nios_lab_bsp//HAL/inc -I../nios_lab_bsp/ -I../nios_lab_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_CLEAN_EXIT -D'exit(a)=_exit(a)' -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
+Info: Linking nios_lab.elf
+nios2-elf-g++  -T'../nios_lab_bsp//linker.x' -msys-crt0='../nios_lab_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../nios_lab_bsp/  -msmallc  -Wl,-Map=nios_lab.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o nios_lab.elf obj/default/main.o -lm -msys-lib=m
+nios2-elf-insert nios_lab.elf --thread_model hal --cpu_name nios --qsys true --simulation_enabled false --id 4660 --sidp 0x10050 --timestamp 1502959301 --stderr_dev jtag_uart --stdin_dev jtag_uart --stdout_dev jtag_uart --sopc_system_name nios_sys --quartus_project_dir "C:/FPGA_Projects/MAX1000/MAX1000_nios_lab" --jdi ../..//output_files/nios_lab_top.jdi --sopcinfo C:/FPGA_Projects/MAX1000/MAX1000_nios_lab/software/nios_lab_bsp/../../nios_sys.sopcinfo
+Picked up JAVA_TOOL_OPTIONS: -Djava.net.preferIPv4Stack=true
+Picked up _JAVA_OPTIONS: -Djava.net.preferIPv4Stack=true
+Info: (nios_lab.elf) 9148 Bytes program size (code + initialized data).
+Info:                22 KBytes free for stack + heap.
+Info: Creating nios_lab.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source nios_lab.elf >nios_lab.objdump
+[nios_lab build complete]
+16:32:06 **** Incremental Build of configuration Nios II for project nios_lab ****
+make all 
+Info: Building ../nios_lab_bsp/
+C:/intelFPGA_lite/17.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../nios_lab_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../nios_lab_bsp//HAL/inc -I../nios_lab_bsp/ -I../nios_lab_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_CLEAN_EXIT -D'exit(a)=_exit(a)' -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
+Info: Linking nios_lab.elf
+nios2-elf-g++  -T'../nios_lab_bsp//linker.x' -msys-crt0='../nios_lab_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../nios_lab_bsp/  -msmallc  -Wl,-Map=nios_lab.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o nios_lab.elf obj/default/main.o -lm -msys-lib=m
+nios2-elf-insert nios_lab.elf --thread_model hal --cpu_name nios --qsys true --simulation_enabled false --id 4660 --sidp 0x10050 --timestamp 1502959301 --stderr_dev jtag_uart --stdin_dev jtag_uart --stdout_dev jtag_uart --sopc_system_name nios_sys --quartus_project_dir "C:/FPGA_Projects/MAX1000/MAX1000_nios_lab" --jdi ../..//output_files/nios_lab_top.jdi --sopcinfo C:/FPGA_Projects/MAX1000/MAX1000_nios_lab/software/nios_lab_bsp/../../nios_sys.sopcinfo
+Picked up JAVA_TOOL_OPTIONS: -Djava.net.preferIPv4Stack=true
+Picked up _JAVA_OPTIONS: -Djava.net.preferIPv4Stack=true
+Info: (nios_lab.elf) 9148 Bytes program size (code + initialized data).
+Info:                22 KBytes free for stack + heap.
+Info: Creating nios_lab.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source nios_lab.elf >nios_lab.objdump
+[nios_lab build complete]
+16:34:49 **** Incremental Build of configuration Nios II for project nios_lab ****
+make all 
+Info: Building ../nios_lab_bsp/
+C:/intelFPGA_lite/17.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../nios_lab_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../nios_lab_bsp//HAL/inc -I../nios_lab_bsp/ -I../nios_lab_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_CLEAN_EXIT -D'exit(a)=_exit(a)' -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
+Info: Linking nios_lab.elf
+nios2-elf-g++  -T'../nios_lab_bsp//linker.x' -msys-crt0='../nios_lab_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../nios_lab_bsp/  -msmallc  -Wl,-Map=nios_lab.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o nios_lab.elf obj/default/main.o -lm -msys-lib=m
+nios2-elf-insert nios_lab.elf --thread_model hal --cpu_name nios --qsys true --simulation_enabled false --id 4660 --sidp 0x10050 --timestamp 1502959301 --stderr_dev jtag_uart --stdin_dev jtag_uart --stdout_dev jtag_uart --sopc_system_name nios_sys --quartus_project_dir "C:/FPGA_Projects/MAX1000/MAX1000_nios_lab" --jdi ../..//output_files/nios_lab_top.jdi --sopcinfo C:/FPGA_Projects/MAX1000/MAX1000_nios_lab/software/nios_lab_bsp/../../nios_sys.sopcinfo
+Picked up JAVA_TOOL_OPTIONS: -Djava.net.preferIPv4Stack=true
+Picked up _JAVA_OPTIONS: -Djava.net.preferIPv4Stack=true
+Info: (nios_lab.elf) 9144 Bytes program size (code + initialized data).
+Info:                22 KBytes free for stack + heap.
+Info: Creating nios_lab.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source nios_lab.elf >nios_lab.objdump
+[nios_lab build complete]
+16:36:37 **** Incremental Build of configuration Nios II for project nios_lab ****
+make all 
+Info: Building ../nios_lab_bsp/
+C:/intelFPGA_lite/17.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../nios_lab_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../nios_lab_bsp//HAL/inc -I../nios_lab_bsp/ -I../nios_lab_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_CLEAN_EXIT -D'exit(a)=_exit(a)' -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/main.o main.c
+Info: Linking nios_lab.elf
+nios2-elf-g++  -T'../nios_lab_bsp//linker.x' -msys-crt0='../nios_lab_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../nios_lab_bsp/  -msmallc  -Wl,-Map=nios_lab.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o nios_lab.elf obj/default/main.o -lm -msys-lib=m
+nios2-elf-insert nios_lab.elf --thread_model hal --cpu_name nios --qsys true --simulation_enabled false --id 4660 --sidp 0x10050 --timestamp 1502959301 --stderr_dev jtag_uart --stdin_dev jtag_uart --stdout_dev jtag_uart --sopc_system_name nios_sys --quartus_project_dir "C:/FPGA_Projects/MAX1000/MAX1000_nios_lab" --jdi ../..//output_files/nios_lab_top.jdi --sopcinfo C:/FPGA_Projects/MAX1000/MAX1000_nios_lab/software/nios_lab_bsp/../../nios_sys.sopcinfo
+Picked up JAVA_TOOL_OPTIONS: -Djava.net.preferIPv4Stack=true
+Picked up _JAVA_OPTIONS: -Djava.net.preferIPv4Stack=true
+Info: (nios_lab.elf) 9144 Bytes program size (code + initialized data).
+Info:                22 KBytes free for stack + heap.
+Info: Creating nios_lab.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source nios_lab.elf >nios_lab.objdump
+[nios_lab build complete]
+10:48:41 **** Incremental Build of configuration Nios II for project nios_lab ****
+make all 
+Info: Building ../nios_lab_bsp/
+C:/intelFPGA_lite_17/17.0/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../nios_lab_bsp/
+[BSP build complete]
+[nios_lab build complete]

@@ -1,0 +1,133 @@
+Quartus Prime Archive log --	C:/Users/dkolosov/Desktop/MAX1000_docs/NIOS_USER_GUIDE/max1000_nios_lab_completed/max1000_nios_lab_completed.qarlog
+
+Archive:	C:/Users/dkolosov/Desktop/MAX1000_docs/NIOS_USER_GUIDE/max1000_nios_lab_completed/max1000_nios_lab_completed.qar
+Date:		Mon Sep 18 10:53:35 2017
+Quartus Prime		17.0.0 Build 595 04/25/2017 SJ Lite Edition
+
+	=========== Files Selected: ===========
+C:/FPGA_Projects/MAX1000/MAX1000_nios_lab/RESET_GEN.vhd
+C:/FPGA_Projects/MAX1000/MAX1000_nios_lab/max1000_nios_lab.qpf
+C:/FPGA_Projects/MAX1000/MAX1000_nios_lab/nios_lab_top.qsf
+C:/FPGA_Projects/MAX1000/MAX1000_nios_lab/nios_lab_top.sdc
+C:/FPGA_Projects/MAX1000/MAX1000_nios_lab/nios_lab_top.vhd
+C:/FPGA_Projects/MAX1000/MAX1000_nios_lab/nios_sys.qsys
+C:/FPGA_Projects/MAX1000/MAX1000_nios_lab/nios_sys.sopcinfo
+C:/FPGA_Projects/MAX1000/MAX1000_nios_lab/nios_sys/nios_sys.cmp
+C:/FPGA_Projects/MAX1000/MAX1000_nios_lab/nios_sys/synthesis/nios_sys.debuginfo
+C:/FPGA_Projects/MAX1000/MAX1000_nios_lab/nios_sys/synthesis/nios_sys.qip
+C:/FPGA_Projects/MAX1000/MAX1000_nios_lab/nios_sys/synthesis/nios_sys.regmap
+C:/FPGA_Projects/MAX1000/MAX1000_nios_lab/nios_sys/synthesis/nios_sys.vhd
+C:/FPGA_Projects/MAX1000/MAX1000_nios_lab/nios_sys/synthesis/nios_sys_rst_controller.vhd
+C:/FPGA_Projects/MAX1000/MAX1000_nios_lab/nios_sys/synthesis/nios_sys_rst_controller_001.vhd
+C:/FPGA_Projects/MAX1000/MAX1000_nios_lab/nios_sys/synthesis/submodules/altera_avalon_sc_fifo.v
+C:/FPGA_Projects/MAX1000/MAX1000_nios_lab/nios_sys/synthesis/submodules/altera_avalon_st_clock_crosser.v
+C:/FPGA_Projects/MAX1000/MAX1000_nios_lab/nios_sys/synthesis/submodules/altera_avalon_st_handshake_clock_crosser.sdc
+C:/FPGA_Projects/MAX1000/MAX1000_nios_lab/nios_sys/synthesis/submodules/altera_avalon_st_handshake_clock_crosser.v
+C:/FPGA_Projects/MAX1000/MAX1000_nios_lab/nios_sys/synthesis/submodules/altera_avalon_st_pipeline_base.v
+C:/FPGA_Projects/MAX1000/MAX1000_nios_lab/nios_sys/synthesis/submodules/altera_merlin_arbitrator.sv
+C:/FPGA_Projects/MAX1000/MAX1000_nios_lab/nios_sys/synthesis/submodules/altera_merlin_burst_uncompressor.sv
+C:/FPGA_Projects/MAX1000/MAX1000_nios_lab/nios_sys/synthesis/submodules/altera_merlin_master_agent.sv
+C:/FPGA_Projects/MAX1000/MAX1000_nios_lab/nios_sys/synthesis/submodules/altera_merlin_master_translator.sv
+C:/FPGA_Projects/MAX1000/MAX1000_nios_lab/nios_sys/synthesis/submodules/altera_merlin_slave_agent.sv
+C:/FPGA_Projects/MAX1000/MAX1000_nios_lab/nios_sys/synthesis/submodules/altera_merlin_slave_translator.sv
+C:/FPGA_Projects/MAX1000/MAX1000_nios_lab/nios_sys/synthesis/submodules/altera_reset_controller.sdc
+C:/FPGA_Projects/MAX1000/MAX1000_nios_lab/nios_sys/synthesis/submodules/altera_reset_controller.v
+C:/FPGA_Projects/MAX1000/MAX1000_nios_lab/nios_sys/synthesis/submodules/altera_reset_synchronizer.v
+C:/FPGA_Projects/MAX1000/MAX1000_nios_lab/nios_sys/synthesis/submodules/altera_std_synchronizer_nocut.v
+C:/FPGA_Projects/MAX1000/MAX1000_nios_lab/nios_sys/synthesis/submodules/nios_sys_irq_mapper.sv
+C:/FPGA_Projects/MAX1000/MAX1000_nios_lab/nios_sys/synthesis/submodules/nios_sys_jtag_uart.v
+C:/FPGA_Projects/MAX1000/MAX1000_nios_lab/nios_sys/synthesis/submodules/nios_sys_mm_interconnect_0.v
+C:/FPGA_Projects/MAX1000/MAX1000_nios_lab/nios_sys/synthesis/submodules/nios_sys_mm_interconnect_0_avalon_st_adapter.v
+C:/FPGA_Projects/MAX1000/MAX1000_nios_lab/nios_sys/synthesis/submodules/nios_sys_mm_interconnect_0_avalon_st_adapter_error_adapter_0.sv
+C:/FPGA_Projects/MAX1000/MAX1000_nios_lab/nios_sys/synthesis/submodules/nios_sys_mm_interconnect_0_cmd_demux.sv
+C:/FPGA_Projects/MAX1000/MAX1000_nios_lab/nios_sys/synthesis/submodules/nios_sys_mm_interconnect_0_cmd_demux_001.sv
+C:/FPGA_Projects/MAX1000/MAX1000_nios_lab/nios_sys/synthesis/submodules/nios_sys_mm_interconnect_0_cmd_mux.sv
+C:/FPGA_Projects/MAX1000/MAX1000_nios_lab/nios_sys/synthesis/submodules/nios_sys_mm_interconnect_0_cmd_mux_002.sv
+C:/FPGA_Projects/MAX1000/MAX1000_nios_lab/nios_sys/synthesis/submodules/nios_sys_mm_interconnect_0_router.sv
+C:/FPGA_Projects/MAX1000/MAX1000_nios_lab/nios_sys/synthesis/submodules/nios_sys_mm_interconnect_0_router_001.sv
+C:/FPGA_Projects/MAX1000/MAX1000_nios_lab/nios_sys/synthesis/submodules/nios_sys_mm_interconnect_0_router_002.sv
+C:/FPGA_Projects/MAX1000/MAX1000_nios_lab/nios_sys/synthesis/submodules/nios_sys_mm_interconnect_0_router_004.sv
+C:/FPGA_Projects/MAX1000/MAX1000_nios_lab/nios_sys/synthesis/submodules/nios_sys_mm_interconnect_0_rsp_demux.sv
+C:/FPGA_Projects/MAX1000/MAX1000_nios_lab/nios_sys/synthesis/submodules/nios_sys_mm_interconnect_0_rsp_demux_003.sv
+C:/FPGA_Projects/MAX1000/MAX1000_nios_lab/nios_sys/synthesis/submodules/nios_sys_mm_interconnect_0_rsp_mux.sv
+C:/FPGA_Projects/MAX1000/MAX1000_nios_lab/nios_sys/synthesis/submodules/nios_sys_mm_interconnect_0_rsp_mux_001.sv
+C:/FPGA_Projects/MAX1000/MAX1000_nios_lab/nios_sys/synthesis/submodules/nios_sys_nios.v
+C:/FPGA_Projects/MAX1000/MAX1000_nios_lab/nios_sys/synthesis/submodules/nios_sys_nios_cpu.sdc
+C:/FPGA_Projects/MAX1000/MAX1000_nios_lab/nios_sys/synthesis/submodules/nios_sys_nios_cpu.v
+C:/FPGA_Projects/MAX1000/MAX1000_nios_lab/nios_sys/synthesis/submodules/nios_sys_nios_cpu_debug_slave_sysclk.v
+C:/FPGA_Projects/MAX1000/MAX1000_nios_lab/nios_sys/synthesis/submodules/nios_sys_nios_cpu_debug_slave_tck.v
+C:/FPGA_Projects/MAX1000/MAX1000_nios_lab/nios_sys/synthesis/submodules/nios_sys_nios_cpu_debug_slave_wrapper.v
+C:/FPGA_Projects/MAX1000/MAX1000_nios_lab/nios_sys/synthesis/submodules/nios_sys_nios_cpu_ociram_default_contents.mif
+C:/FPGA_Projects/MAX1000/MAX1000_nios_lab/nios_sys/synthesis/submodules/nios_sys_nios_cpu_rf_ram_a.mif
+C:/FPGA_Projects/MAX1000/MAX1000_nios_lab/nios_sys/synthesis/submodules/nios_sys_nios_cpu_rf_ram_b.mif
+C:/FPGA_Projects/MAX1000/MAX1000_nios_lab/nios_sys/synthesis/submodules/nios_sys_nios_cpu_test_bench.v
+C:/FPGA_Projects/MAX1000/MAX1000_nios_lab/nios_sys/synthesis/submodules/nios_sys_onchip_ram.hex
+C:/FPGA_Projects/MAX1000/MAX1000_nios_lab/nios_sys/synthesis/submodules/nios_sys_onchip_ram.v
+C:/FPGA_Projects/MAX1000/MAX1000_nios_lab/nios_sys/synthesis/submodules/nios_sys_pio_leds.v
+C:/FPGA_Projects/MAX1000/MAX1000_nios_lab/nios_sys/synthesis/submodules/nios_sys_pio_lis3dh.v
+C:/FPGA_Projects/MAX1000/MAX1000_nios_lab/nios_sys/synthesis/submodules/nios_sys_pll.v
+C:/FPGA_Projects/MAX1000/MAX1000_nios_lab/nios_sys/synthesis/submodules/nios_sys_spi_lis3dh.v
+C:/FPGA_Projects/MAX1000/MAX1000_nios_lab/nios_sys/synthesis/submodules/nios_sys_sys_id.v
+C:/FPGA_Projects/MAX1000/MAX1000_nios_lab/output_files/nios_lab_top.jdi
+C:/FPGA_Projects/MAX1000/MAX1000_nios_lab/output_files/nios_lab_top.pof
+C:/FPGA_Projects/MAX1000/MAX1000_nios_lab/output_files/nios_lab_top.sld
+C:/FPGA_Projects/MAX1000/MAX1000_nios_lab/output_files/nios_lab_top.sof
+c:/intelfpga_lite_17/17.0/quartus/bin64/assignment_defaults.qdf
+	======= Total: 68 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.
+
+
+******* Archived project restoration attempt on Sun Mar 07 19:38:50 2021
+Source archive file:	D:/Franco/Dokumenten/FPGA_VHDL_Verilog/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/Resources/MAX1000NIOSII/max1000_nios_lab_completed/max1000_nios_lab_completed.qar
+Quartus Prime failed to read the archive or extract some files into 
+	D:/Franco/Dokumenten/FPGA_VHDL_Verilog/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/Resources/MAX1000NIOSII/max1000_nios_lab_completed/max1000_nios_lab_completed_restored/.
+	======= Files failed to restore before extraction terminated: ======
+nios_sys/synthesis/nios_sys_rst_controller_001.vhd
+nios_sys/synthesis/submodules/altera_avalon_sc_fifo.v
+nios_sys/synthesis/submodules/altera_avalon_st_clock_crosser.v
+nios_sys/synthesis/submodules/altera_avalon_st_handshake_clock_crosser.sdc
+nios_sys/synthesis/submodules/altera_avalon_st_handshake_clock_crosser.v
+nios_sys/synthesis/submodules/altera_avalon_st_pipeline_base.v
+nios_sys/synthesis/submodules/altera_merlin_arbitrator.sv
+nios_sys/synthesis/submodules/altera_merlin_burst_uncompressor.sv
+nios_sys/synthesis/submodules/altera_merlin_master_agent.sv
+nios_sys/synthesis/submodules/altera_merlin_master_translator.sv
+nios_sys/synthesis/submodules/altera_merlin_slave_agent.sv
+nios_sys/synthesis/submodules/altera_merlin_slave_translator.sv
+nios_sys/synthesis/submodules/altera_reset_controller.sdc
+nios_sys/synthesis/submodules/altera_reset_controller.v
+nios_sys/synthesis/submodules/altera_reset_synchronizer.v
+nios_sys/synthesis/submodules/altera_std_synchronizer_nocut.v
+nios_sys/synthesis/submodules/nios_sys_irq_mapper.sv
+nios_sys/synthesis/submodules/nios_sys_jtag_uart.v
+nios_sys/synthesis/submodules/nios_sys_mm_interconnect_0.v
+nios_sys/synthesis/submodules/nios_sys_mm_interconnect_0_avalon_st_adapter.v
+nios_sys/synthesis/submodules/nios_sys_mm_interconnect_0_avalon_st_adapter_error_adapter_0.sv
+nios_sys/synthesis/submodules/nios_sys_mm_interconnect_0_cmd_demux.sv
+nios_sys/synthesis/submodules/nios_sys_mm_interconnect_0_cmd_demux_001.sv
+nios_sys/synthesis/submodules/nios_sys_mm_interconnect_0_cmd_mux.sv
+nios_sys/synthesis/submodules/nios_sys_mm_interconnect_0_cmd_mux_002.sv
+nios_sys/synthesis/submodules/nios_sys_mm_interconnect_0_router.sv
+nios_sys/synthesis/submodules/nios_sys_mm_interconnect_0_router_001.sv
+nios_sys/synthesis/submodules/nios_sys_mm_interconnect_0_router_002.sv
+nios_sys/synthesis/submodules/nios_sys_mm_interconnect_0_router_004.sv
+nios_sys/synthesis/submodules/nios_sys_mm_interconnect_0_rsp_demux.sv
+nios_sys/synthesis/submodules/nios_sys_mm_interconnect_0_rsp_demux_003.sv
+nios_sys/synthesis/submodules/nios_sys_mm_interconnect_0_rsp_mux.sv
+nios_sys/synthesis/submodules/nios_sys_mm_interconnect_0_rsp_mux_001.sv
+nios_sys/synthesis/submodules/nios_sys_nios_cpu.sdc
+nios_sys/synthesis/submodules/nios_sys_nios_cpu_debug_slave_sysclk.v
+nios_sys/synthesis/submodules/nios_sys_nios_cpu_debug_slave_tck.v
+nios_sys/synthesis/submodules/nios_sys_nios_cpu_debug_slave_wrapper.v
+nios_sys/synthesis/submodules/nios_sys_nios_cpu_ociram_default_contents.mif
+nios_sys/synthesis/submodules/nios_sys_nios_cpu_rf_ram_a.mif
+nios_sys/synthesis/submodules/nios_sys_nios_cpu_rf_ram_b.mif
+nios_sys/synthesis/submodules/nios_sys_nios_cpu_test_bench.v
+nios_sys/synthesis/submodules/nios_sys_onchip_ram.hex
+nios_sys/synthesis/submodules/nios_sys_onchip_ram.v
+nios_sys/synthesis/submodules/nios_sys_pio_lis3dh.v
+nios_sys/synthesis/submodules/nios_sys_spi_lis3dh.v
+			[45 file(s)]
+
