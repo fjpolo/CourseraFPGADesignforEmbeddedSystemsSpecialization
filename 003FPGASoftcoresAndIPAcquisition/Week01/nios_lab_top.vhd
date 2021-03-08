@@ -60,7 +60,8 @@ component nios_sys is
             spi_lis3dh_SS_n           : out std_logic;                                       -- SS_n
             pio_button_export         : in  std_logic                    := 'X'              -- export
         );
-end component nios_sys;
+    end component nios_sys;
+
 
 	
 --------------------------------------------------------	  
@@ -96,7 +97,7 @@ u0 : component nios_sys
             spi_lis3dh_MOSI           => CONNECTED_TO_spi_lis3dh_MOSI,           --                   .MOSI
             spi_lis3dh_SCLK           => CONNECTED_TO_spi_lis3dh_SCLK,           --                   .SCLK
             spi_lis3dh_SS_n           => CONNECTED_TO_spi_lis3dh_SS_n,           --                   .SS_n
-            pio_button_export         => CONNECTED_TO_pio_button_export          --        pio_buttons.export
+            pio_button_export         => CONNECTED_TO_pio_button_export          --         pio_button.export
         );
 
 
