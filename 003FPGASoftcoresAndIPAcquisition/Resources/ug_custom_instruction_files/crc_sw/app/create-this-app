@@ -1,0 +1,48 @@
+#!/bin/bash
+#
+# This script creates an application Makefile in this directory.
+
+# First, check to see if $SOPC_KIT_NIOS2 environmental variable is set.
+# This variable is required for the command line tools to execute correctly.
+if [ -z $SOPC_KIT_NIOS2 ]
+then
+    echo Required \$SOPC_KIT_NIOS2 Environmental Variable is not set!
+    exit 1
+fi
+
+# Also make sure that the APP has not been created already.  Check for
+# existence of Makefile in the app directory
+if [ -f ./Makefile ]
+then
+    echo Application has already been created!  Delete Makefile if you want to create a new application makefile
+    exit 1
+fi
+
+#BSP_NAME=hal_default
+BSP_DIR=../bsp
+
+#always run $BSP_DIR/create-this-bsp
+pushd $BSP_DIR >> /dev/null
+./create-this-bsp "$@" || {
+	echo "create-this-bsp failed"
+	exit 1
+}
+popd >> /dev/null
+
+cmd="nios2-app-generate-makefile --bsp-dir $BSP_DIR --src-rdir ./src --elf-name crc.elf --set OBJDUMP_INCLUDE_SOURCE 1 --set APP_INCLUDE_DIRS \"src\""
+
+echo "create-this-app: Running \"$cmd\""
+$cmd || {
+    echo "nios2-app-generate-makefile failed"
+    exit 1
+}
+
+cmd="make"
+
+echo "create-this-app: Running \"$cmd\""
+$cmd || {
+    echo "make failed"
+    exit 1
+}
+
+exit 0

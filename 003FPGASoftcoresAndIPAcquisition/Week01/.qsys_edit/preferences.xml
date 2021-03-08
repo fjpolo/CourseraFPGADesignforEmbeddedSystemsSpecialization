@@ -11,6 +11,6 @@
  <library
    expandedCategories="Library,Project,Library/Processors and Peripherals,Library/Processors and Peripherals/Peripherals" />
  <window width="1936" height="1056" x="-8" y="-8" />
- <generation block_symbol_file="0" synthesis="VHDL" />
+ <generation block_symbol_file="1" synthesis="VHDL" />
  <hdlexample language="VHDL" />
 </preferences>

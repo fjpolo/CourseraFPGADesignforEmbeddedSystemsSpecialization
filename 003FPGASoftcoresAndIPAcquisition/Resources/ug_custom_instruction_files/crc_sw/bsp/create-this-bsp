@@ -1,0 +1,20 @@
+#!/bin/bash
+#
+# This script creates the hal_default Board Support Package (BSP).
+
+BSP_TYPE=hal
+BSP_DIR=.
+SOPC_DIR=../..
+
+# Run nios2-bsp utility to create a HAL BSP in this directory
+# for the system with a .sopc file in $SOPC_DIR.
+cmd="nios2-bsp $BSP_TYPE $BSP_DIR $SOPC_DIR --set hal.sys_clk_timer none --set hal.timestamp_timer high_res_timer $@"
+
+echo "create-this-bsp: Running \"$cmd\""
+$cmd || {
+    echo "$cmd failed"
+    exit 1
+}
+
+echo "create-this-bsp: Running make"
+make
