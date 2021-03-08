@@ -45,15 +45,12 @@ architecture rtl of nios_lab_top is
 		
 ------ INSERT nios_sys component declaration here ------
 --------------------------------------------------------
-component nios_sys is
-  port (
-		clk_clk                   : in  std_logic                    := 'X';             -- clk
-		pio_leds_export           : out std_logic_vector(7 downto 0);                    -- export
-		pio_lis3dh_export         : in  std_logic_vector(1 downto 0) := (others => 'X'); -- export
-		pll_locked_conduit_export : out std_logic;                                       -- export
-		reset_reset_n             : in  std_logic                    := 'X'              -- reset_n
-  );
-end component nios_sys;
+component nios_lab is
+        port (
+            clk_clk       : in std_logic := 'X'; -- clk
+            reset_reset_n : in std_logic := 'X'  -- reset_n
+        );
+end component nios_lab;
 
 	
 --------------------------------------------------------	  
@@ -77,15 +74,11 @@ SEN_CS 									<= CONNECTED_TO_spi_lis3dh_SS_n;
 		  
 ------ INSERT nios_sys component instantiation here ------
 ----------------------------------------------------------
-u0 : component nios_sys
+u0 : component nios_lab
         port map (
-            clk_clk                   => CONNECTED_TO_clk_clk,                   --                clk.clk
-            pio_leds_export           => CONNECTED_TO_pio_leds_export,           --           pio_leds.export
-            pio_lis3dh_export         => CONNECTED_TO_pio_lis3dh_export,         --         pio_lis3dh.export
-            pll_locked_conduit_export => CONNECTED_TO_pll_locked_conduit_export, -- pll_locked_conduit.export
-            reset_reset_n             => CONNECTED_TO_reset_reset_n              --              reset.reset_n
-			);
-
+            clk_clk       => CONNECTED_TO_clk_clk,       --   clk.clk
+            reset_reset_n => CONNECTED_TO_reset_reset_n  -- reset.reset_n
+        );
 
 
 ---------------------------------------------------------- 

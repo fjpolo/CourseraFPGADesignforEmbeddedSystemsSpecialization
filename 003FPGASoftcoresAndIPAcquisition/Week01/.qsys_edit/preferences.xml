@@ -3,13 +3,13 @@
  <debug showDebugMenu="0" />
  <systemtable filter="All Interfaces">
   <columns>
-   <connections preferredWidth="255" />
+   <connections preferredWidth="207" />
    <irq preferredWidth="34" />
   </columns>
  </systemtable>
  <library
-   expandedCategories="Project,Library/Basic Functions/Bridges and Adaptors,Library/Basic Functions,Library/Basic Functions/Bridges and Adaptors/Memory Mapped,Library" />
+   expandedCategories="Library/Processors and Peripherals,Project,Library,Library/Basic Functions,Library/Processors and Peripherals/Embedded Processors" />
  <window width="1936" height="1056" x="-8" y="-8" />
- <generation block_symbol_file="0" path="nios_sys_core" synthesis="VHDL" />
+ <generation block_symbol_file="0" synthesis="VHDL" />
  <hdlexample language="VHDL" />
 </preferences>
