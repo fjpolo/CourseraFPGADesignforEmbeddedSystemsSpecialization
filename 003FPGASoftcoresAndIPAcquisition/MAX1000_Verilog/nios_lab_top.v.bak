@@ -1,0 +1,16 @@
+`timescale 1ps/1ps
+module nios_lab_top(
+	// Reset and clock
+	input		clk2mhz;
+	input		RST_BTN;
+	// User button
+	input		USR_BTN;
+	// LEDs
+	output		led[7:0];
+);
+
+// REG/WIRE declarations
+
+// Structural code here
+
+endmodule

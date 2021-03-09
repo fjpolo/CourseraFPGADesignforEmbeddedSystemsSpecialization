@@ -1,0 +1,502 @@
+Analysis & Elaboration report for NIOS_C
+Tue Mar 09 12:09:36 2021
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Elaboration Summary
+  3. Parallel Compilation
+  4. Analysis & Elaboration Settings
+  5. Port Connectivity Checks: "core:u0"
+  6. Analysis & Elaboration Messages
+  7. Analysis & Elaboration Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Elaboration Summary                                                   ;
++------------------------------------+---------------------------------------------+
+; Analysis & Elaboration Status      ; Successful - Tue Mar 09 12:09:36 2021       ;
+; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Revision Name                      ; NIOS_C                                      ;
+; Top-level Entity Name              ; DE10_LITE_Golden_Top                        ;
+; Family                             ; MAX 10                                      ;
+; Total logic elements               ; N/A until Partition Merge                   ;
+;     Total combinational functions  ; N/A until Partition Merge                   ;
+;     Dedicated logic registers      ; N/A until Partition Merge                   ;
+; Total registers                    ; N/A until Partition Merge                   ;
+; Total pins                         ; N/A until Partition Merge                   ;
+; Total virtual pins                 ; N/A until Partition Merge                   ;
+; Total memory bits                  ; N/A until Partition Merge                   ;
+; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                   ;
+; Total PLLs                         ; N/A until Partition Merge                   ;
+; UFM blocks                         ; N/A until Partition Merge                   ;
+; ADC blocks                         ; N/A until Partition Merge                   ;
++------------------------------------+---------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Analysis & Elaboration Settings                                                                              ;
++------------------------------------------------------------------+----------------------+--------------------+
+; Option                                                           ; Setting              ; Default Value      ;
++------------------------------------------------------------------+----------------------+--------------------+
+; Device                                                           ; 10M50DAF484C6GES     ;                    ;
+; Top-level entity name                                            ; DE10_LITE_Golden_Top ; NIOS_C             ;
+; Family name                                                      ; MAX 10               ; Cyclone V          ;
+; Use smart compilation                                            ; Off                  ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                   ; On                 ;
+; Enable compact report table                                      ; Off                  ; Off                ;
+; Restructure Multiplexers                                         ; Auto                 ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                  ; Off                ;
+; Preserve fewer node names                                        ; On                   ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable               ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001         ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993            ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto                 ; Auto               ;
+; Safe State Machine                                               ; Off                  ; Off                ;
+; Extract Verilog State Machines                                   ; On                   ; On                 ;
+; Extract VHDL State Machines                                      ; On                   ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                  ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000                 ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                  ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                   ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                   ; On                 ;
+; Parallel Synthesis                                               ; On                   ; On                 ;
+; DSP Block Balancing                                              ; Auto                 ; Auto               ;
+; NOT Gate Push-Back                                               ; On                   ; On                 ;
+; Power-Up Don't Care                                              ; On                   ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                  ; Off                ;
+; Remove Duplicate Registers                                       ; On                   ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                  ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                  ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                  ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                  ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                  ; Off                ;
+; Ignore SOFT Buffers                                              ; On                   ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                  ; Off                ;
+; Optimization Technique                                           ; Balanced             ; Balanced           ;
+; Carry Chain Length                                               ; 70                   ; 70                 ;
+; Auto Carry Chains                                                ; On                   ; On                 ;
+; Auto Open-Drain Pins                                             ; On                   ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                  ; Off                ;
+; Auto ROM Replacement                                             ; On                   ; On                 ;
+; Auto RAM Replacement                                             ; On                   ; On                 ;
+; Auto DSP Block Replacement                                       ; On                   ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto                 ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto                 ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                   ; On                 ;
+; Strict RAM Replacement                                           ; Off                  ; Off                ;
+; Allow Synchronous Control Signals                                ; On                   ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                  ; Off                ;
+; Auto RAM Block Balancing                                         ; On                   ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                  ; Off                ;
+; Auto Resource Sharing                                            ; Off                  ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                  ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                  ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                  ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                   ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                  ; Off                ;
+; Timing-Driven Synthesis                                          ; On                   ; On                 ;
+; Report Parameter Settings                                        ; On                   ; On                 ;
+; Report Source Assignments                                        ; On                   ; On                 ;
+; Report Connectivity Checks                                       ; On                   ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                  ; Off                ;
+; Synchronization Register Chain Length                            ; 2                    ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation   ; Normal compilation ;
+; HDL message level                                                ; Level2               ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                  ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000                 ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000                 ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                  ; 100                ;
+; Clock MUX Protection                                             ; On                   ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                  ; Off                ;
+; Block Design Naming                                              ; Auto                 ; Auto               ;
+; SDC constraint protection                                        ; Off                  ; Off                ;
+; Synthesis Effort                                                 ; Auto                 ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                   ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                  ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium               ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto                 ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                   ; On                 ;
++------------------------------------------------------------------+----------------------+--------------------+
+
+
++--------------------------------------------------------------+
+; Port Connectivity Checks: "core:u0"                          ;
++-----------------+--------+----------+------------------------+
+; Port            ; Type   ; Severity ; Details                ;
++-----------------+--------+----------+------------------------+
+; altpll_0_c1_clk ; Output ; Info     ; Explicitly unconnected ;
++-----------------+--------+----------+------------------------+
+
+
++---------------------------------+
+; Analysis & Elaboration Messages ;
++---------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Elaboration
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+    Info: Processing started: Tue Mar 09 12:08:44 2021
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off NIOS_C -c NIOS_C --analysis_and_elaboration
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file core/core_bb.v
+    Info (12023): Found entity 1: core File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/core_bb.v Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file core/synthesis/core.v
+    Info (12023): Found entity 1: core File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/core.v Line: 6
+Info (12021): Found 1 design units, including 1 entities, in source file core/synthesis/submodules/altera_reset_controller.v
+    Info (12023): Found entity 1: altera_reset_controller File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/altera_reset_controller.v Line: 42
+Info (12021): Found 1 design units, including 1 entities, in source file core/synthesis/submodules/altera_reset_synchronizer.v
+    Info (12023): Found entity 1: altera_reset_synchronizer File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/altera_reset_synchronizer.v Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file core/synthesis/submodules/altera_irq_clock_crosser.sv
+    Info (12023): Found entity 1: altera_irq_clock_crosser File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/altera_irq_clock_crosser.sv Line: 21
+Info (12021): Found 1 design units, including 1 entities, in source file core/synthesis/submodules/core_irq_mapper.sv
+    Info (12023): Found entity 1: core_irq_mapper File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/core_irq_mapper.sv Line: 31
+Info (12021): Found 1 design units, including 1 entities, in source file core/synthesis/submodules/core_mm_interconnect_0.v
+    Info (12023): Found entity 1: core_mm_interconnect_0 File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/core_mm_interconnect_0.v Line: 9
+Info (12021): Found 1 design units, including 1 entities, in source file core/synthesis/submodules/core_mm_interconnect_0_avalon_st_adapter.v
+    Info (12023): Found entity 1: core_mm_interconnect_0_avalon_st_adapter File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/core_mm_interconnect_0_avalon_st_adapter.v Line: 9
+Info (12021): Found 1 design units, including 1 entities, in source file core/synthesis/submodules/core_mm_interconnect_0_avalon_st_adapter_error_adapter_0.sv
+    Info (12023): Found entity 1: core_mm_interconnect_0_avalon_st_adapter_error_adapter_0 File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/core_mm_interconnect_0_avalon_st_adapter_error_adapter_0.sv Line: 66
+Info (12021): Found 1 design units, including 1 entities, in source file core/synthesis/submodules/altera_avalon_st_handshake_clock_crosser.v
+    Info (12023): Found entity 1: altera_avalon_st_handshake_clock_crosser File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/altera_avalon_st_handshake_clock_crosser.v Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file core/synthesis/submodules/altera_avalon_st_clock_crosser.v
+    Info (12023): Found entity 1: altera_avalon_st_clock_crosser File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/altera_avalon_st_clock_crosser.v Line: 22
+Info (12021): Found 1 design units, including 1 entities, in source file core/synthesis/submodules/altera_avalon_st_pipeline_base.v
+    Info (12023): Found entity 1: altera_avalon_st_pipeline_base File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/altera_avalon_st_pipeline_base.v Line: 22
+Info (12021): Found 1 design units, including 1 entities, in source file core/synthesis/submodules/altera_std_synchronizer_nocut.v
+    Info (12023): Found entity 1: altera_std_synchronizer_nocut File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/altera_std_synchronizer_nocut.v Line: 44
+Info (12021): Found 1 design units, including 1 entities, in source file core/synthesis/submodules/core_mm_interconnect_0_rsp_mux_001.sv
+    Info (12023): Found entity 1: core_mm_interconnect_0_rsp_mux_001 File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/core_mm_interconnect_0_rsp_mux_001.sv Line: 51
+Info (12021): Found 2 design units, including 2 entities, in source file core/synthesis/submodules/altera_merlin_arbitrator.sv
+    Info (12023): Found entity 1: altera_merlin_arbitrator File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/altera_merlin_arbitrator.sv Line: 103
+    Info (12023): Found entity 2: altera_merlin_arb_adder File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/altera_merlin_arbitrator.sv Line: 228
+Info (12021): Found 1 design units, including 1 entities, in source file core/synthesis/submodules/core_mm_interconnect_0_rsp_mux.sv
+    Info (12023): Found entity 1: core_mm_interconnect_0_rsp_mux File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/core_mm_interconnect_0_rsp_mux.sv Line: 51
+Info (12021): Found 1 design units, including 1 entities, in source file core/synthesis/submodules/core_mm_interconnect_0_rsp_demux_009.sv
+    Info (12023): Found entity 1: core_mm_interconnect_0_rsp_demux_009 File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/core_mm_interconnect_0_rsp_demux_009.sv Line: 43
+Info (12021): Found 1 design units, including 1 entities, in source file core/synthesis/submodules/core_mm_interconnect_0_rsp_demux_003.sv
+    Info (12023): Found entity 1: core_mm_interconnect_0_rsp_demux_003 File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/core_mm_interconnect_0_rsp_demux_003.sv Line: 43
+Info (12021): Found 1 design units, including 1 entities, in source file core/synthesis/submodules/core_mm_interconnect_0_rsp_demux_002.sv
+    Info (12023): Found entity 1: core_mm_interconnect_0_rsp_demux_002 File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/core_mm_interconnect_0_rsp_demux_002.sv Line: 43
+Info (12021): Found 1 design units, including 1 entities, in source file core/synthesis/submodules/core_mm_interconnect_0_rsp_demux.sv
+    Info (12023): Found entity 1: core_mm_interconnect_0_rsp_demux File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/core_mm_interconnect_0_rsp_demux.sv Line: 43
+Info (12021): Found 1 design units, including 1 entities, in source file core/synthesis/submodules/core_mm_interconnect_0_cmd_mux_003.sv
+    Info (12023): Found entity 1: core_mm_interconnect_0_cmd_mux_003 File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/core_mm_interconnect_0_cmd_mux_003.sv Line: 51
+Info (12021): Found 1 design units, including 1 entities, in source file core/synthesis/submodules/core_mm_interconnect_0_cmd_mux.sv
+    Info (12023): Found entity 1: core_mm_interconnect_0_cmd_mux File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/core_mm_interconnect_0_cmd_mux.sv Line: 51
+Info (12021): Found 1 design units, including 1 entities, in source file core/synthesis/submodules/core_mm_interconnect_0_cmd_demux_001.sv
+    Info (12023): Found entity 1: core_mm_interconnect_0_cmd_demux_001 File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/core_mm_interconnect_0_cmd_demux_001.sv Line: 43
+Info (12021): Found 1 design units, including 1 entities, in source file core/synthesis/submodules/core_mm_interconnect_0_cmd_demux.sv
+    Info (12023): Found entity 1: core_mm_interconnect_0_cmd_demux File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/core_mm_interconnect_0_cmd_demux.sv Line: 43
+Info (12021): Found 1 design units, including 1 entities, in source file core/synthesis/submodules/altera_merlin_traffic_limiter.sv
+    Info (12023): Found entity 1: altera_merlin_traffic_limiter File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/altera_merlin_traffic_limiter.sv Line: 49
+Info (12021): Found 2 design units, including 2 entities, in source file core/synthesis/submodules/altera_merlin_reorder_memory.sv
+    Info (12023): Found entity 1: altera_merlin_reorder_memory File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/altera_merlin_reorder_memory.sv Line: 28
+    Info (12023): Found entity 2: memory_pointer_controller File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/altera_merlin_reorder_memory.sv Line: 185
+Info (12021): Found 1 design units, including 1 entities, in source file core/synthesis/submodules/altera_avalon_sc_fifo.v
+    Info (12023): Found entity 1: altera_avalon_sc_fifo File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/altera_avalon_sc_fifo.v Line: 21
+Info (12021): Found 2 design units, including 2 entities, in source file core/synthesis/submodules/core_mm_interconnect_0_router_005.sv
+    Info (12023): Found entity 1: core_mm_interconnect_0_router_005_default_decode File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/core_mm_interconnect_0_router_005.sv Line: 45
+    Info (12023): Found entity 2: core_mm_interconnect_0_router_005 File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/core_mm_interconnect_0_router_005.sv Line: 84
+Info (12021): Found 2 design units, including 2 entities, in source file core/synthesis/submodules/core_mm_interconnect_0_router_002.sv
+    Info (12023): Found entity 1: core_mm_interconnect_0_router_002_default_decode File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/core_mm_interconnect_0_router_002.sv Line: 45
+    Info (12023): Found entity 2: core_mm_interconnect_0_router_002 File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/core_mm_interconnect_0_router_002.sv Line: 84
+Info (12021): Found 2 design units, including 2 entities, in source file core/synthesis/submodules/core_mm_interconnect_0_router_001.sv
+    Info (12023): Found entity 1: core_mm_interconnect_0_router_001_default_decode File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/core_mm_interconnect_0_router_001.sv Line: 45
+    Info (12023): Found entity 2: core_mm_interconnect_0_router_001 File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/core_mm_interconnect_0_router_001.sv Line: 84
+Info (12021): Found 2 design units, including 2 entities, in source file core/synthesis/submodules/core_mm_interconnect_0_router.sv
+    Info (12023): Found entity 1: core_mm_interconnect_0_router_default_decode File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/core_mm_interconnect_0_router.sv Line: 45
+    Info (12023): Found entity 2: core_mm_interconnect_0_router File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/core_mm_interconnect_0_router.sv Line: 84
+Info (12021): Found 1 design units, including 1 entities, in source file core/synthesis/submodules/altera_merlin_slave_agent.sv
+    Info (12023): Found entity 1: altera_merlin_slave_agent File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/altera_merlin_slave_agent.sv Line: 34
+Info (12021): Found 1 design units, including 1 entities, in source file core/synthesis/submodules/altera_merlin_burst_uncompressor.sv
+    Info (12023): Found entity 1: altera_merlin_burst_uncompressor File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/altera_merlin_burst_uncompressor.sv Line: 40
+Info (12021): Found 1 design units, including 1 entities, in source file core/synthesis/submodules/altera_merlin_master_agent.sv
+    Info (12023): Found entity 1: altera_merlin_master_agent File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/altera_merlin_master_agent.sv Line: 28
+Info (12021): Found 1 design units, including 1 entities, in source file core/synthesis/submodules/altera_merlin_slave_translator.sv
+    Info (12023): Found entity 1: altera_merlin_slave_translator File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/altera_merlin_slave_translator.sv Line: 35
+Info (12021): Found 1 design units, including 1 entities, in source file core/synthesis/submodules/altera_merlin_master_translator.sv
+    Info (12023): Found entity 1: altera_merlin_master_translator File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/altera_merlin_master_translator.sv Line: 32
+Info (12021): Found 1 design units, including 1 entities, in source file core/synthesis/submodules/core_timer_0.v
+    Info (12023): Found entity 1: core_timer_0 File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/core_timer_0.v Line: 21
+Info (12021): Found 1 design units, including 1 entities, in source file core/synthesis/submodules/core_sysid_qsys_0.v
+    Info (12023): Found entity 1: core_sysid_qsys_0 File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/core_sysid_qsys_0.v Line: 34
+Info (12021): Found 1 design units, including 1 entities, in source file core/synthesis/submodules/core_slide_pio.v
+    Info (12023): Found entity 1: core_slide_pio File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/core_slide_pio.v Line: 21
+Info (12021): Found 1 design units, including 1 entities, in source file core/synthesis/submodules/core_pio_0.v
+    Info (12023): Found entity 1: core_pio_0 File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/core_pio_0.v Line: 21
+Info (12021): Found 1 design units, including 1 entities, in source file core/synthesis/submodules/core_onchip_memory2_0.v
+    Info (12023): Found entity 1: core_onchip_memory2_0 File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/core_onchip_memory2_0.v Line: 21
+Info (12021): Found 7 design units, including 7 entities, in source file core/synthesis/submodules/altera_onchip_flash_util.v
+    Info (12023): Found entity 1: altera_onchip_flash_address_range_check File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/altera_onchip_flash_util.v Line: 38
+    Info (12023): Found entity 2: altera_onchip_flash_address_write_protection_check File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/altera_onchip_flash_util.v Line: 55
+    Info (12023): Found entity 3: altera_onchip_flash_s_address_write_protection_check File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/altera_onchip_flash_util.v Line: 109
+    Info (12023): Found entity 4: altera_onchip_flash_a_address_write_protection_check File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/altera_onchip_flash_util.v Line: 147
+    Info (12023): Found entity 5: altera_onchip_flash_convert_address File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/altera_onchip_flash_util.v Line: 197
+    Info (12023): Found entity 6: altera_onchip_flash_convert_sector File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/altera_onchip_flash_util.v Line: 219
+    Info (12023): Found entity 7: altera_onchip_flash_counter File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/altera_onchip_flash_util.v Line: 244
+Info (12021): Found 1 design units, including 1 entities, in source file core/synthesis/submodules/altera_onchip_flash.v
+    Info (12023): Found entity 1: altera_onchip_flash File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/altera_onchip_flash.v Line: 38
+Info (12021): Found 1 design units, including 1 entities, in source file core/synthesis/submodules/altera_onchip_flash_avmm_data_controller.v
+    Info (12023): Found entity 1: altera_onchip_flash_avmm_data_controller File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/altera_onchip_flash_avmm_data_controller.v Line: 38
+Info (12021): Found 1 design units, including 1 entities, in source file core/synthesis/submodules/altera_onchip_flash_avmm_csr_controller.v
+    Info (12023): Found entity 1: altera_onchip_flash_avmm_csr_controller File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/altera_onchip_flash_avmm_csr_controller.v Line: 38
+Info (12021): Found 1 design units, including 1 entities, in source file core/synthesis/submodules/rtl/altera_onchip_flash_block.v
+    Info (12023): Found entity 1: altera_onchip_flash_block File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/rtl/altera_onchip_flash_block.v Line: 38
+Info (12021): Found 1 design units, including 1 entities, in source file core/synthesis/submodules/core_nios2_gen2_0.v
+    Info (12023): Found entity 1: core_nios2_gen2_0 File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/core_nios2_gen2_0.v Line: 9
+Info (12021): Found 27 design units, including 27 entities, in source file core/synthesis/submodules/core_nios2_gen2_0_cpu.v
+    Info (12023): Found entity 1: core_nios2_gen2_0_cpu_ic_data_module File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/core_nios2_gen2_0_cpu.v Line: 21
+    Info (12023): Found entity 2: core_nios2_gen2_0_cpu_ic_tag_module File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/core_nios2_gen2_0_cpu.v Line: 89
+    Info (12023): Found entity 3: core_nios2_gen2_0_cpu_bht_module File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/core_nios2_gen2_0_cpu.v Line: 158
+    Info (12023): Found entity 4: core_nios2_gen2_0_cpu_register_bank_a_module File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/core_nios2_gen2_0_cpu.v Line: 227
+    Info (12023): Found entity 5: core_nios2_gen2_0_cpu_register_bank_b_module File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/core_nios2_gen2_0_cpu.v Line: 293
+    Info (12023): Found entity 6: core_nios2_gen2_0_cpu_dc_tag_module File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/core_nios2_gen2_0_cpu.v Line: 359
+    Info (12023): Found entity 7: core_nios2_gen2_0_cpu_dc_data_module File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/core_nios2_gen2_0_cpu.v Line: 425
+    Info (12023): Found entity 8: core_nios2_gen2_0_cpu_dc_victim_module File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/core_nios2_gen2_0_cpu.v Line: 494
+    Info (12023): Found entity 9: core_nios2_gen2_0_cpu_nios2_oci_debug File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/core_nios2_gen2_0_cpu.v Line: 562
+    Info (12023): Found entity 10: core_nios2_gen2_0_cpu_nios2_oci_break File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/core_nios2_gen2_0_cpu.v Line: 708
+    Info (12023): Found entity 11: core_nios2_gen2_0_cpu_nios2_oci_xbrk File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/core_nios2_gen2_0_cpu.v Line: 1029
+    Info (12023): Found entity 12: core_nios2_gen2_0_cpu_nios2_oci_dbrk File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/core_nios2_gen2_0_cpu.v Line: 1314
+    Info (12023): Found entity 13: core_nios2_gen2_0_cpu_nios2_oci_itrace File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/core_nios2_gen2_0_cpu.v Line: 1503
+    Info (12023): Found entity 14: core_nios2_gen2_0_cpu_nios2_oci_td_mode File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/core_nios2_gen2_0_cpu.v Line: 1686
+    Info (12023): Found entity 15: core_nios2_gen2_0_cpu_nios2_oci_dtrace File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/core_nios2_gen2_0_cpu.v Line: 1754
+    Info (12023): Found entity 16: core_nios2_gen2_0_cpu_nios2_oci_compute_input_tm_cnt File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/core_nios2_gen2_0_cpu.v Line: 1836
+    Info (12023): Found entity 17: core_nios2_gen2_0_cpu_nios2_oci_fifo_wrptr_inc File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/core_nios2_gen2_0_cpu.v Line: 1908
+    Info (12023): Found entity 18: core_nios2_gen2_0_cpu_nios2_oci_fifo_cnt_inc File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/core_nios2_gen2_0_cpu.v Line: 1951
+    Info (12023): Found entity 19: core_nios2_gen2_0_cpu_nios2_oci_fifo File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/core_nios2_gen2_0_cpu.v Line: 1998
+    Info (12023): Found entity 20: core_nios2_gen2_0_cpu_nios2_oci_pib File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/core_nios2_gen2_0_cpu.v Line: 2484
+    Info (12023): Found entity 21: core_nios2_gen2_0_cpu_nios2_oci_im File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/core_nios2_gen2_0_cpu.v Line: 2507
+    Info (12023): Found entity 22: core_nios2_gen2_0_cpu_nios2_performance_monitors File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/core_nios2_gen2_0_cpu.v Line: 2577
+    Info (12023): Found entity 23: core_nios2_gen2_0_cpu_nios2_avalon_reg File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/core_nios2_gen2_0_cpu.v Line: 2594
+    Info (12023): Found entity 24: core_nios2_gen2_0_cpu_ociram_sp_ram_module File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/core_nios2_gen2_0_cpu.v Line: 2687
+    Info (12023): Found entity 25: core_nios2_gen2_0_cpu_nios2_ocimem File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/core_nios2_gen2_0_cpu.v Line: 2752
+    Info (12023): Found entity 26: core_nios2_gen2_0_cpu_nios2_oci File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/core_nios2_gen2_0_cpu.v Line: 2933
+    Info (12023): Found entity 27: core_nios2_gen2_0_cpu File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/core_nios2_gen2_0_cpu.v Line: 3484
+Info (12021): Found 1 design units, including 1 entities, in source file core/synthesis/submodules/core_nios2_gen2_0_cpu_debug_slave_sysclk.v
+    Info (12023): Found entity 1: core_nios2_gen2_0_cpu_debug_slave_sysclk File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/core_nios2_gen2_0_cpu_debug_slave_sysclk.v Line: 21
+Info (12021): Found 1 design units, including 1 entities, in source file core/synthesis/submodules/core_nios2_gen2_0_cpu_debug_slave_tck.v
+    Info (12023): Found entity 1: core_nios2_gen2_0_cpu_debug_slave_tck File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/core_nios2_gen2_0_cpu_debug_slave_tck.v Line: 21
+Info (12021): Found 1 design units, including 1 entities, in source file core/synthesis/submodules/core_nios2_gen2_0_cpu_debug_slave_wrapper.v
+    Info (12023): Found entity 1: core_nios2_gen2_0_cpu_debug_slave_wrapper File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/core_nios2_gen2_0_cpu_debug_slave_wrapper.v Line: 21
+Info (12021): Found 1 design units, including 1 entities, in source file core/synthesis/submodules/core_nios2_gen2_0_cpu_mult_cell.v
+    Info (12023): Found entity 1: core_nios2_gen2_0_cpu_mult_cell File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/core_nios2_gen2_0_cpu_mult_cell.v Line: 21
+Info (12021): Found 1 design units, including 1 entities, in source file core/synthesis/submodules/core_nios2_gen2_0_cpu_test_bench.v
+    Info (12023): Found entity 1: core_nios2_gen2_0_cpu_test_bench File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/core_nios2_gen2_0_cpu_test_bench.v Line: 21
+Info (12021): Found 1 design units, including 1 entities, in source file core/synthesis/submodules/core_modular_adc_0.v
+    Info (12023): Found entity 1: core_modular_adc_0 File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/core_modular_adc_0.v Line: 9
+Info (12021): Found 1 design units, including 1 entities, in source file core/synthesis/submodules/altera_modular_adc_sample_store.v
+    Info (12023): Found entity 1: altera_modular_adc_sample_store File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/altera_modular_adc_sample_store.v Line: 18
+Info (12021): Found 1 design units, including 1 entities, in source file core/synthesis/submodules/altera_modular_adc_sample_store_ram.v
+    Info (12023): Found entity 1: altera_modular_adc_sample_store_ram File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/altera_modular_adc_sample_store_ram.v Line: 53
+Info (12021): Found 1 design units, including 1 entities, in source file core/synthesis/submodules/altera_modular_adc_sequencer.v
+    Info (12023): Found entity 1: altera_modular_adc_sequencer File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/altera_modular_adc_sequencer.v Line: 18
+Info (12021): Found 1 design units, including 1 entities, in source file core/synthesis/submodules/altera_modular_adc_sequencer_csr.v
+    Info (12023): Found entity 1: altera_modular_adc_sequencer_csr File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/altera_modular_adc_sequencer_csr.v Line: 18
+Info (12021): Found 1 design units, including 1 entities, in source file core/synthesis/submodules/altera_modular_adc_sequencer_ctrl.v
+    Info (12023): Found entity 1: altera_modular_adc_sequencer_ctrl File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/altera_modular_adc_sequencer_ctrl.v Line: 18
+Info (12021): Found 1 design units, including 1 entities, in source file core/synthesis/submodules/altera_modular_adc_control.v
+    Info (12023): Found entity 1: altera_modular_adc_control File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/altera_modular_adc_control.v Line: 18
+Info (12021): Found 1 design units, including 1 entities, in source file core/synthesis/submodules/altera_modular_adc_control_avrg_fifo.v
+    Info (12023): Found entity 1: altera_modular_adc_control_avrg_fifo File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/altera_modular_adc_control_avrg_fifo.v Line: 53
+Info (12021): Found 1 design units, including 1 entities, in source file core/synthesis/submodules/altera_modular_adc_control_fsm.v
+    Info (12023): Found entity 1: altera_modular_adc_control_fsm File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/altera_modular_adc_control_fsm.v Line: 18
+Info (12021): Found 1 design units, including 1 entities, in source file core/synthesis/submodules/chsel_code_converter_sw_to_hw.v
+    Info (12023): Found entity 1: chsel_code_converter_sw_to_hw File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/chsel_code_converter_sw_to_hw.v Line: 32
+Info (12021): Found 1 design units, including 1 entities, in source file core/synthesis/submodules/fiftyfivenm_adcblock_primitive_wrapper.v
+    Info (12023): Found entity 1: fiftyfivenm_adcblock_primitive_wrapper File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/fiftyfivenm_adcblock_primitive_wrapper.v Line: 37
+Info (12021): Found 1 design units, including 1 entities, in source file core/synthesis/submodules/fiftyfivenm_adcblock_top_wrapper.v
+    Info (12023): Found entity 1: fiftyfivenm_adcblock_top_wrapper File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/fiftyfivenm_adcblock_top_wrapper.v Line: 31
+Info (12021): Found 1 design units, including 1 entities, in source file core/synthesis/submodules/altera_avalon_mm_clock_crossing_bridge.v
+    Info (12023): Found entity 1: altera_avalon_mm_clock_crossing_bridge File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/altera_avalon_mm_clock_crossing_bridge.v Line: 30
+Info (12021): Found 1 design units, including 1 entities, in source file core/synthesis/submodules/altera_avalon_dc_fifo.v
+    Info (12023): Found entity 1: altera_avalon_dc_fifo File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/altera_avalon_dc_fifo.v Line: 13
+Info (12021): Found 1 design units, including 1 entities, in source file core/synthesis/submodules/altera_dcfifo_synchronizer_bundle.v
+    Info (12023): Found entity 1: altera_dcfifo_synchronizer_bundle File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/altera_dcfifo_synchronizer_bundle.v Line: 8
+Info (12021): Found 1 design units, including 1 entities, in source file core/synthesis/submodules/core_master_0.v
+    Info (12023): Found entity 1: core_master_0 File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/core_master_0.v Line: 9
+Info (12021): Found 1 design units, including 1 entities, in source file core/synthesis/submodules/core_master_0_p2b_adapter.sv
+    Info (12023): Found entity 1: core_master_0_p2b_adapter File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/core_master_0_p2b_adapter.sv Line: 55
+Info (12021): Found 1 design units, including 1 entities, in source file core/synthesis/submodules/core_master_0_b2p_adapter.sv
+    Info (12023): Found entity 1: core_master_0_b2p_adapter File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/core_master_0_b2p_adapter.sv Line: 55
+Info (12021): Found 7 design units, including 7 entities, in source file core/synthesis/submodules/altera_avalon_packets_to_master.v
+    Info (12023): Found entity 1: altera_avalon_packets_to_master File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/altera_avalon_packets_to_master.v Line: 22
+    Info (12023): Found entity 2: packets_to_fifo File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/altera_avalon_packets_to_master.v Line: 142
+    Info (12023): Found entity 3: fifo_buffer_single_clock_fifo File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/altera_avalon_packets_to_master.v Line: 512
+    Info (12023): Found entity 4: fifo_buffer_scfifo_with_controls File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/altera_avalon_packets_to_master.v Line: 573
+    Info (12023): Found entity 5: fifo_buffer File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/altera_avalon_packets_to_master.v Line: 627
+    Info (12023): Found entity 6: fifo_to_packet File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/altera_avalon_packets_to_master.v Line: 697
+    Info (12023): Found entity 7: packets_to_master File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/altera_avalon_packets_to_master.v Line: 851
+Info (12021): Found 1 design units, including 1 entities, in source file core/synthesis/submodules/altera_avalon_st_packets_to_bytes.v
+    Info (12023): Found entity 1: altera_avalon_st_packets_to_bytes File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/altera_avalon_st_packets_to_bytes.v Line: 19
+Info (12021): Found 1 design units, including 1 entities, in source file core/synthesis/submodules/altera_avalon_st_bytes_to_packets.v
+    Info (12023): Found entity 1: altera_avalon_st_bytes_to_packets File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/altera_avalon_st_bytes_to_packets.v Line: 19
+Info (12021): Found 1 design units, including 1 entities, in source file core/synthesis/submodules/core_master_0_timing_adt.sv
+    Info (12023): Found entity 1: core_master_0_timing_adt File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/core_master_0_timing_adt.sv Line: 60
+Info (12021): Found 1 design units, including 1 entities, in source file core/synthesis/submodules/altera_avalon_st_jtag_interface.v
+    Info (12023): Found entity 1: altera_avalon_st_jtag_interface File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/altera_avalon_st_jtag_interface.v Line: 20
+Info (12021): Found 3 design units, including 3 entities, in source file core/synthesis/submodules/altera_jtag_dc_streaming.v
+    Info (12023): Found entity 1: altera_jtag_control_signal_crosser File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/altera_jtag_dc_streaming.v Line: 30
+    Info (12023): Found entity 2: altera_jtag_src_crosser File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/altera_jtag_dc_streaming.v Line: 72
+    Info (12023): Found entity 3: altera_jtag_dc_streaming File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/altera_jtag_dc_streaming.v Line: 135
+Info (12021): Found 1 design units, including 1 entities, in source file core/synthesis/submodules/altera_jtag_sld_node.v
+    Info (12023): Found entity 1: altera_jtag_sld_node File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/altera_jtag_sld_node.v Line: 17
+Info (12021): Found 1 design units, including 1 entities, in source file core/synthesis/submodules/altera_jtag_streaming.v
+    Info (12023): Found entity 1: altera_jtag_streaming File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/altera_jtag_streaming.v Line: 18
+Info (12021): Found 1 design units, including 1 entities, in source file core/synthesis/submodules/altera_avalon_st_idle_remover.v
+    Info (12023): Found entity 1: altera_avalon_st_idle_remover File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/altera_avalon_st_idle_remover.v Line: 19
+Info (12021): Found 1 design units, including 1 entities, in source file core/synthesis/submodules/altera_avalon_st_idle_inserter.v
+    Info (12023): Found entity 1: altera_avalon_st_idle_inserter File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/altera_avalon_st_idle_inserter.v Line: 19
+Info (12021): Found 1 design units, including 1 entities, in source file core/synthesis/submodules/altera_avalon_st_pipeline_stage.sv
+    Info (12023): Found entity 1: altera_avalon_st_pipeline_stage File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/altera_avalon_st_pipeline_stage.sv Line: 22
+Info (12021): Found 5 design units, including 5 entities, in source file core/synthesis/submodules/core_jtag_uart_0.v
+    Info (12023): Found entity 1: core_jtag_uart_0_sim_scfifo_w File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/core_jtag_uart_0.v Line: 21
+    Info (12023): Found entity 2: core_jtag_uart_0_scfifo_w File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/core_jtag_uart_0.v Line: 78
+    Info (12023): Found entity 3: core_jtag_uart_0_sim_scfifo_r File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/core_jtag_uart_0.v Line: 164
+    Info (12023): Found entity 4: core_jtag_uart_0_scfifo_r File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/core_jtag_uart_0.v Line: 243
+    Info (12023): Found entity 5: core_jtag_uart_0 File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/core_jtag_uart_0.v Line: 331
+Info (12021): Found 4 design units, including 4 entities, in source file core/synthesis/submodules/core_altpll_1.v
+    Info (12023): Found entity 1: core_altpll_1_dffpipe_l2c File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/core_altpll_1.v Line: 37
+    Info (12023): Found entity 2: core_altpll_1_stdsync_sv6 File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/core_altpll_1.v Line: 98
+    Info (12023): Found entity 3: core_altpll_1_altpll_gr22 File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/core_altpll_1.v Line: 130
+    Info (12023): Found entity 4: core_altpll_1 File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/core_altpll_1.v Line: 213
+Info (12021): Found 4 design units, including 4 entities, in source file core/synthesis/submodules/core_altpll_0.v
+    Info (12023): Found entity 1: core_altpll_0_dffpipe_l2c File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/core_altpll_0.v Line: 37
+    Info (12023): Found entity 2: core_altpll_0_stdsync_sv6 File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/core_altpll_0.v Line: 98
+    Info (12023): Found entity 3: core_altpll_0_altpll_2tf2 File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/core_altpll_0.v Line: 130
+    Info (12023): Found entity 4: core_altpll_0 File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/synthesis/submodules/core_altpll_0.v Line: 221
+Info (12021): Found 1 design units, including 1 entities, in source file de10_lite_golden_top.v
+    Info (12023): Found entity 1: DE10_LITE_Golden_Top File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/DE10_LITE_Golden_Top.v Line: 29
+Info (12127): Elaborating entity "DE10_LITE_Golden_Top" for the top level hierarchy
+Warning (10034): Output port "DRAM_ADDR" at DE10_LITE_Golden_Top.v(46) has no driver File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/DE10_LITE_Golden_Top.v Line: 46
+Warning (10034): Output port "DRAM_BA" at DE10_LITE_Golden_Top.v(47) has no driver File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/DE10_LITE_Golden_Top.v Line: 47
+Warning (10034): Output port "HEX0" at DE10_LITE_Golden_Top.v(61) has no driver File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/DE10_LITE_Golden_Top.v Line: 61
+Warning (10034): Output port "HEX1" at DE10_LITE_Golden_Top.v(64) has no driver File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/DE10_LITE_Golden_Top.v Line: 64
+Warning (10034): Output port "HEX2" at DE10_LITE_Golden_Top.v(67) has no driver File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/DE10_LITE_Golden_Top.v Line: 67
+Warning (10034): Output port "HEX3" at DE10_LITE_Golden_Top.v(70) has no driver File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/DE10_LITE_Golden_Top.v Line: 70
+Warning (10034): Output port "HEX4" at DE10_LITE_Golden_Top.v(73) has no driver File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/DE10_LITE_Golden_Top.v Line: 73
+Warning (10034): Output port "HEX5" at DE10_LITE_Golden_Top.v(76) has no driver File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/DE10_LITE_Golden_Top.v Line: 76
+Warning (10034): Output port "VGA_B" at DE10_LITE_Golden_Top.v(96) has no driver File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/DE10_LITE_Golden_Top.v Line: 96
+Warning (10034): Output port "VGA_G" at DE10_LITE_Golden_Top.v(97) has no driver File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/DE10_LITE_Golden_Top.v Line: 97
+Warning (10034): Output port "VGA_R" at DE10_LITE_Golden_Top.v(99) has no driver File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/DE10_LITE_Golden_Top.v Line: 99
+Warning (10034): Output port "DRAM_CAS_N" at DE10_LITE_Golden_Top.v(48) has no driver File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/DE10_LITE_Golden_Top.v Line: 48
+Warning (10034): Output port "DRAM_CKE" at DE10_LITE_Golden_Top.v(49) has no driver File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/DE10_LITE_Golden_Top.v Line: 49
+Warning (10034): Output port "DRAM_CLK" at DE10_LITE_Golden_Top.v(50) has no driver File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/DE10_LITE_Golden_Top.v Line: 50
+Warning (10034): Output port "DRAM_CS_N" at DE10_LITE_Golden_Top.v(51) has no driver File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/DE10_LITE_Golden_Top.v Line: 51
+Warning (10034): Output port "DRAM_LDQM" at DE10_LITE_Golden_Top.v(53) has no driver File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/DE10_LITE_Golden_Top.v Line: 53
+Warning (10034): Output port "DRAM_RAS_N" at DE10_LITE_Golden_Top.v(54) has no driver File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/DE10_LITE_Golden_Top.v Line: 54
+Warning (10034): Output port "DRAM_UDQM" at DE10_LITE_Golden_Top.v(55) has no driver File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/DE10_LITE_Golden_Top.v Line: 55
+Warning (10034): Output port "DRAM_WE_N" at DE10_LITE_Golden_Top.v(56) has no driver File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/DE10_LITE_Golden_Top.v Line: 56
+Warning (10034): Output port "VGA_HS" at DE10_LITE_Golden_Top.v(98) has no driver File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/DE10_LITE_Golden_Top.v Line: 98
+Warning (10034): Output port "VGA_VS" at DE10_LITE_Golden_Top.v(100) has no driver File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/DE10_LITE_Golden_Top.v Line: 100
+Warning (10034): Output port "GSENSOR_CS_N" at DE10_LITE_Golden_Top.v(105) has no driver File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/DE10_LITE_Golden_Top.v Line: 105
+Warning (10034): Output port "GSENSOR_SCLK" at DE10_LITE_Golden_Top.v(107) has no driver File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/DE10_LITE_Golden_Top.v Line: 107
+Info (12128): Elaborating entity "core" for hierarchy "core:u0" File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/DE10_LITE_Golden_Top.v Line: 146
+Warning (10034): Output port "pio_0_external_export" at core_bb.v(14) has no driver File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/core_bb.v Line: 14
+Warning (10034): Output port "altpll_1_locked_conduit_export" at core_bb.v(20) has no driver File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/core_bb.v Line: 20
+Warning (10034): Output port "altpll_0_c1_clk" at core_bb.v(21) has no driver File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/core/core_bb.v Line: 21
+Warning (12158): Entity "core" contains only dangling pins File: C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/DE10_LITE_Golden_Top.v Line: 146
+Warning (20013): Ignored 24 assignments for entity "altera_avalon_mm_clock_crossing_bridge" -- entity does not exist in design
+Warning (20013): Ignored 12 assignments for entity "altera_avalon_packets_to_master" -- entity does not exist in design
+Warning (20013): Ignored 23 assignments for entity "altera_avalon_sc_fifo" -- entity does not exist in design
+Warning (20013): Ignored 12 assignments for entity "altera_avalon_st_bytes_to_packets" -- entity does not exist in design
+Warning (20013): Ignored 23 assignments for entity "altera_avalon_st_handshake_clock_crosser" -- entity does not exist in design
+Warning (20013): Ignored 18 assignments for entity "altera_avalon_st_jtag_interface" -- entity does not exist in design
+Warning (20013): Ignored 12 assignments for entity "altera_avalon_st_packets_to_bytes" -- entity does not exist in design
+Warning (20013): Ignored 12 assignments for entity "altera_irq_clock_crosser" -- entity does not exist in design
+Warning (20013): Ignored 64 assignments for entity "altera_merlin_master_agent" -- entity does not exist in design
+Warning (20013): Ignored 55 assignments for entity "altera_merlin_master_translator" -- entity does not exist in design
+Warning (20013): Ignored 53 assignments for entity "altera_merlin_slave_agent" -- entity does not exist in design
+Warning (20013): Ignored 68 assignments for entity "altera_merlin_slave_translator" -- entity does not exist in design
+Warning (20013): Ignored 34 assignments for entity "altera_merlin_traffic_limiter" -- entity does not exist in design
+Warning (20013): Ignored 22 assignments for entity "altera_modular_adc_control" -- entity does not exist in design
+Warning (20013): Ignored 12 assignments for entity "altera_modular_adc_sample_store" -- entity does not exist in design
+Warning (20013): Ignored 140 assignments for entity "altera_modular_adc_sequencer" -- entity does not exist in design
+Warning (20013): Ignored 63 assignments for entity "altera_onchip_flash" -- entity does not exist in design
+Warning (20013): Ignored 35 assignments for entity "altera_reset_controller" -- entity does not exist in design
+Warning (20013): Ignored 82 assignments for entity "core_altpll_0" -- entity does not exist in design
+Warning (20013): Ignored 74 assignments for entity "core_altpll_1" -- entity does not exist in design
+Warning (20013): Ignored 14 assignments for entity "core_irq_mapper" -- entity does not exist in design
+Warning (20013): Ignored 24 assignments for entity "core_jtag_uart_0" -- entity does not exist in design
+Warning (20013): Ignored 16 assignments for entity "core_master_0" -- entity does not exist in design
+Warning (20013): Ignored 21 assignments for entity "core_master_0_b2p_adapter" -- entity does not exist in design
+Warning (20013): Ignored 21 assignments for entity "core_master_0_p2b_adapter" -- entity does not exist in design
+Warning (20013): Ignored 21 assignments for entity "core_master_0_timing_adt" -- entity does not exist in design
+Warning (20013): Ignored 12 assignments for entity "core_mm_interconnect_0" -- entity does not exist in design
+Warning (20013): Ignored 32 assignments for entity "core_mm_interconnect_0_avalon_st_adapter" -- entity does not exist in design
+Warning (20013): Ignored 19 assignments for entity "core_mm_interconnect_0_avalon_st_adapter_error_adapter_0" -- entity does not exist in design
+Warning (20013): Ignored 17 assignments for entity "core_mm_interconnect_0_cmd_demux" -- entity does not exist in design
+Warning (20013): Ignored 17 assignments for entity "core_mm_interconnect_0_cmd_demux_001" -- entity does not exist in design
+Warning (20013): Ignored 19 assignments for entity "core_mm_interconnect_0_cmd_mux" -- entity does not exist in design
+Warning (20013): Ignored 19 assignments for entity "core_mm_interconnect_0_cmd_mux_003" -- entity does not exist in design
+Warning (20013): Ignored 36 assignments for entity "core_mm_interconnect_0_router" -- entity does not exist in design
+Warning (20013): Ignored 36 assignments for entity "core_mm_interconnect_0_router_001" -- entity does not exist in design
+Warning (20013): Ignored 36 assignments for entity "core_mm_interconnect_0_router_002" -- entity does not exist in design
+Warning (20013): Ignored 36 assignments for entity "core_mm_interconnect_0_router_005" -- entity does not exist in design
+Warning (20013): Ignored 17 assignments for entity "core_mm_interconnect_0_rsp_demux" -- entity does not exist in design
+Warning (20013): Ignored 17 assignments for entity "core_mm_interconnect_0_rsp_demux_002" -- entity does not exist in design
+Warning (20013): Ignored 17 assignments for entity "core_mm_interconnect_0_rsp_demux_003" -- entity does not exist in design
+Warning (20013): Ignored 17 assignments for entity "core_mm_interconnect_0_rsp_demux_009" -- entity does not exist in design
+Warning (20013): Ignored 19 assignments for entity "core_mm_interconnect_0_rsp_mux" -- entity does not exist in design
+Warning (20013): Ignored 19 assignments for entity "core_mm_interconnect_0_rsp_mux_001" -- entity does not exist in design
+Warning (20013): Ignored 196 assignments for entity "core_modular_adc_0" -- entity does not exist in design
+Warning (20013): Ignored 172 assignments for entity "core_nios2_gen2_0" -- entity does not exist in design
+Warning (20013): Ignored 179 assignments for entity "core_nios2_gen2_0_cpu" -- entity does not exist in design
+Warning (20013): Ignored 36 assignments for entity "core_onchip_memory2_0" -- entity does not exist in design
+Warning (20013): Ignored 22 assignments for entity "core_pio_0" -- entity does not exist in design
+Warning (20013): Ignored 27 assignments for entity "core_slide_pio" -- entity does not exist in design
+Warning (20013): Ignored 10 assignments for entity "core_sysid_qsys_0" -- entity does not exist in design
+Warning (20013): Ignored 26 assignments for entity "core_timer_0" -- entity does not exist in design
+Info (144001): Generated suppressed messages file C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/output_files/NIOS_C.map.smsg
+Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 79 warnings
+    Info: Peak virtual memory: 4763 megabytes
+    Info: Processing ended: Tue Mar 09 12:09:36 2021
+    Info: Elapsed time: 00:00:52
+    Info: Total CPU time (on all processors): 00:01:01
+
+
++--------------------------------------------+
+; Analysis & Elaboration Suppressed Messages ;
++--------------------------------------------+
+The suppressed messages can be found in C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/DE10LiteV2/output_files/NIOS_C.map.smsg.
+
+

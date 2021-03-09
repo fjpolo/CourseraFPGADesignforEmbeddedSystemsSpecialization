@@ -1,0 +1,12 @@
+Power Analyzer Status : Successful - Tue Mar 09 12:41:35 2021
+Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+Revision Name : nios_lab_top
+Top-level Entity Name : nios_lab_top
+Family : MAX 10
+Device : 10M08SAU169C8G
+Power Models : Final
+Total Thermal Power Dissipation : 254.07 mW
+Core Dynamic Thermal Power Dissipation : 126.38 mW
+Core Static Thermal Power Dissipation : 121.42 mW
+I/O Thermal Power Dissipation : 6.27 mW
+Power Estimation Confidence : Low: user provided insufficient toggle rate data
