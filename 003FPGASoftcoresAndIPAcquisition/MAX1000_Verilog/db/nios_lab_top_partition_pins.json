@@ -36,6 +36,18 @@
 					"strict" : false
 				},
 				{
+					"name" : "LIS3DH_SCLK",
+					"strict" : false
+				},
+				{
+					"name" : "LIS3DH_SS",
+					"strict" : false
+				},
+				{
+					"name" : "LIS3DH_MOSI",
+					"strict" : false
+				},
+				{
 					"name" : "CLK12M",
 					"strict" : false
 				},
@@ -45,6 +57,18 @@
 				},
 				{
 					"name" : "USER_BTN",
+					"strict" : false
+				},
+				{
+					"name" : "LIS3DH_INT[0]",
+					"strict" : false
+				},
+				{
+					"name" : "LIS3DH_INT[1]",
+					"strict" : false
+				},
+				{
+					"name" : "LIS3DH_MISO",
 					"strict" : false
 				},
 				{

@@ -22,13 +22,13 @@
 <td width="20%" bgcolor="#77BBFF">BSP Version:</td><td>default</td>
 </tr>
 <tr mode="wrap">
-<td width="20%" bgcolor="#77BBFF">BSP Generated On:</td><td>Mar 9, 2021 1:04:46 PM</td>
+<td width="20%" bgcolor="#77BBFF">BSP Generated On:</td><td>13/03/2021 18:15:13</td>
 </tr>
 <tr mode="wrap">
-<td width="20%" bgcolor="#77BBFF">BSP Generated Timestamp:</td><td>1615291486776</td>
+<td width="20%" bgcolor="#77BBFF">BSP Generated Timestamp:</td><td>1615655713227</td>
 </tr>
 <tr mode="wrap">
-<td width="20%" bgcolor="#77BBFF">BSP Generated Location:</td><td>C:\Users\fpolo\Downloads\Franco\Courses\Coursera\CourseraFPGADesignforEmbeddedSystemsSpecialization\003FPGASoftcoresAndIPAcquisition\MAX1000_Verilog\software\HelloWorld_bsp</td>
+<td width="20%" bgcolor="#77BBFF">BSP Generated Location:</td><td>D:\Franco\Dokumenten\FPGA_VHDL_Verilog\CourseraFPGADesignforEmbeddedSystemsSpecialization\003FPGASoftcoresAndIPAcquisition\MAX1000_Verilog\software\HelloWorld_bsp</td>
 </tr>
 </table>
 <br>
@@ -53,10 +53,16 @@
 <td>adc0_sample_store_csr</td><td>0x00000200 - 0x000003FF</td><td>512</td><td class="listing">&nbsp;</td>
 </tr>
 <tr mode="wrap" STYLE="display: 'block'; font-family: 'courier'; color: '#000000'; font-weight: '500'; font-size: '14'; margin-top: '10pt'; text-align: 'left'">
+<td>spi_lis3dh</td><td>0x00000100 - 0x0000011F</td><td>32</td><td class="listing">&nbsp;</td>
+</tr>
+<tr mode="wrap" STYLE="display: 'block'; font-family: 'courier'; color: '#000000'; font-weight: '500'; font-size: '14'; margin-top: '10pt'; text-align: 'left'">
 <td>sys_id</td><td>0x000000A0 - 0x000000A7</td><td>8</td><td class="listing">&nbsp;</td>
 </tr>
 <tr mode="wrap" STYLE="display: 'block'; font-family: 'courier'; color: '#000000'; font-weight: '500'; font-size: '14'; margin-top: '10pt'; text-align: 'left'">
 <td>jtag_uart</td><td>0x00000090 - 0x00000097</td><td>8</td><td class="listing">printable</td>
+</tr>
+<tr mode="wrap" STYLE="display: 'block'; font-family: 'courier'; color: '#000000'; font-weight: '500'; font-size: '14'; margin-top: '10pt'; text-align: 'left'">
+<td>pio_lis3dh</td><td>0x00000070 - 0x0000007F</td><td>16</td><td class="listing">&nbsp;</td>
 </tr>
 <tr mode="wrap" STYLE="display: 'block'; font-family: 'courier'; color: '#000000'; font-weight: '500'; font-size: '14'; margin-top: '10pt'; text-align: 'left'">
 <td>pio_leds</td><td>0x00000060 - 0x0000006F</td><td>16</td><td class="listing">&nbsp;</td>
@@ -225,7 +231,7 @@
 <td width="20%">Default Value:</td><td>1</td>
 </tr>
 <tr>
-<td width="20%">Value:</td><td>0</td>
+<td width="20%">Value:</td><td>1</td>
 </tr>
 <tr>
 <td width="20%">Type:</td><td>Boolean</td>
@@ -252,7 +258,7 @@
 <td width="20%">Default Value:</td><td>1</td>
 </tr>
 <tr>
-<td width="20%">Value:</td><td>0</td>
+<td width="20%">Value:</td><td>1</td>
 </tr>
 <tr>
 <td width="20%">Type:</td><td>Boolean</td>
@@ -333,7 +339,7 @@
 <td width="20%">Default Value:</td><td>0</td>
 </tr>
 <tr>
-<td width="20%">Value:</td><td>1</td>
+<td width="20%">Value:</td><td>0</td>
 </tr>
 <tr>
 <td width="20%">Type:</td><td>Boolean</td>
@@ -1143,7 +1149,7 @@
 <td width="20%">Default Value:</td><td>-O0</td>
 </tr>
 <tr>
-<td width="20%">Value:</td><td>'-Os'</td>
+<td width="20%">Value:</td><td>-O0</td>
 </tr>
 <tr>
 <td width="20%">Type:</td><td>UnquotedString</td>
@@ -1953,7 +1959,7 @@
 <td width="20%">Default Value:</td><td>32</td>
 </tr>
 <tr>
-<td width="20%">Value:</td><td>4</td>
+<td width="20%">Value:</td><td>32</td>
 </tr>
 <tr>
 <td width="20%">Type:</td><td>DecimalNumber</td>

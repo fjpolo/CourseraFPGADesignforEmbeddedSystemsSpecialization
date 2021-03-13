@@ -2,9 +2,9 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>Mar 9, 2021 1:04:46 PM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1615291486776</BspGeneratedUnixTimeStamp>
-        <BspGeneratedLocation>C:\Users\fpolo\Downloads\Franco\Courses\Coursera\CourseraFPGADesignforEmbeddedSystemsSpecialization\003FPGASoftcoresAndIPAcquisition\MAX1000_Verilog\software\HelloWorld_bsp</BspGeneratedLocation>
+        <BspGeneratedTimeStamp>13/03/2021 18:15:13</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1615655713227</BspGeneratedUnixTimeStamp>
+        <BspGeneratedLocation>D:\Franco\Dokumenten\FPGA_VHDL_Verilog\CourseraFPGADesignforEmbeddedSystemsSpecialization\003FPGASoftcoresAndIPAcquisition\MAX1000_Verilog\software\HelloWorld_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>..\..\nios_sys.sopcinfo</SopcDesignFile>
         <JdiFile>default</JdiFile>
@@ -38,7 +38,7 @@
                 <SettingName>hal.max_file_descriptors</SettingName>
                 <Identifier>ALT_MAX_FD</Identifier>
                 <Type>DecimalNumber</Type>
-                <Value>4</Value>
+                <Value>32</Value>
                 <DefaultValue>32</DefaultValue>
                 <DestinationFile>system_h_define</DestinationFile>
                 <Description>Determines the number of file descriptors statically allocated. This setting defines the value of ALT_MAX_FD in system.h.</Description>
@@ -386,7 +386,7 @@
                 <SettingName>hal.make.bsp_cflags_optimization</SettingName>
                 <Identifier>BSP_CFLAGS_OPTIMIZATION</Identifier>
                 <Type>UnquotedString</Type>
-                <Value>'-Os'</Value>
+                <Value>-O0</Value>
                 <DefaultValue>-O0</DefaultValue>
                 <DestinationFile>makefile_variable</DestinationFile>
                 <Description>C/C++ compiler optimization level. "-O0" = no optimization,"-O2" = "normal" optimization, etc. "-O0" is recommended for code that you want to debug since compiler optimization can remove variables and produce non-sequential execution of code while debugging. This setting defines the value of BSP_CFLAGS_OPTIMIZATION in Makefile.</Description>
@@ -722,7 +722,7 @@
                 <SettingName>hal.enable_exit</SettingName>
                 <Identifier>ALT_NO_EXIT</Identifier>
                 <Type>Boolean</Type>
-                <Value>0</Value>
+                <Value>1</Value>
                 <DefaultValue>1</DefaultValue>
                 <DestinationFile>public_mk_define</DestinationFile>
                 <Description>Add exit() support. This option increases code footprint if your "main()" routine does "return" or call "exit()". If false, adds -DALT_NO_EXIT to ALT_CPPFLAGS in public.mk, and reduces footprint</Description>
@@ -746,7 +746,7 @@
                 <SettingName>hal.enable_clean_exit</SettingName>
                 <Identifier>ALT_NO_CLEAN_EXIT</Identifier>
                 <Type>Boolean</Type>
-                <Value>0</Value>
+                <Value>1</Value>
                 <DefaultValue>1</DefaultValue>
                 <DestinationFile>public_mk_define</DestinationFile>
                 <Description>When your application exits, close file descriptors, call C++ destructors, etc. Code footprint can be reduced by disabling clean exit. If disabled, adds -DALT_NO_CLEAN_EXIT to ALT_CPPFLAGS -D'exit(a)=_exit(a)' in public.mk.</Description>
@@ -806,7 +806,7 @@
                 <SettingName>hal.enable_lightweight_device_driver_api</SettingName>
                 <Identifier>ALT_USE_DIRECT_DRIVERS</Identifier>
                 <Type>Boolean</Type>
-                <Value>1</Value>
+                <Value>0</Value>
                 <DefaultValue>0</DefaultValue>
                 <DestinationFile>public_mk_define</DestinationFile>
                 <Description>Enables lightweight device driver API. This reduces code and data footprint by removing the HAL layer that maps device names (e.g. /dev/uart0) to file descriptors. Instead, driver routines are called directly. The open(), close(), and lseek() routines will always fail if called. The read(), write(), fstat(), ioctl(), and isatty() routines only work for the stdio devices. If true, adds -DALT_USE_DIRECT_DRIVERS to ALT_CPPFLAGS in public.mk.</Description>
@@ -923,6 +923,12 @@
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
+                <slaveDescriptor>pio_lis3dh</slaveDescriptor>
+                <addressRange>0x00000070 - 0x0000007F</addressRange>
+                <addressSpan>16</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
                 <slaveDescriptor>jtag_uart</slaveDescriptor>
                 <addressRange>0x00000090 - 0x00000097</addressRange>
                 <addressSpan>8</addressSpan>
@@ -932,6 +938,12 @@
                 <slaveDescriptor>sys_id</slaveDescriptor>
                 <addressRange>0x000000A0 - 0x000000A7</addressRange>
                 <addressSpan>8</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
+                <slaveDescriptor>spi_lis3dh</slaveDescriptor>
+                <addressRange>0x00000100 - 0x0000011F</addressRange>
+                <addressSpan>32</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>

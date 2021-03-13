@@ -7,13 +7,18 @@ module nios_sys (
 		input  wire       clk_clk,                   //                clk.clk
 		input  wire       pio_button_export,         //         pio_button.export
 		output wire [7:0] pio_leds_export,           //           pio_leds.export
+		input  wire [1:0] pio_lis3dh_export,         //         pio_lis3dh.export
 		output wire       pll_locked_conduit_export, // pll_locked_conduit.export
-		input  wire       reset_reset_n              //              reset.reset_n
+		input  wire       reset_reset_n,             //              reset.reset_n
+		input  wire       spi_lis3dh_MISO,           //         spi_lis3dh.MISO
+		output wire       spi_lis3dh_MOSI,           //                   .MOSI
+		output wire       spi_lis3dh_SCLK,           //                   .SCLK
+		output wire       spi_lis3dh_SS_n            //                   .SS_n
 	);
 
-	wire         pll_c0_clk;                                                // pll:c0 -> [adc0:adc_pll_clock_clk, irq_mapper:clk, jtag_uart:clk, mm_interconnect_0:pll_c0_clk, nios:clk, onchip_flash:clock, onchip_ram:clk, pio_button:clk, pio_leds:clk, rst_controller_001:clk, sys_id:clock]
-	wire         pll_c1_clk;                                                // pll:c1 -> [mm_interconnect_0:pll_c1_clk, rst_controller_003:clk, timer0:clk]
-	wire         pll_c2_clk;                                                // pll:c2 -> [adc0:clock_clk, mm_interconnect_0:pll_c2_clk, rst_controller:clk]
+	wire         pll_c0_clk;                                                // pll:c0 -> [adc0:adc_pll_clock_clk, irq_mapper:clk, irq_synchronizer:sender_clk, irq_synchronizer_001:sender_clk, jtag_uart:clk, mm_interconnect_0:pll_c0_clk, nios:clk, onchip_flash:clock, onchip_ram:clk, pio_button:clk, pio_leds:clk, pio_lis3dh:clk, rst_controller_001:clk, spi_lis3dh:clk, sys_id:clock]
+	wire         pll_c1_clk;                                                // pll:c1 -> [irq_synchronizer:receiver_clk, mm_interconnect_0:pll_c1_clk, rst_controller_003:clk, timer0:clk]
+	wire         pll_c2_clk;                                                // pll:c2 -> [adc0:clock_clk, irq_synchronizer_001:receiver_clk, mm_interconnect_0:pll_c2_clk, rst_controller:clk]
 	wire  [31:0] nios_data_master_readdata;                                 // mm_interconnect_0:nios_data_master_readdata -> nios:d_readdata
 	wire         nios_data_master_waitrequest;                              // mm_interconnect_0:nios_data_master_waitrequest -> nios:d_waitrequest
 	wire         nios_data_master_debugaccess;                              // nios:debug_mem_slave_debugaccess_to_roms -> mm_interconnect_0:nios_data_master_debugaccess
@@ -83,6 +88,11 @@ module nios_sys (
 	wire   [2:0] mm_interconnect_0_timer0_s1_address;                       // mm_interconnect_0:timer0_s1_address -> timer0:address
 	wire         mm_interconnect_0_timer0_s1_write;                         // mm_interconnect_0:timer0_s1_write -> timer0:write_n
 	wire  [15:0] mm_interconnect_0_timer0_s1_writedata;                     // mm_interconnect_0:timer0_s1_writedata -> timer0:writedata
+	wire         mm_interconnect_0_pio_lis3dh_s1_chipselect;                // mm_interconnect_0:pio_lis3dh_s1_chipselect -> pio_lis3dh:chipselect
+	wire  [31:0] mm_interconnect_0_pio_lis3dh_s1_readdata;                  // pio_lis3dh:readdata -> mm_interconnect_0:pio_lis3dh_s1_readdata
+	wire   [1:0] mm_interconnect_0_pio_lis3dh_s1_address;                   // mm_interconnect_0:pio_lis3dh_s1_address -> pio_lis3dh:address
+	wire         mm_interconnect_0_pio_lis3dh_s1_write;                     // mm_interconnect_0:pio_lis3dh_s1_write -> pio_lis3dh:write_n
+	wire  [31:0] mm_interconnect_0_pio_lis3dh_s1_writedata;                 // mm_interconnect_0:pio_lis3dh_s1_writedata -> pio_lis3dh:writedata
 	wire  [31:0] mm_interconnect_0_adc0_sample_store_csr_readdata;          // adc0:sample_store_csr_readdata -> mm_interconnect_0:adc0_sample_store_csr_readdata
 	wire   [6:0] mm_interconnect_0_adc0_sample_store_csr_address;           // mm_interconnect_0:adc0_sample_store_csr_address -> adc0:sample_store_csr_address
 	wire         mm_interconnect_0_adc0_sample_store_csr_read;              // mm_interconnect_0:adc0_sample_store_csr_read -> adc0:sample_store_csr_read
@@ -93,15 +103,27 @@ module nios_sys (
 	wire         mm_interconnect_0_adc0_sequencer_csr_read;                 // mm_interconnect_0:adc0_sequencer_csr_read -> adc0:sequencer_csr_read
 	wire         mm_interconnect_0_adc0_sequencer_csr_write;                // mm_interconnect_0:adc0_sequencer_csr_write -> adc0:sequencer_csr_write
 	wire  [31:0] mm_interconnect_0_adc0_sequencer_csr_writedata;            // mm_interconnect_0:adc0_sequencer_csr_writedata -> adc0:sequencer_csr_writedata
+	wire         mm_interconnect_0_spi_lis3dh_spi_control_port_chipselect;  // mm_interconnect_0:spi_lis3dh_spi_control_port_chipselect -> spi_lis3dh:spi_select
+	wire  [15:0] mm_interconnect_0_spi_lis3dh_spi_control_port_readdata;    // spi_lis3dh:data_to_cpu -> mm_interconnect_0:spi_lis3dh_spi_control_port_readdata
+	wire   [2:0] mm_interconnect_0_spi_lis3dh_spi_control_port_address;     // mm_interconnect_0:spi_lis3dh_spi_control_port_address -> spi_lis3dh:mem_addr
+	wire         mm_interconnect_0_spi_lis3dh_spi_control_port_read;        // mm_interconnect_0:spi_lis3dh_spi_control_port_read -> spi_lis3dh:read_n
+	wire         mm_interconnect_0_spi_lis3dh_spi_control_port_write;       // mm_interconnect_0:spi_lis3dh_spi_control_port_write -> spi_lis3dh:write_n
+	wire  [15:0] mm_interconnect_0_spi_lis3dh_spi_control_port_writedata;   // mm_interconnect_0:spi_lis3dh_spi_control_port_writedata -> spi_lis3dh:data_from_cpu
 	wire         irq_mapper_receiver0_irq;                                  // jtag_uart:av_irq -> irq_mapper:receiver0_irq
 	wire         irq_mapper_receiver1_irq;                                  // pio_button:irq -> irq_mapper:receiver1_irq
+	wire         irq_mapper_receiver3_irq;                                  // spi_lis3dh:irq -> irq_mapper:receiver3_irq
+	wire         irq_mapper_receiver4_irq;                                  // pio_lis3dh:irq -> irq_mapper:receiver4_irq
 	wire  [31:0] nios_irq_irq;                                              // irq_mapper:sender_irq -> nios:irq
-	wire         rst_controller_reset_out_reset;                            // rst_controller:reset_out -> [adc0:reset_sink_reset_n, mm_interconnect_0:adc0_reset_sink_reset_bridge_in_reset_reset]
+	wire         irq_mapper_receiver2_irq;                                  // irq_synchronizer:sender_irq -> irq_mapper:receiver2_irq
+	wire   [0:0] irq_synchronizer_receiver_irq;                             // timer0:irq -> irq_synchronizer:receiver_irq
+	wire         irq_mapper_receiver5_irq;                                  // irq_synchronizer_001:sender_irq -> irq_mapper:receiver5_irq
+	wire   [0:0] irq_synchronizer_001_receiver_irq;                         // adc0:sample_store_irq_irq -> irq_synchronizer_001:receiver_irq
+	wire         rst_controller_reset_out_reset;                            // rst_controller:reset_out -> [adc0:reset_sink_reset_n, irq_synchronizer_001:receiver_reset, mm_interconnect_0:adc0_reset_sink_reset_bridge_in_reset_reset]
 	wire         nios_debug_reset_request_reset;                            // nios:debug_reset_request -> [rst_controller:reset_in1, rst_controller_001:reset_in1, rst_controller_002:reset_in1, rst_controller_003:reset_in1]
-	wire         rst_controller_001_reset_out_reset;                        // rst_controller_001:reset_out -> [irq_mapper:reset, jtag_uart:rst_n, mm_interconnect_0:nios_reset_reset_bridge_in_reset_reset, nios:reset_n, onchip_flash:reset_n, onchip_ram:reset, pio_button:reset_n, pio_leds:reset_n, rst_translator:in_reset, sys_id:reset_n]
+	wire         rst_controller_001_reset_out_reset;                        // rst_controller_001:reset_out -> [irq_mapper:reset, irq_synchronizer:sender_reset, irq_synchronizer_001:sender_reset, jtag_uart:rst_n, mm_interconnect_0:nios_reset_reset_bridge_in_reset_reset, nios:reset_n, onchip_flash:reset_n, onchip_ram:reset, pio_button:reset_n, pio_leds:reset_n, pio_lis3dh:reset_n, rst_translator:in_reset, spi_lis3dh:reset_n, sys_id:reset_n]
 	wire         rst_controller_001_reset_out_reset_req;                    // rst_controller_001:reset_req -> [nios:reset_req, onchip_ram:reset_req, rst_translator:reset_req_in]
 	wire         rst_controller_002_reset_out_reset;                        // rst_controller_002:reset_out -> [mm_interconnect_0:pll_inclk_interface_reset_reset_bridge_in_reset_reset, pll:reset]
-	wire         rst_controller_003_reset_out_reset;                        // rst_controller_003:reset_out -> [mm_interconnect_0:timer0_reset_reset_bridge_in_reset_reset, timer0:reset_n]
+	wire         rst_controller_003_reset_out_reset;                        // rst_controller_003:reset_out -> [irq_synchronizer:receiver_reset, mm_interconnect_0:timer0_reset_reset_bridge_in_reset_reset, timer0:reset_n]
 
 	nios_sys_adc0 adc0 (
 		.clock_clk                  (pll_c2_clk),                                        //            clock.clk
@@ -118,7 +140,7 @@ module nios_sys (
 		.sample_store_csr_write     (mm_interconnect_0_adc0_sample_store_csr_write),     //                 .write
 		.sample_store_csr_writedata (mm_interconnect_0_adc0_sample_store_csr_writedata), //                 .writedata
 		.sample_store_csr_readdata  (mm_interconnect_0_adc0_sample_store_csr_readdata),  //                 .readdata
-		.sample_store_irq_irq       ()                                                   // sample_store_irq.irq
+		.sample_store_irq_irq       (irq_synchronizer_001_receiver_irq)                  // sample_store_irq.irq
 	);
 
 	nios_sys_jtag_uart jtag_uart (
@@ -265,6 +287,18 @@ module nios_sys (
 		.out_port   (pio_leds_export)                           // external_connection.export
 	);
 
+	nios_sys_pio_lis3dh pio_lis3dh (
+		.clk        (pll_c0_clk),                                 //                 clk.clk
+		.reset_n    (~rst_controller_001_reset_out_reset),        //               reset.reset_n
+		.address    (mm_interconnect_0_pio_lis3dh_s1_address),    //                  s1.address
+		.write_n    (~mm_interconnect_0_pio_lis3dh_s1_write),     //                    .write_n
+		.writedata  (mm_interconnect_0_pio_lis3dh_s1_writedata),  //                    .writedata
+		.chipselect (mm_interconnect_0_pio_lis3dh_s1_chipselect), //                    .chipselect
+		.readdata   (mm_interconnect_0_pio_lis3dh_s1_readdata),   //                    .readdata
+		.in_port    (pio_lis3dh_export),                          // external_connection.export
+		.irq        (irq_mapper_receiver4_irq)                    //                 irq.irq
+	);
+
 	nios_sys_pll pll (
 		.clk                (clk_clk),                                   //       inclk_interface.clk
 		.reset              (rst_controller_002_reset_out_reset),        // inclk_interface_reset.reset
@@ -292,6 +326,22 @@ module nios_sys (
 		.configupdate       (1'b0)                                       //           (terminated)
 	);
 
+	nios_sys_spi_lis3dh spi_lis3dh (
+		.clk           (pll_c0_clk),                                               //              clk.clk
+		.reset_n       (~rst_controller_001_reset_out_reset),                      //            reset.reset_n
+		.data_from_cpu (mm_interconnect_0_spi_lis3dh_spi_control_port_writedata),  // spi_control_port.writedata
+		.data_to_cpu   (mm_interconnect_0_spi_lis3dh_spi_control_port_readdata),   //                 .readdata
+		.mem_addr      (mm_interconnect_0_spi_lis3dh_spi_control_port_address),    //                 .address
+		.read_n        (~mm_interconnect_0_spi_lis3dh_spi_control_port_read),      //                 .read_n
+		.spi_select    (mm_interconnect_0_spi_lis3dh_spi_control_port_chipselect), //                 .chipselect
+		.write_n       (~mm_interconnect_0_spi_lis3dh_spi_control_port_write),     //                 .write_n
+		.irq           (irq_mapper_receiver3_irq),                                 //              irq.irq
+		.MISO          (spi_lis3dh_MISO),                                          //         external.export
+		.MOSI          (spi_lis3dh_MOSI),                                          //                 .export
+		.SCLK          (spi_lis3dh_SCLK),                                          //                 .export
+		.SS_n          (spi_lis3dh_SS_n)                                           //                 .export
+	);
+
 	nios_sys_sys_id sys_id (
 		.clock    (pll_c0_clk),                                      //           clk.clk
 		.reset_n  (~rst_controller_001_reset_out_reset),             //         reset.reset_n
@@ -307,7 +357,7 @@ module nios_sys (
 		.readdata   (mm_interconnect_0_timer0_s1_readdata),   //      .readdata
 		.chipselect (mm_interconnect_0_timer0_s1_chipselect), //      .chipselect
 		.write_n    (~mm_interconnect_0_timer0_s1_write),     //      .write_n
-		.irq        ()                                        //   irq.irq
+		.irq        (irq_synchronizer_receiver_irq)           //   irq.irq
 	);
 
 	nios_sys_mm_interconnect_0 mm_interconnect_0 (
@@ -386,11 +436,22 @@ module nios_sys (
 		.pio_leds_s1_readdata                                  (mm_interconnect_0_pio_leds_s1_readdata),                    //                                                .readdata
 		.pio_leds_s1_writedata                                 (mm_interconnect_0_pio_leds_s1_writedata),                   //                                                .writedata
 		.pio_leds_s1_chipselect                                (mm_interconnect_0_pio_leds_s1_chipselect),                  //                                                .chipselect
+		.pio_lis3dh_s1_address                                 (mm_interconnect_0_pio_lis3dh_s1_address),                   //                                   pio_lis3dh_s1.address
+		.pio_lis3dh_s1_write                                   (mm_interconnect_0_pio_lis3dh_s1_write),                     //                                                .write
+		.pio_lis3dh_s1_readdata                                (mm_interconnect_0_pio_lis3dh_s1_readdata),                  //                                                .readdata
+		.pio_lis3dh_s1_writedata                               (mm_interconnect_0_pio_lis3dh_s1_writedata),                 //                                                .writedata
+		.pio_lis3dh_s1_chipselect                              (mm_interconnect_0_pio_lis3dh_s1_chipselect),                //                                                .chipselect
 		.pll_pll_slave_address                                 (mm_interconnect_0_pll_pll_slave_address),                   //                                   pll_pll_slave.address
 		.pll_pll_slave_write                                   (mm_interconnect_0_pll_pll_slave_write),                     //                                                .write
 		.pll_pll_slave_read                                    (mm_interconnect_0_pll_pll_slave_read),                      //                                                .read
 		.pll_pll_slave_readdata                                (mm_interconnect_0_pll_pll_slave_readdata),                  //                                                .readdata
 		.pll_pll_slave_writedata                               (mm_interconnect_0_pll_pll_slave_writedata),                 //                                                .writedata
+		.spi_lis3dh_spi_control_port_address                   (mm_interconnect_0_spi_lis3dh_spi_control_port_address),     //                     spi_lis3dh_spi_control_port.address
+		.spi_lis3dh_spi_control_port_write                     (mm_interconnect_0_spi_lis3dh_spi_control_port_write),       //                                                .write
+		.spi_lis3dh_spi_control_port_read                      (mm_interconnect_0_spi_lis3dh_spi_control_port_read),        //                                                .read
+		.spi_lis3dh_spi_control_port_readdata                  (mm_interconnect_0_spi_lis3dh_spi_control_port_readdata),    //                                                .readdata
+		.spi_lis3dh_spi_control_port_writedata                 (mm_interconnect_0_spi_lis3dh_spi_control_port_writedata),   //                                                .writedata
+		.spi_lis3dh_spi_control_port_chipselect                (mm_interconnect_0_spi_lis3dh_spi_control_port_chipselect),  //                                                .chipselect
 		.sys_id_control_slave_address                          (mm_interconnect_0_sys_id_control_slave_address),            //                            sys_id_control_slave.address
 		.sys_id_control_slave_readdata                         (mm_interconnect_0_sys_id_control_slave_readdata),           //                                                .readdata
 		.timer0_s1_address                                     (mm_interconnect_0_timer0_s1_address),                       //                                       timer0_s1.address
@@ -405,7 +466,33 @@ module nios_sys (
 		.reset         (rst_controller_001_reset_out_reset), // clk_reset.reset
 		.receiver0_irq (irq_mapper_receiver0_irq),           // receiver0.irq
 		.receiver1_irq (irq_mapper_receiver1_irq),           // receiver1.irq
+		.receiver2_irq (irq_mapper_receiver2_irq),           // receiver2.irq
+		.receiver3_irq (irq_mapper_receiver3_irq),           // receiver3.irq
+		.receiver4_irq (irq_mapper_receiver4_irq),           // receiver4.irq
+		.receiver5_irq (irq_mapper_receiver5_irq),           // receiver5.irq
 		.sender_irq    (nios_irq_irq)                        //    sender.irq
+	);
+
+	altera_irq_clock_crosser #(
+		.IRQ_WIDTH (1)
+	) irq_synchronizer (
+		.receiver_clk   (pll_c1_clk),                         //       receiver_clk.clk
+		.sender_clk     (pll_c0_clk),                         //         sender_clk.clk
+		.receiver_reset (rst_controller_003_reset_out_reset), // receiver_clk_reset.reset
+		.sender_reset   (rst_controller_001_reset_out_reset), //   sender_clk_reset.reset
+		.receiver_irq   (irq_synchronizer_receiver_irq),      //           receiver.irq
+		.sender_irq     (irq_mapper_receiver2_irq)            //             sender.irq
+	);
+
+	altera_irq_clock_crosser #(
+		.IRQ_WIDTH (1)
+	) irq_synchronizer_001 (
+		.receiver_clk   (pll_c2_clk),                         //       receiver_clk.clk
+		.sender_clk     (pll_c0_clk),                         //         sender_clk.clk
+		.receiver_reset (rst_controller_reset_out_reset),     // receiver_clk_reset.reset
+		.sender_reset   (rst_controller_001_reset_out_reset), //   sender_clk_reset.reset
+		.receiver_irq   (irq_synchronizer_001_receiver_irq),  //           receiver.irq
+		.sender_irq     (irq_mapper_receiver5_irq)            //             sender.irq
 	);
 
 	altera_reset_controller #(
