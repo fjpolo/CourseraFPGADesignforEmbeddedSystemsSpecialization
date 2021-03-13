@@ -1,0 +1,9 @@
+18:37:19 **** Incremental Build of configuration Nios II for project HelloWorld ****
+make all 
+Info: Building ../HelloWorld_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../HelloWorld_bsp/
+[BSP build complete]
+[HelloWorld build complete]
+
+18:37:20 Build Finished (took 1s.285ms)
+

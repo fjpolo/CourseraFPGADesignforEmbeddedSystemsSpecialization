@@ -1,0 +1,17 @@
+# # File gsaved with Nlview version 6.3.8  2013-12-19 bk=1.2992 VDI=34 GEI=35
+# 
+preplace inst nios_lab.nios.reset_bridge -pg 1
+preplace inst nios_lab -pg 1 -lvl 1 -y 40 -regy -20
+preplace inst nios_lab.nios -pg 1 -lvl 3 -y 50
+preplace inst nios_lab.clk12mhz -pg 1 -lvl 1 -y 70
+preplace inst nios_lab.pll -pg 1 -lvl 2 -y 70
+preplace inst nios_lab.nios.cpu -pg 1
+preplace inst nios_lab.nios.clock_bridge -pg 1
+preplace netloc FAN_IN<net_container>nios_lab</net_container>(MASTER)nios.instruction_master,(SLAVE)nios.debug_mem_slave,(MASTER)nios.data_master) 1 2 2 500 190 880
+preplace netloc INTERCONNECT<net_container>nios_lab</net_container>(MASTER)nios.debug_reset_request,(MASTER)clk12mhz.clk_reset,(SLAVE)pll.inclk_interface_reset,(SLAVE)nios.reset) 1 1 3 260 180 480 210 860
+preplace netloc EXPORT<net_container>nios_lab</net_container>(SLAVE)clk12mhz.clk_in,(SLAVE)nios_lab.clk) 1 0 1 NJ
+preplace netloc POINT_TO_POINT<net_container>nios_lab</net_container>(SLAVE)nios.clk,(MASTER)pll.c0) 1 2 1 N
+preplace netloc EXPORT<net_container>nios_lab</net_container>(SLAVE)nios_lab.reset,(SLAVE)clk12mhz.clk_in_reset) 1 0 1 NJ
+preplace netloc POINT_TO_POINT<net_container>nios_lab</net_container>(MASTER)clk12mhz.clk,(SLAVE)pll.inclk_interface) 1 1 1 N
+levelinfo -pg 1 0 50 920
+levelinfo -hier nios_lab 60 90 290 620 900

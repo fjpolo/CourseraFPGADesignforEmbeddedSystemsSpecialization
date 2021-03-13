@@ -1,0 +1,147 @@
+Info: Starting: Create block symbol file (.bsf)
+Info: qsys-generate D:\Franco\Dokumenten\FPGA_VHDL_Verilog\CourseraFPGADesignforEmbeddedSystemsSpecialization\003FPGASoftcoresAndIPAcquisition\MAX1000_Verilog\nios_sys.qsys --block-symbol-file --output-directory=D:\Franco\Dokumenten\FPGA_VHDL_Verilog\CourseraFPGADesignforEmbeddedSystemsSpecialization\003FPGASoftcoresAndIPAcquisition\MAX1000_Verilog\nios_sys --family="MAX 10" --part=10M08SAU169C8G
+Progress: Loading MAX1000_Verilog/nios_sys.qsys
+Progress: Reading input file
+Progress: Adding adc0 [altera_modular_adc 18.1]
+Progress: Parameterizing module adc0
+Progress: Adding clk12mhz [clock_source 18.1]
+Progress: Parameterizing module clk12mhz
+Progress: Adding jtag_uart [altera_avalon_jtag_uart 18.1]
+Progress: Parameterizing module jtag_uart
+Progress: Adding nios [altera_nios2_gen2 18.1]
+Progress: Parameterizing module nios
+Progress: Adding onchip_flash [altera_onchip_flash 18.1]
+Progress: Parameterizing module onchip_flash
+Progress: Adding onchip_ram [altera_avalon_onchip_memory2 18.1]
+Progress: Parameterizing module onchip_ram
+Progress: Adding pio_button [altera_avalon_pio 18.1]
+Progress: Parameterizing module pio_button
+Progress: Adding pio_leds [altera_avalon_pio 18.1]
+Progress: Parameterizing module pio_leds
+Progress: Adding pio_lis3dh [altera_avalon_pio 18.1]
+Progress: Parameterizing module pio_lis3dh
+Progress: Adding pll [altpll 18.1]
+Progress: Parameterizing module pll
+Progress: Adding spi_lis3dh [altera_avalon_spi 18.1]
+Progress: Parameterizing module spi_lis3dh
+Progress: Adding sys_id [altera_avalon_sysid_qsys 18.1]
+Progress: Parameterizing module sys_id
+Progress: Adding timer0 [altera_avalon_timer 18.1]
+Progress: Parameterizing module timer0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: nios_sys.jtag_uart: JTAG UART IP input clock need to be at least double (2x) the operating frequency of JTAG TCK on board
+Info: nios_sys.pio_button: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: nios_sys.pio_lis3dh: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: nios_sys.sys_id: System ID is not assigned automatically. Edit the System ID parameter to provide a unique ID
+Info: nios_sys.sys_id: Time stamp will be automatically updated when this component is generated.
+Warning: nios_sys.adc0: adc0.adc_pll_locked must be exported, or connected to a matching conduit.
+Warning: nios_sys.spi_lis3dh: spi_lis3dh.external must be exported, or connected to a matching conduit.
+Info: qsys-generate succeeded.
+Info: Finished: Create block symbol file (.bsf)
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: qsys-generate D:\Franco\Dokumenten\FPGA_VHDL_Verilog\CourseraFPGADesignforEmbeddedSystemsSpecialization\003FPGASoftcoresAndIPAcquisition\MAX1000_Verilog\nios_sys.qsys --synthesis=VERILOG --output-directory=D:\Franco\Dokumenten\FPGA_VHDL_Verilog\CourseraFPGADesignforEmbeddedSystemsSpecialization\003FPGASoftcoresAndIPAcquisition\MAX1000_Verilog\nios_sys\synthesis --family="MAX 10" --part=10M08SAU169C8G
+Progress: Loading MAX1000_Verilog/nios_sys.qsys
+Progress: Reading input file
+Progress: Adding adc0 [altera_modular_adc 18.1]
+Progress: Parameterizing module adc0
+Progress: Adding clk12mhz [clock_source 18.1]
+Progress: Parameterizing module clk12mhz
+Progress: Adding jtag_uart [altera_avalon_jtag_uart 18.1]
+Progress: Parameterizing module jtag_uart
+Progress: Adding nios [altera_nios2_gen2 18.1]
+Progress: Parameterizing module nios
+Progress: Adding onchip_flash [altera_onchip_flash 18.1]
+Progress: Parameterizing module onchip_flash
+Progress: Adding onchip_ram [altera_avalon_onchip_memory2 18.1]
+Progress: Parameterizing module onchip_ram
+Progress: Adding pio_button [altera_avalon_pio 18.1]
+Progress: Parameterizing module pio_button
+Progress: Adding pio_leds [altera_avalon_pio 18.1]
+Progress: Parameterizing module pio_leds
+Progress: Adding pio_lis3dh [altera_avalon_pio 18.1]
+Progress: Parameterizing module pio_lis3dh
+Progress: Adding pll [altpll 18.1]
+Progress: Parameterizing module pll
+Progress: Adding spi_lis3dh [altera_avalon_spi 18.1]
+Progress: Parameterizing module spi_lis3dh
+Progress: Adding sys_id [altera_avalon_sysid_qsys 18.1]
+Progress: Parameterizing module sys_id
+Progress: Adding timer0 [altera_avalon_timer 18.1]
+Progress: Parameterizing module timer0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: nios_sys.jtag_uart: JTAG UART IP input clock need to be at least double (2x) the operating frequency of JTAG TCK on board
+Info: nios_sys.pio_button: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: nios_sys.pio_lis3dh: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: nios_sys.sys_id: System ID is not assigned automatically. Edit the System ID parameter to provide a unique ID
+Info: nios_sys.sys_id: Time stamp will be automatically updated when this component is generated.
+Warning: nios_sys.adc0: adc0.adc_pll_locked must be exported, or connected to a matching conduit.
+Warning: nios_sys.spi_lis3dh: spi_lis3dh.external must be exported, or connected to a matching conduit.
+Info: nios_sys: Generating nios_sys "nios_sys" for QUARTUS_SYNTH
+Info: Inserting clock-crossing logic between cmd_demux.src5 and cmd_mux_005.sink0
+Info: Inserting clock-crossing logic between cmd_demux.src9 and cmd_mux_009.sink0
+Info: Inserting clock-crossing logic between cmd_demux.src11 and cmd_mux_011.sink0
+Info: Inserting clock-crossing logic between cmd_demux.src12 and cmd_mux_012.sink0
+Info: Inserting clock-crossing logic between rsp_demux_005.src0 and rsp_mux.sink5
+Info: Inserting clock-crossing logic between rsp_demux_009.src0 and rsp_mux.sink9
+Info: Inserting clock-crossing logic between rsp_demux_011.src0 and rsp_mux.sink11
+Info: Inserting clock-crossing logic between rsp_demux_012.src0 and rsp_mux.sink12
+Info: adc0: "nios_sys" instantiated altera_modular_adc "adc0"
+Info: jtag_uart: Starting RTL generation for module 'nios_sys_jtag_uart'
+Info: jtag_uart:   Generation command is [exec C:/intelfpga_lite/18.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=nios_sys_jtag_uart --dir=C:/Users/franc/AppData/Local/Temp/alt8699_9140113920948138320.dir/0040_jtag_uart_gen/ --quartus_dir=C:/intelfpga_lite/18.1/quartus --verilog --config=C:/Users/franc/AppData/Local/Temp/alt8699_9140113920948138320.dir/0040_jtag_uart_gen//nios_sys_jtag_uart_component_configuration.pl  --do_build_sim=0  ]
+Info: jtag_uart: Done RTL generation for module 'nios_sys_jtag_uart'
+Info: jtag_uart: "nios_sys" instantiated altera_avalon_jtag_uart "jtag_uart"
+Info: nios: "nios_sys" instantiated altera_nios2_gen2 "nios"
+Info: onchip_flash: Generating top-level entity altera_onchip_flash
+Info: onchip_flash: "nios_sys" instantiated altera_onchip_flash "onchip_flash"
+Info: onchip_ram: Starting RTL generation for module 'nios_sys_onchip_ram'
+Info: onchip_ram:   Generation command is [exec C:/intelfpga_lite/18.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=nios_sys_onchip_ram --dir=C:/Users/franc/AppData/Local/Temp/alt8699_9140113920948138320.dir/0042_onchip_ram_gen/ --quartus_dir=C:/intelfpga_lite/18.1/quartus --verilog --config=C:/Users/franc/AppData/Local/Temp/alt8699_9140113920948138320.dir/0042_onchip_ram_gen//nios_sys_onchip_ram_component_configuration.pl  --do_build_sim=0  ]
+Info: onchip_ram: Done RTL generation for module 'nios_sys_onchip_ram'
+Info: onchip_ram: "nios_sys" instantiated altera_avalon_onchip_memory2 "onchip_ram"
+Info: pio_button: Starting RTL generation for module 'nios_sys_pio_button'
+Info: pio_button:   Generation command is [exec C:/intelfpga_lite/18.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=nios_sys_pio_button --dir=C:/Users/franc/AppData/Local/Temp/alt8699_9140113920948138320.dir/0043_pio_button_gen/ --quartus_dir=C:/intelfpga_lite/18.1/quartus --verilog --config=C:/Users/franc/AppData/Local/Temp/alt8699_9140113920948138320.dir/0043_pio_button_gen//nios_sys_pio_button_component_configuration.pl  --do_build_sim=0  ]
+Info: pio_button: Done RTL generation for module 'nios_sys_pio_button'
+Info: pio_button: "nios_sys" instantiated altera_avalon_pio "pio_button"
+Info: pio_leds: Starting RTL generation for module 'nios_sys_pio_leds'
+Info: pio_leds:   Generation command is [exec C:/intelfpga_lite/18.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=nios_sys_pio_leds --dir=C:/Users/franc/AppData/Local/Temp/alt8699_9140113920948138320.dir/0044_pio_leds_gen/ --quartus_dir=C:/intelfpga_lite/18.1/quartus --verilog --config=C:/Users/franc/AppData/Local/Temp/alt8699_9140113920948138320.dir/0044_pio_leds_gen//nios_sys_pio_leds_component_configuration.pl  --do_build_sim=0  ]
+Info: pio_leds: Done RTL generation for module 'nios_sys_pio_leds'
+Info: pio_leds: "nios_sys" instantiated altera_avalon_pio "pio_leds"
+Info: pio_lis3dh: Starting RTL generation for module 'nios_sys_pio_lis3dh'
+Info: pio_lis3dh:   Generation command is [exec C:/intelfpga_lite/18.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=nios_sys_pio_lis3dh --dir=C:/Users/franc/AppData/Local/Temp/alt8699_9140113920948138320.dir/0045_pio_lis3dh_gen/ --quartus_dir=C:/intelfpga_lite/18.1/quartus --verilog --config=C:/Users/franc/AppData/Local/Temp/alt8699_9140113920948138320.dir/0045_pio_lis3dh_gen//nios_sys_pio_lis3dh_component_configuration.pl  --do_build_sim=0  ]
+Info: pio_lis3dh: Done RTL generation for module 'nios_sys_pio_lis3dh'
+Info: pio_lis3dh: "nios_sys" instantiated altera_avalon_pio "pio_lis3dh"
+Info: pll: "nios_sys" instantiated altpll "pll"
+Info: spi_lis3dh: Starting RTL generation for module 'nios_sys_spi_lis3dh'
+Info: spi_lis3dh:   Generation command is [exec C:/intelfpga_lite/18.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_spi -- C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_spi/generate_rtl.pl --name=nios_sys_spi_lis3dh --dir=C:/Users/franc/AppData/Local/Temp/alt8699_9140113920948138320.dir/0048_spi_lis3dh_gen/ --quartus_dir=C:/intelfpga_lite/18.1/quartus --verilog --config=C:/Users/franc/AppData/Local/Temp/alt8699_9140113920948138320.dir/0048_spi_lis3dh_gen//nios_sys_spi_lis3dh_component_configuration.pl  --do_build_sim=0  ]
+Info: spi_lis3dh: Done RTL generation for module 'nios_sys_spi_lis3dh'
+Info: spi_lis3dh: "nios_sys" instantiated altera_avalon_spi "spi_lis3dh"
+Info: sys_id: "nios_sys" instantiated altera_avalon_sysid_qsys "sys_id"
+Info: timer0: Starting RTL generation for module 'nios_sys_timer0'
+Info: timer0:   Generation command is [exec C:/intelFPGA_lite/18.1/quartus/bin64//perl/bin/perl.exe -I C:/intelFPGA_lite/18.1/quartus/bin64//perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_timer -- C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_timer/generate_rtl.pl --name=nios_sys_timer0 --dir=C:/Users/franc/AppData/Local/Temp/alt8699_9140113920948138320.dir/0050_timer0_gen/ --quartus_dir=C:/intelfpga_lite/18.1/quartus --verilog --config=C:/Users/franc/AppData/Local/Temp/alt8699_9140113920948138320.dir/0050_timer0_gen//nios_sys_timer0_component_configuration.pl  --do_build_sim=0  ]
+Info: timer0: Done RTL generation for module 'nios_sys_timer0'
+Info: timer0: "nios_sys" instantiated altera_avalon_timer "timer0"
+Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_001: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_002: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_003: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_004: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_005: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_006: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_007: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_008: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_009: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_010: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_011: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_012: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_013: Inserting error_adapter: error_adapter_0
+Info: mm_interconnect_0: "nios_sys" instantiated altera_mm_interconnect "mm_interconnect_0"
+Error: Generation stopped, 131 or more modules remaining
+Info: nios_sys: Done "nios_sys" with 43 modules, 20 files
+Error: qsys-generate failed with exit code 1: 1 Error, 2 Warnings
+Info: Stopping: Create HDL design files for synthesis
