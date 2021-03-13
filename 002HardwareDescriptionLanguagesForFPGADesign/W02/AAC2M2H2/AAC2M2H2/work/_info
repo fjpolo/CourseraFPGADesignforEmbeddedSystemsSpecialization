@@ -1,0 +1,30 @@
+m255
+o
+cModel Technology
+dC:\Users\fpolo\Downloads\Franco\FPGA\Modeltech_5.5e\win32
+Efifo8x9
+DP ieee std_logic_arith XinSYO>L7_n;;dMn;72:52
+DP ieee std_logic_unsigned hEMVMlaNCR^<OOoVNV;m90
+DP ieee numeric_std JEAJIQRRkDSZF:PY1:8aa1
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+w1579162136
+dC:\Users\fpolo\Downloads\Franco\FPGA\W02\AAC2M2H2
+FC:/Users/fpolo/Downloads/Franco/FPGA/W02/AAC2M2H2/AAC2M2H2.vhd
+l0
+L7
+VXlQWD:WQ?g`oSeKilPS>z2
+OE;C;5.5e;15
+o-work work -87 -explicit
+tExplicit T
+Artl
+DE work fifo8x9 XlQWD:WQ?g`oSeKilPS>z2
+l26
+L18
+VLSdjXSL80I6RPXS_:;cY[1
+OE;C;5.5e;15
+M4 ieee std_logic_1164
+M3 ieee numeric_std
+M2 ieee std_logic_unsigned
+M1 ieee std_logic_arith
+o-work work -87 -explicit
+tExplicit T

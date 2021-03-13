@@ -1,0 +1,241 @@
+--------------------------------------------------------------------------------
+--                                                                            --
+--                     Mux(4-bit) Test Bench                                  --
+--                                                                            --
+--------------------------------------------------------------------------------
+--
+--
+-- @file AAC2M1P3_tb.vhd
+-- @version: 2.0 
+-- Date of current revision:  @date 2019-07-21  
+-- Target FPGA: Intel Altera 
+-- Tools used: Quartus Prime 16.1 for editing and synthesis 
+--              Modeltech ModelSIM 10.4a Student Edition for simulation 
+--             Quartus Prime 16.1  for place and route if applied 
+--  Functional Description:  This file contains the VHDL which describes the 
+--              test bench for an FPGA implementation of a 4-bit mux
+--  Hierarchy:  This test bench uses the submitted AAC2M1P3.vhd component found
+--              in the Work Library.
+--              The FPGA is one entity.  The architecture is one
+--              functional section, which compares all the possible
+--              input bit vector combinations and checks to see if the
+--              result is correct after a 10 ns delay.   
+
+--	 TESTS 
+--   I. Mux test
+--    compare all the possible input bit vector combinations and checks to see 
+--    if the result is correct after a 10 ns delay.
+--  
+--  Designed by:  @author Tim Scherr 
+--                @author Sanju Prakash Kannioth
+--                University of Colorado at Boulder
+--                timothy.scherr@colorado.edu 
+-- 
+--      Copyright (c) 2019, University of Colorado   All rights reserved.
+------------------------------------------------------------------------------
+-- 
+--
+
+----------------------------------------------------------------------
+-- Libraries
+----------------------------------------------------------------------
+
+library ieee;                                
+use ieee.std_logic_1164.all;                 
+use ieee.numeric_std.all; 
+use ieee.numeric_bit_unsigned.all;
+use ieee.std_logic_textio.all; 
+use std.textio.all;
+use work.all;
+
+----------------------------------------------------------------------
+-- Testbench entity declaration
+----------------------------------------------------------------------
+entity AAC2M1P3_tb is 
+--  port( ); 
+-- no external interface.....THIS IS THE TOP LEVEL
+end AAC2M1P3_tb;
+
+-------------------------------------------------------------------
+-- Testbench architecture body
+----------------------------------------------------------------------
+architecture behavioral of AAC2M1P3_tb is      
+----------------------------------------------------------------------
+--- constant declarations
+----------------------------------------------------------------------
+   constant delay:  TIME := 10.00 NS; -- defines the wait period.
+   constant Points: integer := 10;   -- number of points this problem
+                                    -- is worth
+----------------------------------------------------------------------                                                                      
+-- signal declarations 
+----------------------------------------------------------------------
+--  signal clock:  std_logic := '0';
+  signal a_tb:  bit_vector(0 to 3);  -- data input
+  signal c_tb:  bit_vector(5 downto 0);  -- data input
+  signal b_tb:  std_logic_vector(3 downto 0);    -- data output  
+
+  signal ValidCheck: std_logic_vector(15 downto 0);  
+            -- unique to this problem, to check validity of submission
+  type mem is array (integer range <>) of std_logic_vector(7 downto 0);
+  signal ROM: mem(0 to 255);        
+
+--------------------------------------------------
+-- component declarations before instantiation 
+--------------------------------------------------
+---------------------------------------------------------------------
+-- Component declarations
+----------------------------------------------------------------------
+-- Mux
+component find_errors 
+   port (                 
+    a: in bit_vector(0 to 3);                   
+    b: out std_logic_vector(3 downto 0);         
+    c: in bit_vector(5 downto 0)
+    );  
+end component;
+
+----------------------------------------------------------------------
+--- Procedures
+----------------------------------------------------------------------
+
+  procedure Load_ROM(signal data_word : inout mem) is
+     file ROMfile : text open read_mode is "vectorh.out";
+     variable lbuf: line;
+     variable i: integer :=0;
+     variable fdata: std_logic_vector(7 downto 0);
+ --
+   begin
+     while not(endfile(ROMfile))  loop
+     -- read digital data from input file
+     readline(ROMfile, lbuf);
+     hread(lbuf, fdata);
+     data_word(i) <= fdata;
+     i := i + 1;
+     end loop;
+  end procedure; 
+
+ procedure Write_ROM (signal data_word : inout mem) is
+     file ROMfileOut : text open write_mode is "myvectorh.out";
+     variable row: line;
+     variable i : integer :=0;
+     variable fdata: std_logic_vector (7 downto 0);
+ --
+   begin
+     while (i<256) loop
+     fdata := data_word(i);
+     hwrite(row, fdata, left,4);
+     writeline(RomfileOut, row);
+     i := i + 1;
+     end loop;
+  end procedure;
+
+----------------------------------------------------------------------
+-- Top level output port assignments
+----------------------------------------------------------------------
+
+begin
+ ----------------------------------------------------------------------
+-- Component instances
+----------------------------------------------------------------------
+-- find_errors
+Mux4 : find_errors
+    port map( 
+        -- Inputs
+        a    => a_tb,
+        c    => c_tb,
+         -- Outputs
+        b    => b_tb
+        );  
+----------------------------------------------------------------------
+-- Test Stimulation
+----------------------------------------------------------------------                                       
+  `protect BEGIN_PROTECTED
+`protect version = 1
+`protect encrypt_agent = "ModelSim", encrypt_agent_info = "10.4a"
+`protect key_keyowner = "Mentor Graphics Corporation" , key_keyname = "MGC-VERIF-SIM-RSA-1" , key_method = "rsa"
+`protect encoding = (enctype = "base64", line_length = 64, bytes = 128)
+`protect KEY_BLOCK
+fik/HehaZzJhTVEM+yyZFuNqEOeVgp+QISuIKrPwuFWIrgpw20e5qm9OGT7JRC2f
+Jpzt9HQ4LiypZJQGcqW6YABZkBFfHcslIsLnKK8pf5FG3KokjQhs3Wy1R6HVzeBN
+OeghLu5v4vqzfzWraPXTFxvE/NKVaoeNCqQ0Qtb8nRQ=
+`protect data_method = "aes128-cbc"
+`protect encoding = (enctype = "base64", line_length = 64, bytes = 3555)
+
+`protect DATA_BLOCK
+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
+`protect END_PROTECTED             
+end behavioral; -- of AAC2M1P3_tb;     

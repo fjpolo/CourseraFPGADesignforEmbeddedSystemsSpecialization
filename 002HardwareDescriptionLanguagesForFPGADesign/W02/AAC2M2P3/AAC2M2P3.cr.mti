@@ -1,0 +1,26 @@
+D:/Dokumenten/FPGA_VHDL_Verilog/W02/AAC2M2P3/AAC2M2P3.vhd {2 {vcom -work work -2002 -explicit -stats=none D:/Dokumenten/FPGA_VHDL_Verilog/W02/AAC2M2P3/AAC2M2P3.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity FSM
+-- Compiling architecture behavioral of FSM
+** Warning: D:/Dokumenten/FPGA_VHDL_Verilog/W02/AAC2M2P3/AAC2M2P3.vhd(25): (vcom-1937) Choice in CASE statement alternative must be locally static.
+** Warning: D:/Dokumenten/FPGA_VHDL_Verilog/W02/AAC2M2P3/AAC2M2P3.vhd(30): (vcom-1937) Choice in CASE statement alternative must be locally static.
+** Warning: D:/Dokumenten/FPGA_VHDL_Verilog/W02/AAC2M2P3/AAC2M2P3.vhd(35): (vcom-1937) Choice in CASE statement alternative must be locally static.
+** Warning: D:/Dokumenten/FPGA_VHDL_Verilog/W02/AAC2M2P3/AAC2M2P3.vhd(25): (vcom-1322) Case statement choice (generic "stateA") cannot be checked for uniqueness.
+** Warning: D:/Dokumenten/FPGA_VHDL_Verilog/W02/AAC2M2P3/AAC2M2P3.vhd(30): (vcom-1322) Case statement choice (generic "stateB") cannot be checked for uniqueness.
+** Warning: D:/Dokumenten/FPGA_VHDL_Verilog/W02/AAC2M2P3/AAC2M2P3.vhd(35): (vcom-1322) Case statement choice (generic "stateC") cannot be checked for uniqueness.
+
+} {} {}} D:/Dokumenten/FPGA_VHDL_Verilog/W02/AAC2M2P3/AAC2M2P3_tb.vhdp {1 {vcom -work work -2002 -explicit -stats=none D:/Dokumenten/FPGA_VHDL_Verilog/W02/AAC2M2P3/AAC2M2P3_tb.vhdp
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package NUMERIC_BIT_UNSIGNED
+-- Loading package std_logic_textio
+-- Compiling entity AAC2M2P3_tb
+-- Compiling architecture behavioral of AAC2M2P3_tb
+
+} {} {}}

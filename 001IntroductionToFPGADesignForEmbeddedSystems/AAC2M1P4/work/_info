@@ -1,0 +1,92 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/Users/franc/Downloads/FPGA/W01/03-AAC2M1P4
+Eaac2m1p4_tb
+Z0 w1573328400
+Z1 DPx4 ieee 16 std_logic_textio 0 22 V5TSK`;aJKC<l]CEg1>mz1
+Z2 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z4 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z5 dD:/Dokumenten/FPGA_VHDL_Verilog/AAC2M1P4
+Z6 8D:/Dokumenten/FPGA_VHDL_Verilog/AAC2M1P4/AAC2M1P4_tb.vhdp
+Z7 FD:/Dokumenten/FPGA_VHDL_Verilog/AAC2M1P4/AAC2M1P4_tb.vhdp
+l0
+L53
+V0lm18;2PAT9;9UX`h8OiV1
+!s100 <J[WH[[Ng2Fl68CRf5E:H0
+Z8 OV;C;10.5b;63
+32
+Z9 !s110 1576778531
+!i10b 1
+Z10 !s108 1576778531.000000
+Z11 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|D:/Dokumenten/FPGA_VHDL_Verilog/AAC2M1P4/AAC2M1P4_tb.vhdp|
+Z12 !s107 D:/Dokumenten/FPGA_VHDL_Verilog/AAC2M1P4/AAC2M1P4_tb.vhdp|
+!i113 1
+Z13 o-work work -2002 -explicit
+Z14 tExplicit 1 CvgOpt 0
+Abehavioral
+R1
+R2
+R3
+R4
+DEx4 work 11 aac2m1p4_tb 0 22 0lm18;2PAT9;9UX`h8OiV1
+l132
+L61
+VNPaP7UoTB1^0_JARMFkN83
+!s100 iJWg2TWh58NTAFiC6DH_P1
+R8
+32
+!s110 1576778532
+!i10b 1
+R10
+R11
+R12
+!i113 1
+R13
+R14
+Emajority
+Z15 w1576778527
+R3
+R4
+R5
+Z16 8D:/Dokumenten/FPGA_VHDL_Verilog/AAC2M1P4/AAC2M1P4.vhd
+Z17 FD:/Dokumenten/FPGA_VHDL_Verilog/AAC2M1P4/AAC2M1P4.vhd
+l0
+L41
+V^Z_L>Y6=QC02;<=5RRSZU3
+!s100 4hHeGnTJdoRHWFO;eb1W91
+R8
+32
+R9
+!i10b 1
+R10
+Z18 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|D:/Dokumenten/FPGA_VHDL_Verilog/AAC2M1P4/AAC2M1P4.vhd|
+Z19 !s107 D:/Dokumenten/FPGA_VHDL_Verilog/AAC2M1P4/AAC2M1P4.vhd|
+!i113 1
+R13
+R14
+Abehavioral
+R3
+R4
+DEx4 work 8 majority 0 22 ^Z_L>Y6=QC02;<=5RRSZU3
+l47
+L46
+V4Pk7hO?:N<dZXM91ZJ8B91
+!s100 5S6AVTAAJozKZFTj=[6FO2
+R8
+32
+R9
+!i10b 1
+R10
+R18
+R19
+!i113 1
+R13
+R14

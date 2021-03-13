@@ -1,0 +1,19 @@
+D:/Dokumenten/FPGA_VHDL_Verilog/W03/AAC2M3P1/vector.out {0 {vlog -work work -stats=none D:/Dokumenten/FPGA_VHDL_Verilog/W03/AAC2M3P1/vector.out
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+** Error: (vlog-13069) D:/Dokumenten/FPGA_VHDL_Verilog/W03/AAC2M3P1/vector.out(4): near "24": syntax error, unexpected INTEGER NUMBER, expecting class.
+
+} {3.0 4.0} {}} D:/Dokumenten/FPGA_VHDL_Verilog/W03/AAC2M3P1/AAC2M3P1_tb.vp {1 {vlog -work work -stats=none D:/Dokumenten/FPGA_VHDL_Verilog/W03/AAC2M3P1/AAC2M3P1_tb.vp
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module AAC2M3P1_tb
+
+Top level modules:
+	AAC2M3P1_tb
+
+} {} {}} D:/Dokumenten/FPGA_VHDL_Verilog/W03/AAC2M3P1/AAC2M3P1.v {1 {vlog -work work -stats=none D:/Dokumenten/FPGA_VHDL_Verilog/W03/AAC2M3P1/AAC2M3P1.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module Comparator2
+
+Top level modules:
+	Comparator2
+
+} {} {}}

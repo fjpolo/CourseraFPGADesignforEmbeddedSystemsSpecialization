@@ -1,0 +1,52 @@
+-------------------------------------------------------------------------------
+--  Using VHDL, Design a FIFO memory. Make it 8-deep, 9 bits wide. 
+-- When a read signal is asserted, the output of the FIFO should 
+-- be enabled, otherwise it should be high impedance. When the write 
+-- signal is asserted, write to one of the 9 bit registers. Use RdInc 
+-- and WrInc as input signals to increment the pointers that indicate 
+-- which register to read or write. Use RdPtrClr and WrPtrClr as input 
+-- signals which reset the pointers to point to the first register in 
+-- the array. Do not implement full or empty signals.   
+-------------------------------------------------------------------------------
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity FIFO8x9 is
+   generic 
+	(
+	constant DATA_WIDTH  : positive := 9;
+	constant FIFO_DEPTH  : positive := 8
+	);
+   port(
+      clk, rst:		in std_logic;
+      RdPtrClr, WrPtrClr:	in std_logic;    
+      RdInc, WrInc:	in std_logic;
+      DataIn:	 in std_logic_vector(8 downto 0);
+      DataOut: out std_logic_vector(8 downto 0);
+      rden, wren: in std_logic
+	);
+end entity FIFO8x9;
+
+architecture RTL of FIFO8x9 is
+	--signal declarations
+	type fifo_array is array(7 downto 0) of std_logic_vector(8 downto 0);  -- makes use of VHDL a€™s enumerated type
+	signal fifo:  fifo_array;
+	signal wrptr, rdptr: unsigned(2 downto 0);
+	signal en: std_logic_vector(7 downto 0);
+	signal dmuxout: std_logic_vector(8 downto 0);
+
+begin
+	fifo_proc : process(clk)
+	begin
+		--  When a read signal is asserted, the output of the FIFO should 
+		-- be enabled, otherwise it should be high impedance.
+		if rden = '1' then
+			-- Output of FIFO enabled
+			DataOut <= fifo(rdptr);
+		else
+			-- Output high impedance
+			DataOut <= "ZZZZZZZZZ";
+		end if; -- END rden = '1'
+	end process; -- END fifo_proc
+end RTL;
