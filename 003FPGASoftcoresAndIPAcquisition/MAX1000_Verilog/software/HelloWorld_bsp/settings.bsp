@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>Mar 9, 2021 1:04:46 PM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1615291486776</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>Mar 11, 2021 10:41:25 AM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1615455685053</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>C:\Users\fpolo\Downloads\Franco\Courses\Coursera\CourseraFPGADesignforEmbeddedSystemsSpecialization\003FPGASoftcoresAndIPAcquisition\MAX1000_Verilog\software\HelloWorld_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>..\..\nios_sys.sopcinfo</SopcDesignFile>

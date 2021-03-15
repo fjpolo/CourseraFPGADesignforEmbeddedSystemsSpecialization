@@ -1,0 +1,16 @@
+<sld_project_info>
+  <project>
+    <hash md5_digest_80b="eb5efc0f301fa25a5a6f"/>
+  </project>
+  <file_info>
+    <file device="10M50DAF484C6GES" path="NIOS_C.sof" usercode="0xFFFFFFFF"/>
+  </file_info>
+  <sld_infos>
+    <sld_info hpath="core:u0" name="u0">
+      <assignment_values>
+        <assignment_value text="QSYS_NAME core HAS_SOPCINFO 1 GENERATION_ID 1615297621"/>
+      </assignment_values>
+      <parameters/>
+    </sld_info>
+  </sld_infos>
+</sld_project_info>

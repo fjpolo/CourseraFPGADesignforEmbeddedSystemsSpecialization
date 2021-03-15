@@ -9,32 +9,30 @@ preplace inst nios_sys -pg 1 -lvl 1 -y 40 -regy -20
 preplace inst nios_sys.pio_leds -pg 1 -lvl 3 -y 1060
 preplace inst nios_sys.adc0.cb_inst -pg 1
 preplace inst nios_sys.sys_id -pg 1 -lvl 3 -y 210
-preplace inst nios_sys.pio_lis3dh -pg 1 -lvl 3 -y 820
 preplace inst nios_sys.nios -pg 1 -lvl 1 -y 290
 preplace inst nios_sys.jtag_uart -pg 1 -lvl 3 -y 720
 preplace inst nios_sys.adc0.control_internal -pg 1
 preplace inst nios_sys.pio_button -pg 1 -lvl 3 -y 500
 preplace inst nios_sys.onchip_ram -pg 1 -lvl 3 -y 130
-preplace inst nios_sys.spi_lis3dh -pg 1 -lvl 3 -y 940
 preplace inst nios_sys.pll -pg 1 -lvl 2 -y 300
 preplace inst nios_sys.clk12mhz -pg 1 -lvl 1 -y 460
 preplace inst nios_sys.adc0.sample_store_internal -pg 1
 preplace inst nios_sys.adc0.rst_inst -pg 1
 preplace inst nios_sys.adc0.sequencer_internal -pg 1
+preplace inst nios_sys.CRC_0 -pg 1 -lvl 2 -y 200
 preplace inst nios_sys.adc0 -pg 1 -lvl 3 -y 320
 preplace netloc EXPORT<net_container>nios_sys</net_container>(SLAVE)nios_sys.reset,(SLAVE)clk12mhz.clk_in_reset) 1 0 1 NJ
 preplace netloc EXPORT<net_container>nios_sys</net_container>(SLAVE)nios_sys.pio_leds,(SLAVE)pio_leds.external_connection) 1 0 3 NJ 1090 NJ 1090 NJ
-preplace netloc FAN_OUT<net_container>nios_sys</net_container>(MASTER)nios.irq,(SLAVE)jtag_uart.irq,(SLAVE)pio_button.irq,(SLAVE)pio_lis3dh.irq,(SLAVE)spi_lis3dh.irq) 1 1 2 NJ 430 850
-preplace netloc EXPORT<net_container>nios_sys</net_container>(SLAVE)nios_sys.spi_lis3dh,(SLAVE)spi_lis3dh.external) 1 0 3 NJ 970 NJ 970 NJ
-preplace netloc EXPORT<net_container>nios_sys</net_container>(SLAVE)pll.locked_conduit,(SLAVE)nios_sys.pll_locked_conduit) 1 0 2 NJ 430 NJ
-preplace netloc POINT_TO_POINT<net_container>nios_sys</net_container>(SLAVE)pll.inclk_interface,(MASTER)clk12mhz.clk) 1 1 1 610
-preplace netloc POINT_TO_POINT<net_container>nios_sys</net_container>(SLAVE)timer0.clk,(MASTER)pll.c1) 1 2 1 870
-preplace netloc FAN_OUT<net_container>nios_sys</net_container>(SLAVE)spi_lis3dh.clk,(SLAVE)pio_leds.clk,(SLAVE)onchip_ram.clk1,(SLAVE)jtag_uart.clk,(SLAVE)pio_button.clk,(MASTER)pll.c0,(SLAVE)adc0.adc_pll_clock,(SLAVE)pio_lis3dh.clk,(SLAVE)sys_id.clk,(SLAVE)nios.clk,(SLAVE)onchip_flash.clk) 1 0 3 170 230 NJ 230 890
+preplace netloc POINT_TO_POINT<net_container>nios_sys</net_container>(SLAVE)CRC_0.nios_custom_instruction_slave,(MASTER)nios.custom_instruction_master) 1 1 1 570
+preplace netloc FAN_OUT<net_container>nios_sys</net_container>(MASTER)nios.irq,(SLAVE)pio_button.irq,(SLAVE)jtag_uart.irq) 1 1 2 NJ 430 870
+preplace netloc EXPORT<net_container>nios_sys</net_container>(SLAVE)pll.locked_conduit,(SLAVE)nios_sys.pll_locked_conduit) 1 0 2 NJ 230 NJ
+preplace netloc POINT_TO_POINT<net_container>nios_sys</net_container>(SLAVE)timer0.clk,(MASTER)pll.c1) 1 2 1 890
 preplace netloc EXPORT<net_container>nios_sys</net_container>(SLAVE)nios_sys.clk,(SLAVE)clk12mhz.clk_in) 1 0 1 NJ
-preplace netloc INTERCONNECT<net_container>nios_sys</net_container>(SLAVE)pll.pll_slave,(SLAVE)pio_leds.s1,(SLAVE)spi_lis3dh.spi_control_port,(SLAVE)pio_lis3dh.s1,(MASTER)nios.data_master,(SLAVE)nios.debug_mem_slave,(MASTER)nios.instruction_master,(SLAVE)onchip_flash.data,(SLAVE)adc0.sequencer_csr,(SLAVE)jtag_uart.avalon_jtag_slave,(SLAVE)adc0.sample_store_csr,(SLAVE)onchip_flash.csr,(SLAVE)pio_button.s1,(SLAVE)onchip_ram.s1,(SLAVE)timer0.s1,(SLAVE)sys_id.control_slave) 1 0 3 190 250 570 410 930
-preplace netloc INTERCONNECT<net_container>nios_sys</net_container>(SLAVE)onchip_flash.nreset,(SLAVE)nios.reset,(SLAVE)pio_button.reset,(SLAVE)adc0.reset_sink,(SLAVE)spi_lis3dh.reset,(MASTER)nios.debug_reset_request,(SLAVE)pio_leds.reset,(SLAVE)onchip_ram.reset1,(SLAVE)pll.inclk_interface_reset,(SLAVE)jtag_uart.reset,(SLAVE)sys_id.reset,(SLAVE)pio_lis3dh.reset,(MASTER)clk12mhz.clk_reset,(SLAVE)timer0.reset) 1 0 3 150 210 590 450 910
-preplace netloc POINT_TO_POINT<net_container>nios_sys</net_container>(MASTER)pll.c2,(SLAVE)adc0.clock) 1 2 1 950
-preplace netloc EXPORT<net_container>nios_sys</net_container>(SLAVE)nios_sys.pio_lis3dh,(SLAVE)pio_lis3dh.external_connection) 1 0 3 NJ 850 NJ 850 NJ
+preplace netloc INTERCONNECT<net_container>nios_sys</net_container>(SLAVE)pll.pll_slave,(SLAVE)timer0.s1,(SLAVE)nios.debug_mem_slave,(SLAVE)pio_leds.s1,(SLAVE)jtag_uart.avalon_jtag_slave,(SLAVE)onchip_flash.data,(SLAVE)pio_button.s1,(MASTER)nios.instruction_master,(SLAVE)adc0.sequencer_csr,(SLAVE)onchip_flash.csr,(MASTER)nios.data_master,(SLAVE)sys_id.control_slave,(SLAVE)onchip_ram.s1,(SLAVE)adc0.sample_store_csr) 1 0 3 190 430 590 290 950
+preplace netloc INTERCONNECT<net_container>nios_sys</net_container>(SLAVE)pio_button.reset,(SLAVE)onchip_flash.nreset,(SLAVE)onchip_ram.reset1,(SLAVE)pio_leds.reset,(SLAVE)pll.inclk_interface_reset,(MASTER)nios.debug_reset_request,(SLAVE)sys_id.reset,(MASTER)clk12mhz.clk_reset,(SLAVE)jtag_uart.reset,(SLAVE)adc0.reset_sink,(SLAVE)nios.reset,(SLAVE)timer0.reset,(SLAVE)CRC_0.reset) 1 0 3 170 250 610 410 930
+preplace netloc FAN_OUT<net_container>nios_sys</net_container>(MASTER)clk12mhz.clk,(SLAVE)CRC_0.clock,(SLAVE)pll.inclk_interface) 1 1 1 630
+preplace netloc FAN_OUT<net_container>nios_sys</net_container>(SLAVE)pio_button.clk,(SLAVE)sys_id.clk,(SLAVE)onchip_ram.clk1,(SLAVE)adc0.adc_pll_clock,(SLAVE)pio_leds.clk,(SLAVE)nios.clk,(SLAVE)onchip_flash.clk,(MASTER)pll.c0,(SLAVE)jtag_uart.clk) 1 0 3 150 210 NJ 190 910
+preplace netloc POINT_TO_POINT<net_container>nios_sys</net_container>(MASTER)pll.c2,(SLAVE)adc0.clock) 1 2 1 970
 preplace netloc EXPORT<net_container>nios_sys</net_container>(SLAVE)pio_button.external_connection,(SLAVE)nios_sys.pio_button) 1 0 3 NJ 530 NJ 530 NJ
-levelinfo -pg 1 0 120 1230
-levelinfo -hier nios_sys 130 310 660 1070 1220
+levelinfo -pg 1 0 120 1250
+levelinfo -hier nios_sys 130 310 660 1090 1240

@@ -2833,6 +2833,8 @@ endmodule
 
 module nios_sys_nios_cpu (
                            // inputs:
+                            E_ci_multi_done,
+                            E_ci_result,
                             clk,
                             d_readdata,
                             d_waitrequest,
@@ -2849,6 +2851,23 @@ module nios_sys_nios_cpu (
                             reset_req,
 
                            // outputs:
+                            D_ci_a,
+                            D_ci_b,
+                            D_ci_c,
+                            D_ci_n,
+                            D_ci_readra,
+                            D_ci_readrb,
+                            D_ci_writerc,
+                            E_ci_dataa,
+                            E_ci_datab,
+                            E_ci_multi_clk_en,
+                            E_ci_multi_clock,
+                            E_ci_multi_reset,
+                            E_ci_multi_reset_req,
+                            E_ci_multi_start,
+                            W_ci_estatus,
+                            W_ci_ipending,
+                            W_ci_status,
                             d_address,
                             d_byteenable,
                             d_read,
@@ -2858,12 +2877,28 @@ module nios_sys_nios_cpu (
                             debug_mem_slave_readdata,
                             debug_mem_slave_waitrequest,
                             debug_reset_request,
-                            dummy_ci_port,
                             i_address,
                             i_read
                          )
 ;
 
+  output  [  4: 0] D_ci_a;
+  output  [  4: 0] D_ci_b;
+  output  [  4: 0] D_ci_c;
+  output  [  7: 0] D_ci_n;
+  output           D_ci_readra;
+  output           D_ci_readrb;
+  output           D_ci_writerc;
+  output  [ 31: 0] E_ci_dataa;
+  output  [ 31: 0] E_ci_datab;
+  output           E_ci_multi_clk_en;
+  output           E_ci_multi_clock;
+  output           E_ci_multi_reset;
+  output           E_ci_multi_reset_req;
+  output           E_ci_multi_start;
+  output           W_ci_estatus;
+  output  [ 31: 0] W_ci_ipending;
+  output           W_ci_status;
   output  [ 22: 0] d_address;
   output  [  3: 0] d_byteenable;
   output           d_read;
@@ -2873,9 +2908,10 @@ module nios_sys_nios_cpu (
   output  [ 31: 0] debug_mem_slave_readdata;
   output           debug_mem_slave_waitrequest;
   output           debug_reset_request;
-  output           dummy_ci_port;
   output  [ 21: 0] i_address;
   output           i_read;
+  input            E_ci_multi_done;
+  input   [ 31: 0] E_ci_result;
   input            clk;
   input   [ 31: 0] d_readdata;
   input            d_waitrequest;
@@ -2893,6 +2929,13 @@ module nios_sys_nios_cpu (
 
 
 reg              A_valid_from_M /* synthesis ALTERA_IP_DEBUG_VISIBLE = 1 */;
+wire    [  4: 0] D_ci_a;
+wire    [  4: 0] D_ci_b;
+wire    [  4: 0] D_ci_c;
+wire    [  7: 0] D_ci_n;
+wire             D_ci_readra;
+wire             D_ci_readrb;
+wire             D_ci_writerc;
 wire    [  1: 0] D_compare_op;
 wire             D_ctrl_alu_force_and;
 wire             D_ctrl_alu_force_xor;
@@ -2993,6 +3036,7 @@ wire             D_op_cmpltu;
 wire             D_op_cmpltui;
 wire             D_op_cmpne;
 wire             D_op_cmpnei;
+wire             D_op_crc_0;
 wire             D_op_crst;
 wire             D_op_custom;
 wire             D_op_div;
@@ -3100,8 +3144,14 @@ reg              E_alu_sub;
 wire    [ 32: 0] E_arith_result;
 wire    [ 31: 0] E_arith_src1;
 wire    [ 31: 0] E_arith_src2;
+wire    [ 31: 0] E_ci_dataa;
+wire    [ 31: 0] E_ci_datab;
+reg              E_ci_multi_clk_en;
+wire             E_ci_multi_clock;
+wire             E_ci_multi_reset;
+wire             E_ci_multi_reset_req;
 wire             E_ci_multi_stall;
-wire    [ 31: 0] E_ci_result;
+reg              E_ci_multi_start;
 wire             E_cmp_result;
 wire    [ 31: 0] E_control_rd_data;
 wire             E_eq;
@@ -3202,6 +3252,7 @@ wire             F_op_cmpltu;
 wire             F_op_cmpltui;
 wire             F_op_cmpne;
 wire             F_op_cmpnei;
+wire             F_op_crc_0;
 wire             F_op_crst;
 wire             F_op_custom;
 wire             F_op_div;
@@ -3432,6 +3483,9 @@ reg              W_bstatus_reg;
 wire             W_bstatus_reg_inst_nxt;
 wire             W_bstatus_reg_nxt;
 reg     [ 31: 0] W_cdsr_reg;
+wire             W_ci_estatus;
+wire    [ 31: 0] W_ci_ipending;
+wire             W_ci_status;
 reg              W_cmp_result;
 reg     [ 31: 0] W_control_rd_data;
 wire    [ 31: 0] W_cpuid_reg;
@@ -3496,7 +3550,6 @@ wire    [ 31: 0] debug_mem_slave_readdata;
 wire             debug_mem_slave_reset;
 wire             debug_mem_slave_waitrequest;
 wire             debug_reset_request;
-wire             dummy_ci_port;
 reg              hbreak_enabled;
 reg              hbreak_pending;
 wire             hbreak_pending_nxt;
@@ -3722,6 +3775,7 @@ reg              wait_for_one_post_bret_inst;
   assign F_op_intr = (F_iw_opx == 61) & F_is_opx_inst;
   assign F_op_crst = (F_iw_opx == 62) & F_is_opx_inst;
   assign F_op_opx_rsv63 = (F_iw_opx == 63) & F_is_opx_inst;
+  assign F_op_crc_0 = F_op_custom & 1'b1;
   assign F_is_opx_inst = F_iw_op == 58;
   assign D_op_call = D_iw_op == 0;
   assign D_op_jmpi = D_iw_op == 1;
@@ -3850,12 +3904,25 @@ reg              wait_for_one_post_bret_inst;
   assign D_op_intr = (D_iw_opx == 61) & D_is_opx_inst;
   assign D_op_crst = (D_iw_opx == 62) & D_is_opx_inst;
   assign D_op_opx_rsv63 = (D_iw_opx == 63) & D_is_opx_inst;
+  assign D_op_crc_0 = D_op_custom & 1'b1;
   assign D_is_opx_inst = D_iw_op == 58;
   assign R_en = 1'b1;
-  assign E_ci_result = 0;
+  assign E_ci_dataa = E_src1;
+  assign E_ci_datab = E_src2;
+  assign W_ci_ipending = W_ipending_reg;
+  assign W_ci_status = W_status_reg;
+  assign W_ci_estatus = W_estatus_reg;
+  assign D_ci_n = D_iw_custom_n;
+  assign D_ci_a = D_iw_a;
+  assign D_ci_b = D_iw_b;
+  assign D_ci_c = D_iw_c;
+  assign D_ci_readra = D_iw_custom_readra;
+  assign D_ci_readrb = D_iw_custom_readrb;
+  assign D_ci_writerc = D_iw_custom_writerc;
+  assign E_ci_multi_clock = clk;
+  assign E_ci_multi_reset = ~reset_n;
+  assign E_ci_multi_reset_req = reset_req;
   //custom_instruction_master, which is an e_custom_instruction_master
-  assign dummy_ci_port = 1'b0;
-  assign E_ci_multi_stall = 1'b0;
   assign iactive = irq[31 : 0] & 32'b00000000000000000000000000000011;
   assign F_pc_sel_nxt = (R_ctrl_exception | W_rf_ecc_unrecoverable_valid) ? 2'b00 :
     R_ctrl_break                              ? 2'b01 :
@@ -4156,6 +4223,29 @@ defparam nios_sys_nios_cpu_register_bank_b.lpm_file = "nios_sys_nios_cpu_rf_ram_
 
   assign E_valid = E_valid_from_R & ~E_rf_ecc_valid_any;
   assign E_stall = (E_shift_rot_stall | E_ld_stall | E_st_stall | E_ci_multi_stall) & ~(E_rf_ecc_valid_any|W_rf_ecc_valid_any|W1_rf_ecc_recoverable_valid);
+  always @(posedge clk or negedge reset_n)
+    begin
+      if (reset_n == 0)
+          E_ci_multi_start <= 0;
+      else 
+        E_ci_multi_start <= E_ci_multi_start ? 1'b0 : 
+                (R_ctrl_custom_multi & R_valid);
+
+    end
+
+
+  always @(posedge clk or negedge reset_n)
+    begin
+      if (reset_n == 0)
+          E_ci_multi_clk_en <= 0;
+      else 
+        E_ci_multi_clk_en <= E_ci_multi_clk_en ? ~E_ci_multi_done : 
+                (R_ctrl_custom_multi & R_valid);
+
+    end
+
+
+  assign E_ci_multi_stall = R_ctrl_custom_multi & E_valid & ~E_ci_multi_done;
   assign E_arith_src1 = { E_src1[31] ^ E_invert_arith_src_msb, 
     E_src1[30 : 0]};
 
@@ -4577,7 +4667,7 @@ defparam nios_sys_nios_cpu_register_bank_b.lpm_file = "nios_sys_nios_cpu_rf_ram_
   //debug_mem_slave, which is an e_avalon_slave
   assign debug_mem_slave_clk = clk;
   assign debug_mem_slave_reset = ~reset_n;
-  assign D_ctrl_custom = 1'b0;
+  assign D_ctrl_custom = D_op_crc_0;
   assign R_ctrl_custom_nxt = D_ctrl_custom;
   always @(posedge clk or negedge reset_n)
     begin
@@ -4588,7 +4678,7 @@ defparam nios_sys_nios_cpu_register_bank_b.lpm_file = "nios_sys_nios_cpu_rf_ram_
     end
 
 
-  assign D_ctrl_custom_multi = 1'b0;
+  assign D_ctrl_custom_multi = D_op_crc_0;
   assign R_ctrl_custom_multi_nxt = D_ctrl_custom_multi;
   always @(posedge clk or negedge reset_n)
     begin
@@ -5226,7 +5316,7 @@ defparam nios_sys_nios_cpu_register_bank_b.lpm_file = "nios_sys_nios_cpu_rf_ram_
     end
 
 
-  assign D_ctrl_b_is_dst = D_op_addi|
+  assign D_ctrl_b_is_dst = (D_op_addi|
     D_op_andhi|
     D_op_orhi|
     D_op_xorhi|
@@ -5254,7 +5344,7 @@ defparam nios_sys_nios_cpu_register_bank_b.lpm_file = "nios_sys_nios_cpu_rf_ram_
     D_op_initd|
     D_op_initda|
     D_op_flushd|
-    D_op_flushda;
+    D_op_flushda) & ~D_op_custom;
 
   assign R_ctrl_b_is_dst_nxt = D_ctrl_b_is_dst;
   always @(posedge clk or negedge reset_n)
@@ -5266,7 +5356,7 @@ defparam nios_sys_nios_cpu_register_bank_b.lpm_file = "nios_sys_nios_cpu_rf_ram_
     end
 
 
-  assign D_ctrl_ignore_dst = D_op_br|
+  assign D_ctrl_ignore_dst = (D_op_br|
     D_op_bge|
     D_op_blt|
     D_op_bne|
@@ -5279,7 +5369,7 @@ defparam nios_sys_nios_cpu_register_bank_b.lpm_file = "nios_sys_nios_cpu_rf_ram_
     D_op_stbio|
     D_op_sthio|
     D_op_stwio|
-    D_op_jmpi;
+    D_op_jmpi) | (D_op_custom & ~D_iw_custom_writerc);
 
   assign R_ctrl_ignore_dst_nxt = D_ctrl_ignore_dst;
   always @(posedge clk or negedge reset_n)
@@ -5553,6 +5643,7 @@ defparam nios_sys_nios_cpu_register_bank_b.lpm_file = "nios_sys_nios_cpu_rf_ram_
     (F_op_srai)? 56'h20202073726169 :
     (F_op_sra)? 56'h20202020737261 :
     (F_op_intr)? 56'h202020696e7472 :
+    (F_op_crc_0)? 56'h20206372635f30 :
     56'h20202020424144;
 
   assign D_inst = (D_op_call)? 56'h20202063616c6c :
@@ -5642,6 +5733,7 @@ defparam nios_sys_nios_cpu_register_bank_b.lpm_file = "nios_sys_nios_cpu_rf_ram_
     (D_op_srai)? 56'h20202073726169 :
     (D_op_sra)? 56'h20202020737261 :
     (D_op_intr)? 56'h202020696e7472 :
+    (D_op_crc_0)? 56'h20206372635f30 :
     56'h20202020424144;
 
   assign F_vinst = F_valid ? F_inst : {9{8'h2d}};

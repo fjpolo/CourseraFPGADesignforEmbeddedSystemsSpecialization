@@ -4,7 +4,7 @@
  * Machine generated for CPU 'nios' in SOPC Builder design 'nios_sys'
  * SOPC Builder design path: ../../nios_sys.sopcinfo
  *
- * Generated: Tue Mar 09 12:54:41 CET 2021
+ * Generated: Thu Mar 11 10:41:29 CET 2021
  */
 
 /*
@@ -129,6 +129,16 @@
 
 
 /*
+ * Custom instruction macros
+ *
+ */
+
+#define ALT_CI_CRC_0(n,A,B) __builtin_custom_inii(ALT_CI_CRC_0_N+(n&ALT_CI_CRC_0_N_MASK),(A),(B))
+#define ALT_CI_CRC_0_N 0x0
+#define ALT_CI_CRC_0_N_MASK ((1<<3)-1)
+
+
+/*
  * Define for each module class mastered by the CPU
  *
  */
@@ -142,6 +152,7 @@
 #define __ALTERA_NIOS2_GEN2
 #define __ALTERA_ONCHIP_FLASH
 #define __ALTPLL
+#define __CRC
 
 
 /*
@@ -586,7 +597,7 @@
 #define SYS_ID_IRQ_INTERRUPT_CONTROLLER_ID -1
 #define SYS_ID_NAME "/dev/sys_id"
 #define SYS_ID_SPAN 8
-#define SYS_ID_TIMESTAMP 1615289084
+#define SYS_ID_TIMESTAMP 1615453998
 #define SYS_ID_TYPE "altera_avalon_sysid_qsys"
 
 

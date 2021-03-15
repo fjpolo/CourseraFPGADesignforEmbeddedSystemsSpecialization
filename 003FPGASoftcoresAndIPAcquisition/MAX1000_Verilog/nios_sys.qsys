@@ -9,6 +9,14 @@
    categories="System" />
  <parameter name="bonusData"><![CDATA[bonusData 
 {
+   element CRC_0
+   {
+      datum _sortIndex
+      {
+         value = "11";
+         type = "int";
+      }
+   }
    element adc0
    {
       datum _sortIndex
@@ -247,6 +255,14 @@
    type="conduit"
    dir="end" />
  <interface name="reset" internal="clk12mhz.clk_in_reset" type="reset" dir="end" />
+ <module name="CRC_0" kind="CRC" version="1.0" enabled="1">
+  <parameter name="crc_width" value="32" />
+  <parameter name="polynomial" value="79764919" />
+  <parameter name="polynomial_inital" value="4294967295" />
+  <parameter name="reflected_input" value="1" />
+  <parameter name="reflected_output" value="1" />
+  <parameter name="xor_output" value="4294967295" />
+ </module>
  <module name="adc0" kind="altera_modular_adc" version="18.1" enabled="1">
   <parameter name="AUTO_DEVICE_SPEEDGRADE" value="8" />
   <parameter name="CLOCK_FREQ" value="10000000" />
@@ -476,7 +492,7 @@
   <parameter name="cpuArchRev" value="1" />
   <parameter name="cpuID" value="0" />
   <parameter name="cpuReset" value="false" />
-  <parameter name="customInstSlavesSystemInfo" value="&lt;info/&gt;" />
+  <parameter name="customInstSlavesSystemInfo"><![CDATA[<info><slave name="crc_0" baseAddress="0" addressSpan="8" clockCycleType="VARIABLE" /></info>]]></parameter>
   <parameter name="customInstSlavesSystemInfo_nios_a" value="&lt;info/&gt;" />
   <parameter name="customInstSlavesSystemInfo_nios_b" value="&lt;info/&gt;" />
   <parameter name="customInstSlavesSystemInfo_nios_c" value="&lt;info/&gt;" />
@@ -656,7 +672,7 @@
   <parameter name="READ_BURST_COUNT" value="8" />
   <parameter name="READ_BURST_MODE" value="Incrementing" />
   <parameter name="SECTOR_ACCESS_MODE">Read and write,Read and write,Read and write,Read and write,Read and write</parameter>
-  <parameter name="autoInitializationFileName">$${FILENAME}_onchip_flash</parameter>
+  <parameter name="autoInitializationFileName">nios_sys_onchip_flash</parameter>
   <parameter name="initFlashContent" value="false" />
   <parameter name="initializationFileName">altera_onchip_flash.hex</parameter>
   <parameter name="initializationFileNameForSim">altera_onchip_flash.dat</parameter>
@@ -668,7 +684,7 @@
    version="18.1"
    enabled="1">
   <parameter name="allowInSystemMemoryContentEditor" value="false" />
-  <parameter name="autoInitializationFileName">$${FILENAME}_onchip_ram</parameter>
+  <parameter name="autoInitializationFileName" value="nios_sys_onchip_ram" />
   <parameter name="blockType" value="AUTO" />
   <parameter name="copyInitFile" value="false" />
   <parameter name="dataWidth" value="32" />
@@ -1047,6 +1063,7 @@
  <connection kind="clock" version="18.1" start="pll.c0" end="pio_button.clk" />
  <connection kind="clock" version="18.1" start="pll.c0" end="onchip_flash.clk" />
  <connection kind="clock" version="18.1" start="pll.c0" end="onchip_ram.clk1" />
+ <connection kind="clock" version="18.1" start="pll.c0" end="CRC_0.clock" />
  <connection kind="clock" version="18.1" start="pll.c1" end="timer0.clk" />
  <connection kind="clock" version="18.1" start="pll.c2" end="adc0.clock" />
  <connection
@@ -1059,6 +1076,15 @@
  </connection>
  <connection kind="interrupt" version="18.1" start="nios.irq" end="pio_button.irq">
   <parameter name="irqNumber" value="1" />
+ </connection>
+ <connection
+   kind="nios_custom_instruction"
+   version="18.1"
+   start="nios.custom_instruction_master"
+   end="CRC_0.nios_custom_instruction_slave">
+  <parameter name="CIName" value="crc_0" />
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0" />
  </connection>
  <connection
    kind="reset"
@@ -1100,6 +1126,11 @@
    version="18.1"
    start="clk12mhz.clk_reset"
    end="timer0.reset" />
+ <connection
+   kind="reset"
+   version="18.1"
+   start="clk12mhz.clk_reset"
+   end="CRC_0.reset" />
  <connection
    kind="reset"
    version="18.1"
@@ -1150,6 +1181,11 @@
    version="18.1"
    start="nios.debug_reset_request"
    end="timer0.reset" />
+ <connection
+   kind="reset"
+   version="18.1"
+   start="nios.debug_reset_request"
+   end="CRC_0.reset" />
  <connection
    kind="reset"
    version="18.1"
