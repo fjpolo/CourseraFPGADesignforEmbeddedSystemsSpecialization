@@ -4,7 +4,7 @@
  * Machine generated for CPU 'nios' in SOPC Builder design 'nios_sys'
  * SOPC Builder design path: ../../nios_sys.sopcinfo
  *
- * Generated: Tue Mar 09 12:54:41 CET 2021
+ * Generated: Sat Mar 13 18:14:12 CET 2021
  */
 
 /*
@@ -60,6 +60,7 @@
 
 #include "altera_nios2_gen2_irq.h"
 #include "altera_avalon_jtag_uart.h"
+#include "altera_avalon_spi.h"
 #include "altera_avalon_sysid_qsys.h"
 #include "altera_avalon_timer.h"
 #include "altera_modular_adc.h"
@@ -71,6 +72,7 @@
 
 ALTERA_NIOS2_GEN2_IRQ_INSTANCE ( NIOS, nios);
 ALTERA_AVALON_JTAG_UART_INSTANCE ( JTAG_UART, jtag_uart);
+ALTERA_AVALON_SPI_INSTANCE ( SPI_LIS3DH, spi_lis3dh);
 ALTERA_AVALON_SYSID_QSYS_INSTANCE ( SYS_ID, sys_id);
 ALTERA_AVALON_TIMER_INSTANCE ( TIMER0, timer0);
 ALTERA_MODULAR_ADC_INSTANCE ( ADC0, adc0);
@@ -99,6 +101,7 @@ void alt_sys_init( void )
 {
     ALTERA_AVALON_TIMER_INIT ( TIMER0, timer0);
     ALTERA_AVALON_JTAG_UART_INIT ( JTAG_UART, jtag_uart);
+    ALTERA_AVALON_SPI_INIT ( SPI_LIS3DH, spi_lis3dh);
     ALTERA_AVALON_SYSID_QSYS_INIT ( SYS_ID, sys_id);
     ALTERA_MODULAR_ADC_INIT ( ADC0, adc0);
     ALTERA_ONCHIP_FLASH_INIT ( ONCHIP_FLASH, onchip_flash);

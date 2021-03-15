@@ -1,6 +1,6 @@
-10:41:46 **** Clean-only build of configuration Nios II for project HelloWorld_bsp ****
-make clean 
-[BSP clean complete]
+18:21:19 **** Incremental Build of configuration Nios II for project HelloWorld_bsp ****
+make all 
+[BSP build complete]
 
-10:41:52 Build Finished (took 5s.725ms)
+18:21:20 Build Finished (took 1s.157ms)
 

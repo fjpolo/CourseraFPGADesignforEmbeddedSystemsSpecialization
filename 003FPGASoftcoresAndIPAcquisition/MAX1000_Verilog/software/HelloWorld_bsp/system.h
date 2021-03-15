@@ -4,7 +4,7 @@
  * Machine generated for CPU 'nios' in SOPC Builder design 'nios_sys'
  * SOPC Builder design path: ../../nios_sys.sopcinfo
  *
- * Generated: Thu Mar 11 10:41:29 CET 2021
+ * Generated: Sat Mar 13 18:14:12 CET 2021
  */
 
 /*
@@ -129,16 +129,6 @@
 
 
 /*
- * Custom instruction macros
- *
- */
-
-#define ALT_CI_CRC_0(n,A,B) __builtin_custom_inii(ALT_CI_CRC_0_N+(n&ALT_CI_CRC_0_N_MASK),(A),(B))
-#define ALT_CI_CRC_0_N 0x0
-#define ALT_CI_CRC_0_N_MASK ((1<<3)-1)
-
-
-/*
  * Define for each module class mastered by the CPU
  *
  */
@@ -146,13 +136,13 @@
 #define __ALTERA_AVALON_JTAG_UART
 #define __ALTERA_AVALON_ONCHIP_MEMORY2
 #define __ALTERA_AVALON_PIO
+#define __ALTERA_AVALON_SPI
 #define __ALTERA_AVALON_SYSID_QSYS
 #define __ALTERA_AVALON_TIMER
 #define __ALTERA_MODULAR_ADC
 #define __ALTERA_NIOS2_GEN2
 #define __ALTERA_ONCHIP_FLASH
 #define __ALTPLL
-#define __CRC
 
 
 /*
@@ -264,8 +254,8 @@
 #define ADC0_SAMPLE_STORE_CSR_CSD_SLOT_8 "CH0"
 #define ADC0_SAMPLE_STORE_CSR_CSD_SLOT_9 "CH0"
 #define ADC0_SAMPLE_STORE_CSR_DUAL_ADC_MODE 0
-#define ADC0_SAMPLE_STORE_CSR_IRQ -1
-#define ADC0_SAMPLE_STORE_CSR_IRQ_INTERRUPT_CONTROLLER_ID -1
+#define ADC0_SAMPLE_STORE_CSR_IRQ 3
+#define ADC0_SAMPLE_STORE_CSR_IRQ_INTERRUPT_CONTROLLER_ID 0
 #define ADC0_SAMPLE_STORE_CSR_NAME "/dev/adc0_sample_store_csr"
 #define ADC0_SAMPLE_STORE_CSR_PRESCALER_CH16 0
 #define ADC0_SAMPLE_STORE_CSR_PRESCALER_CH8 0
@@ -403,7 +393,7 @@
  */
 
 #define ALT_INCLUDE_INSTRUCTION_RELATED_EXCEPTION_API
-#define ALT_MAX_FD 4
+#define ALT_MAX_FD 32
 #define ALT_SYS_CLK none
 #define ALT_TIMESTAMP_CLK none
 
@@ -572,6 +562,33 @@
 
 
 /*
+ * pio_lis3dh configuration
+ *
+ */
+
+#define ALT_MODULE_CLASS_pio_lis3dh altera_avalon_pio
+#define PIO_LIS3DH_BASE 0x70
+#define PIO_LIS3DH_BIT_CLEARING_EDGE_REGISTER 0
+#define PIO_LIS3DH_BIT_MODIFYING_OUTPUT_REGISTER 0
+#define PIO_LIS3DH_CAPTURE 1
+#define PIO_LIS3DH_DATA_WIDTH 2
+#define PIO_LIS3DH_DO_TEST_BENCH_WIRING 0
+#define PIO_LIS3DH_DRIVEN_SIM_VALUE 0
+#define PIO_LIS3DH_EDGE_TYPE "RISING"
+#define PIO_LIS3DH_FREQ 80000000
+#define PIO_LIS3DH_HAS_IN 1
+#define PIO_LIS3DH_HAS_OUT 0
+#define PIO_LIS3DH_HAS_TRI 0
+#define PIO_LIS3DH_IRQ 5
+#define PIO_LIS3DH_IRQ_INTERRUPT_CONTROLLER_ID 0
+#define PIO_LIS3DH_IRQ_TYPE "EDGE"
+#define PIO_LIS3DH_NAME "/dev/pio_lis3dh"
+#define PIO_LIS3DH_RESET_VALUE 0
+#define PIO_LIS3DH_SPAN 16
+#define PIO_LIS3DH_TYPE "altera_avalon_pio"
+
+
+/*
  * pll configuration
  *
  */
@@ -586,6 +603,37 @@
 
 
 /*
+ * spi_lis3dh configuration
+ *
+ */
+
+#define ALT_MODULE_CLASS_spi_lis3dh altera_avalon_spi
+#define SPI_LIS3DH_BASE 0x100
+#define SPI_LIS3DH_CLOCKMULT 1
+#define SPI_LIS3DH_CLOCKPHASE 0
+#define SPI_LIS3DH_CLOCKPOLARITY 0
+#define SPI_LIS3DH_CLOCKUNITS "Hz"
+#define SPI_LIS3DH_DATABITS 8
+#define SPI_LIS3DH_DATAWIDTH 16
+#define SPI_LIS3DH_DELAYMULT "1.0E-9"
+#define SPI_LIS3DH_DELAYUNITS "ns"
+#define SPI_LIS3DH_EXTRADELAY 0
+#define SPI_LIS3DH_INSERT_SYNC 0
+#define SPI_LIS3DH_IRQ 4
+#define SPI_LIS3DH_IRQ_INTERRUPT_CONTROLLER_ID 0
+#define SPI_LIS3DH_ISMASTER 1
+#define SPI_LIS3DH_LSBFIRST 0
+#define SPI_LIS3DH_NAME "/dev/spi_lis3dh"
+#define SPI_LIS3DH_NUMSLAVES 1
+#define SPI_LIS3DH_PREFIX "spi_"
+#define SPI_LIS3DH_SPAN 32
+#define SPI_LIS3DH_SYNC_REG_DEPTH 2
+#define SPI_LIS3DH_TARGETCLOCK 1000000u
+#define SPI_LIS3DH_TARGETSSDELAY "0.0"
+#define SPI_LIS3DH_TYPE "altera_avalon_spi"
+
+
+/*
  * sys_id configuration
  *
  */
@@ -597,7 +645,7 @@
 #define SYS_ID_IRQ_INTERRUPT_CONTROLLER_ID -1
 #define SYS_ID_NAME "/dev/sys_id"
 #define SYS_ID_SPAN 8
-#define SYS_ID_TIMESTAMP 1615453998
+#define SYS_ID_TIMESTAMP 1615654510
 #define SYS_ID_TYPE "altera_avalon_sysid_qsys"
 
 
@@ -612,8 +660,8 @@
 #define TIMER0_COUNTER_SIZE 32
 #define TIMER0_FIXED_PERIOD 0
 #define TIMER0_FREQ 40000000
-#define TIMER0_IRQ -1
-#define TIMER0_IRQ_INTERRUPT_CONTROLLER_ID -1
+#define TIMER0_IRQ 2
+#define TIMER0_IRQ_INTERRUPT_CONTROLLER_ID 0
 #define TIMER0_LOAD_VALUE 39999
 #define TIMER0_MULT 0.001
 #define TIMER0_NAME "/dev/timer0"

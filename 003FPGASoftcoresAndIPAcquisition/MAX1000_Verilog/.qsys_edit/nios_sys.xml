@@ -1282,10 +1282,6 @@
 										<leaf id="1389812800464"/>
 									</backup-path>
 								</property>
-								<property factory="StackDockPropertyFactory">
-									<index>2</index>
-									<placeholder>dock.single.Parameters</placeholder>
-								</property>
 							</location>
 							<layout>
 								<layout factory="predefined" placeholder="dock.single.Parameters">

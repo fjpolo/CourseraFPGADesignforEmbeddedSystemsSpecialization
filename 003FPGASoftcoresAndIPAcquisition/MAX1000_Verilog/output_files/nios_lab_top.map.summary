@@ -1,13 +1,13 @@
-Analysis & Synthesis Status : Successful - Thu Mar 11 10:59:53 2021
+Analysis & Synthesis Status : Successful - Sat Mar 13 18:07:34 2021
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : nios_lab_top
 Top-level Entity Name : nios_lab_top
 Family : MAX 10
-Total logic elements : 3,647
-    Total combinational functions : 3,138
-    Dedicated logic registers : 1,906
-Total registers : 1906
-Total pins : 11
+Total logic elements : 3,524
+    Total combinational functions : 2,912
+    Dedicated logic registers : 2,020
+Total registers : 2020
+Total pins : 17
 Total virtual pins : 0
 Total memory bits : 143,360
 Embedded Multiplier 9-bit elements : 0

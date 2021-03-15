@@ -1,5 +1,5 @@
 Flow report for nios_lab_top
-Thu Mar 11 10:59:54 2021
+Sat Mar 13 18:07:34 2021
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,18 +40,18 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Thu Mar 11 10:59:53 2021       ;
+; Flow Status                        ; Successful - Sat Mar 13 18:07:34 2021       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; nios_lab_top                                ;
 ; Top-level Entity Name              ; nios_lab_top                                ;
 ; Family                             ; MAX 10                                      ;
 ; Device                             ; 10M08SAU169C8G                              ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 3,647                                       ;
-;     Total combinational functions  ; 3,138                                       ;
-;     Dedicated logic registers      ; 1,906                                       ;
-; Total registers                    ; 1906                                        ;
-; Total pins                         ; 11                                          ;
+; Total logic elements               ; 3,524                                       ;
+;     Total combinational functions  ; 2,912                                       ;
+;     Dedicated logic registers      ; 2,020                                       ;
+; Total registers                    ; 2020                                        ;
+; Total pins                         ; 17                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 143,360                                     ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -66,7 +66,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 03/11/2021 10:54:59 ;
+; Start date & time ; 03/13/2021 18:06:31 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; nios_lab_top        ;
 +-------------------+---------------------+
@@ -77,7 +77,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------+------------------------------------------------------------+---------------+---------------------+------------+
 ; Assignment Name                     ; Value                                                      ; Default Value ; Entity Name         ; Section Id ;
 +-------------------------------------+------------------------------------------------------------+---------------+---------------------+------------+
-; COMPILER_SIGNATURE_ID               ; 93186101145607.161545649516880                             ; --            ; --                  ; --         ;
+; COMPILER_SIGNATURE_ID               ; 184849020561464.161565518914312                            ; --            ; --                  ; --         ;
 ; FLOW_ENABLE_POWER_ANALYZER          ; On                                                         ; Off           ; --                  ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                                         ; --            ; --                  ; --         ;
 ; MESSAGE_DISABLE                     ; 332060                                                     ; --            ; altera_onchip_flash ; --         ;
@@ -98,7 +98,7 @@ refer to the applicable agreement for further details.
 ; PROJECT_OUTPUT_DIRECTORY            ; output_files                                               ; --            ; --                  ; --         ;
 ; SLD_FILE                            ; nios_sys/synthesis/nios_sys.regmap                         ; --            ; --                  ; --         ;
 ; SLD_FILE                            ; nios_sys/synthesis/nios_sys.debuginfo                      ; --            ; --                  ; --         ;
-; SLD_INFO                            ; QSYS_NAME nios_sys HAS_SOPCINFO 1 GENERATION_ID 1615455975 ; --            ; nios_sys            ; --         ;
+; SLD_INFO                            ; QSYS_NAME nios_sys HAS_SOPCINFO 1 GENERATION_ID 1615654510 ; --            ; nios_sys            ; --         ;
 ; SOPCINFO_FILE                       ; nios_sys/synthesis/../../nios_sys.sopcinfo                 ; --            ; --                  ; --         ;
 ; SYNTHESIS_ONLY_QIP                  ; On                                                         ; --            ; --                  ; --         ;
 ; VCCA_USER_VOLTAGE                   ; 3.3V                                                       ; --            ; --                  ; --         ;
@@ -110,8 +110,8 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:04:43     ; 1.0                     ; 4955 MB             ; 00:03:08                           ;
-; Total                ; 00:04:43     ; --                      ; --                  ; 00:03:08                           ;
+; Analysis & Synthesis ; 00:01:01     ; 1.0                     ; 4962 MB             ; 00:01:42                           ;
+; Total                ; 00:01:01     ; --                      ; --                  ; 00:01:42                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -120,7 +120,7 @@ refer to the applicable agreement for further details.
 +----------------------+------------------+------------+------------+----------------+
 ; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +----------------------+------------------+------------+------------+----------------+
-; Analysis & Synthesis ; HY-RD-17-008LX   ; Windows 10 ; 10.0       ; x86_64         ;
+; Analysis & Synthesis ; LAPTOP-L0V8KIIC  ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 

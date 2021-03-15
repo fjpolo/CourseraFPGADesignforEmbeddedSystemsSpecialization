@@ -9,14 +9,6 @@
    categories="System" />
  <parameter name="bonusData"><![CDATA[bonusData 
 {
-   element CRC_0
-   {
-      datum _sortIndex
-      {
-         value = "11";
-         type = "int";
-      }
-   }
    element adc0
    {
       datum _sortIndex
@@ -169,6 +161,22 @@
          type = "String";
       }
    }
+   element pio_lis3dh
+   {
+      datum _sortIndex
+      {
+         value = "12";
+         type = "int";
+      }
+   }
+   element pio_lis3dh.s1
+   {
+      datum baseAddress
+      {
+         value = "112";
+         type = "String";
+      }
+   }
    element pll
    {
       datum _sortIndex
@@ -182,6 +190,22 @@
       datum baseAddress
       {
          value = "1086064";
+         type = "String";
+      }
+   }
+   element spi_lis3dh
+   {
+      datum _sortIndex
+      {
+         value = "11";
+         type = "int";
+      }
+   }
+   element spi_lis3dh.spi_control_port
+   {
+      datum baseAddress
+      {
+         value = "256";
          type = "String";
       }
    }
@@ -250,19 +274,21 @@
    type="conduit"
    dir="end" />
  <interface
+   name="pio_lis3dh"
+   internal="pio_lis3dh.external_connection"
+   type="conduit"
+   dir="end" />
+ <interface
    name="pll_locked_conduit"
    internal="pll.locked_conduit"
    type="conduit"
    dir="end" />
  <interface name="reset" internal="clk12mhz.clk_in_reset" type="reset" dir="end" />
- <module name="CRC_0" kind="CRC" version="1.0" enabled="1">
-  <parameter name="crc_width" value="32" />
-  <parameter name="polynomial" value="79764919" />
-  <parameter name="polynomial_inital" value="4294967295" />
-  <parameter name="reflected_input" value="1" />
-  <parameter name="reflected_output" value="1" />
-  <parameter name="xor_output" value="4294967295" />
- </module>
+ <interface
+   name="spi_lis3dh"
+   internal="spi_lis3dh.external"
+   type="conduit"
+   dir="end" />
  <module name="adc0" kind="altera_modular_adc" version="18.1" enabled="1">
   <parameter name="AUTO_DEVICE_SPEEDGRADE" value="8" />
   <parameter name="CLOCK_FREQ" value="10000000" />
@@ -492,14 +518,14 @@
   <parameter name="cpuArchRev" value="1" />
   <parameter name="cpuID" value="0" />
   <parameter name="cpuReset" value="false" />
-  <parameter name="customInstSlavesSystemInfo"><![CDATA[<info><slave name="crc_0" baseAddress="0" addressSpan="8" clockCycleType="VARIABLE" /></info>]]></parameter>
+  <parameter name="customInstSlavesSystemInfo" value="&lt;info/&gt;" />
   <parameter name="customInstSlavesSystemInfo_nios_a" value="&lt;info/&gt;" />
   <parameter name="customInstSlavesSystemInfo_nios_b" value="&lt;info/&gt;" />
   <parameter name="customInstSlavesSystemInfo_nios_c" value="&lt;info/&gt;" />
   <parameter name="dataAddrWidth" value="23" />
   <parameter name="dataMasterHighPerformanceAddrWidth" value="1" />
   <parameter name="dataMasterHighPerformanceMapParam" value="" />
-  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='adc0.sequencer_csr' start='0x0' end='0x8' type='altera_modular_adc.sequencer_csr' /><slave name='timer0.s1' start='0x20' end='0x40' type='altera_avalon_timer.s1' /><slave name='pio_button.s1' start='0x40' end='0x50' type='altera_avalon_pio.s1' /><slave name='pio_leds.s1' start='0x60' end='0x70' type='altera_avalon_pio.s1' /><slave name='jtag_uart.avalon_jtag_slave' start='0x90' end='0x98' type='altera_avalon_jtag_uart.avalon_jtag_slave' /><slave name='sys_id.control_slave' start='0xA0' end='0xA8' type='altera_avalon_sysid_qsys.control_slave' /><slave name='adc0.sample_store_csr' start='0x200' end='0x400' type='altera_modular_adc.sample_store_csr' /><slave name='nios.debug_mem_slave' start='0x800' end='0x1000' type='altera_nios2_gen2.debug_mem_slave' /><slave name='onchip_ram.s1' start='0x4000' end='0x8000' type='altera_avalon_onchip_memory2.s1' /><slave name='pll.pll_slave' start='0x109270' end='0x109280' type='altpll.pll_slave' /><slave name='onchip_flash.data' start='0x200000' end='0x24E000' type='altera_onchip_flash.data' /><slave name='onchip_flash.csr' start='0x400000' end='0x400008' type='altera_onchip_flash.csr' /></address-map>]]></parameter>
+  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='adc0.sequencer_csr' start='0x0' end='0x8' type='altera_modular_adc.sequencer_csr' /><slave name='timer0.s1' start='0x20' end='0x40' type='altera_avalon_timer.s1' /><slave name='pio_button.s1' start='0x40' end='0x50' type='altera_avalon_pio.s1' /><slave name='pio_leds.s1' start='0x60' end='0x70' type='altera_avalon_pio.s1' /><slave name='pio_lis3dh.s1' start='0x70' end='0x80' type='altera_avalon_pio.s1' /><slave name='jtag_uart.avalon_jtag_slave' start='0x90' end='0x98' type='altera_avalon_jtag_uart.avalon_jtag_slave' /><slave name='sys_id.control_slave' start='0xA0' end='0xA8' type='altera_avalon_sysid_qsys.control_slave' /><slave name='spi_lis3dh.spi_control_port' start='0x100' end='0x120' type='altera_avalon_spi.spi_control_port' /><slave name='adc0.sample_store_csr' start='0x200' end='0x400' type='altera_modular_adc.sample_store_csr' /><slave name='nios.debug_mem_slave' start='0x800' end='0x1000' type='altera_nios2_gen2.debug_mem_slave' /><slave name='onchip_ram.s1' start='0x4000' end='0x8000' type='altera_avalon_onchip_memory2.s1' /><slave name='pll.pll_slave' start='0x109270' end='0x109280' type='altpll.pll_slave' /><slave name='onchip_flash.data' start='0x200000' end='0x24E000' type='altera_onchip_flash.data' /><slave name='onchip_flash.csr' start='0x400000' end='0x400008' type='altera_onchip_flash.csr' /></address-map>]]></parameter>
   <parameter name="data_master_high_performance_paddr_base" value="0" />
   <parameter name="data_master_high_performance_paddr_size" value="0" />
   <parameter name="data_master_paddr_base" value="0" />
@@ -545,7 +571,7 @@
   <parameter name="instruction_master_high_performance_paddr_size" value="0" />
   <parameter name="instruction_master_paddr_base" value="0" />
   <parameter name="instruction_master_paddr_size" value="0" />
-  <parameter name="internalIrqMaskSystemInfo" value="3" />
+  <parameter name="internalIrqMaskSystemInfo" value="63" />
   <parameter name="io_regionbase" value="0" />
   <parameter name="io_regionsize" value="0" />
   <parameter name="master_addr_map" value="false" />
@@ -672,7 +698,7 @@
   <parameter name="READ_BURST_COUNT" value="8" />
   <parameter name="READ_BURST_MODE" value="Incrementing" />
   <parameter name="SECTOR_ACCESS_MODE">Read and write,Read and write,Read and write,Read and write,Read and write</parameter>
-  <parameter name="autoInitializationFileName">nios_sys_onchip_flash</parameter>
+  <parameter name="autoInitializationFileName">$${FILENAME}_onchip_flash</parameter>
   <parameter name="initFlashContent" value="false" />
   <parameter name="initializationFileName">altera_onchip_flash.hex</parameter>
   <parameter name="initializationFileNameForSim">altera_onchip_flash.dat</parameter>
@@ -684,7 +710,7 @@
    version="18.1"
    enabled="1">
   <parameter name="allowInSystemMemoryContentEditor" value="false" />
-  <parameter name="autoInitializationFileName" value="nios_sys_onchip_ram" />
+  <parameter name="autoInitializationFileName">$${FILENAME}_onchip_ram</parameter>
   <parameter name="blockType" value="AUTO" />
   <parameter name="copyInitFile" value="false" />
   <parameter name="dataWidth" value="32" />
@@ -737,6 +763,20 @@
   <parameter name="simDoTestBenchWiring" value="false" />
   <parameter name="simDrivenValue" value="0" />
   <parameter name="width" value="8" />
+ </module>
+ <module name="pio_lis3dh" kind="altera_avalon_pio" version="18.1" enabled="1">
+  <parameter name="bitClearingEdgeCapReg" value="false" />
+  <parameter name="bitModifyingOutReg" value="false" />
+  <parameter name="captureEdge" value="true" />
+  <parameter name="clockRate" value="80000000" />
+  <parameter name="direction" value="Input" />
+  <parameter name="edgeType" value="RISING" />
+  <parameter name="generateIRQ" value="true" />
+  <parameter name="irqType" value="EDGE" />
+  <parameter name="resetValue" value="0" />
+  <parameter name="simDoTestBenchWiring" value="false" />
+  <parameter name="simDrivenValue" value="0" />
+  <parameter name="width" value="2" />
  </module>
  <module name="pll" kind="altpll" version="18.1" enabled="1">
   <parameter name="AUTO_DEVICE_FAMILY" value="MAX 10" />
@@ -905,6 +945,22 @@
   <parameter name="WIDTH_CLOCK" value="5" />
   <parameter name="WIDTH_PHASECOUNTERSELECT" value="" />
  </module>
+ <module name="spi_lis3dh" kind="altera_avalon_spi" version="18.1" enabled="1">
+  <parameter name="avalonSpec" value="2.0" />
+  <parameter name="clockPhase" value="0" />
+  <parameter name="clockPolarity" value="0" />
+  <parameter name="dataWidth" value="8" />
+  <parameter name="disableAvalonFlowControl" value="false" />
+  <parameter name="inputClockRate" value="80000000" />
+  <parameter name="insertDelayBetweenSlaveSelectAndSClk" value="false" />
+  <parameter name="insertSync" value="false" />
+  <parameter name="lsbOrderedFirst" value="false" />
+  <parameter name="masterSPI" value="true" />
+  <parameter name="numberOfSlaves" value="1" />
+  <parameter name="syncRegDepth" value="2" />
+  <parameter name="targetClockRate" value="1000000" />
+  <parameter name="targetSlaveSelectToSClkDelay" value="0.0" />
+ </module>
  <module
    name="sys_id"
    kind="altera_avalon_sysid_qsys"
@@ -1014,6 +1070,15 @@
    kind="avalon"
    version="18.1"
    start="nios.data_master"
+   end="pio_lis3dh.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0070" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="18.1"
+   start="nios.data_master"
    end="adc0.sample_store_csr">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x0200" />
@@ -1026,6 +1091,15 @@
    end="adc0.sequencer_csr">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x0000" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="18.1"
+   start="nios.data_master"
+   end="spi_lis3dh.spi_control_port">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0100" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1062,8 +1136,9 @@
  <connection kind="clock" version="18.1" start="pll.c0" end="sys_id.clk" />
  <connection kind="clock" version="18.1" start="pll.c0" end="pio_button.clk" />
  <connection kind="clock" version="18.1" start="pll.c0" end="onchip_flash.clk" />
+ <connection kind="clock" version="18.1" start="pll.c0" end="spi_lis3dh.clk" />
+ <connection kind="clock" version="18.1" start="pll.c0" end="pio_lis3dh.clk" />
  <connection kind="clock" version="18.1" start="pll.c0" end="onchip_ram.clk1" />
- <connection kind="clock" version="18.1" start="pll.c0" end="CRC_0.clock" />
  <connection kind="clock" version="18.1" start="pll.c1" end="timer0.clk" />
  <connection kind="clock" version="18.1" start="pll.c2" end="adc0.clock" />
  <connection
@@ -1077,14 +1152,21 @@
  <connection kind="interrupt" version="18.1" start="nios.irq" end="pio_button.irq">
   <parameter name="irqNumber" value="1" />
  </connection>
+ <connection kind="interrupt" version="18.1" start="nios.irq" end="timer0.irq">
+  <parameter name="irqNumber" value="2" />
+ </connection>
+ <connection kind="interrupt" version="18.1" start="nios.irq" end="spi_lis3dh.irq">
+  <parameter name="irqNumber" value="4" />
+ </connection>
+ <connection kind="interrupt" version="18.1" start="nios.irq" end="pio_lis3dh.irq">
+  <parameter name="irqNumber" value="5" />
+ </connection>
  <connection
-   kind="nios_custom_instruction"
+   kind="interrupt"
    version="18.1"
-   start="nios.custom_instruction_master"
-   end="CRC_0.nios_custom_instruction_slave">
-  <parameter name="CIName" value="crc_0" />
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0" />
+   start="nios.irq"
+   end="adc0.sample_store_irq">
+  <parameter name="irqNumber" value="3" />
  </connection>
  <connection
    kind="reset"
@@ -1130,7 +1212,12 @@
    kind="reset"
    version="18.1"
    start="clk12mhz.clk_reset"
-   end="CRC_0.reset" />
+   end="spi_lis3dh.reset" />
+ <connection
+   kind="reset"
+   version="18.1"
+   start="clk12mhz.clk_reset"
+   end="pio_lis3dh.reset" />
  <connection
    kind="reset"
    version="18.1"
@@ -1185,7 +1272,12 @@
    kind="reset"
    version="18.1"
    start="nios.debug_reset_request"
-   end="CRC_0.reset" />
+   end="spi_lis3dh.reset" />
+ <connection
+   kind="reset"
+   version="18.1"
+   start="nios.debug_reset_request"
+   end="pio_lis3dh.reset" />
  <connection
    kind="reset"
    version="18.1"
