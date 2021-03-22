@@ -110,6 +110,7 @@ wire             D_op_cmpltu;
 wire             D_op_cmpltui;
 wire             D_op_cmpne;
 wire             D_op_cmpnei;
+wire             D_op_crc_0;
 wire             D_op_crst;
 wire             D_op_custom;
 wire             D_op_div;
@@ -370,6 +371,7 @@ wire             test_has_ended;
   assign D_op_intr = (D_iw_opx == 61) & D_is_opx_inst;
   assign D_op_crst = (D_iw_opx == 62) & D_is_opx_inst;
   assign D_op_opx_rsv63 = (D_iw_opx == 63) & D_is_opx_inst;
+  assign D_op_crc_0 = D_op_custom & 1'b1;
   assign D_is_opx_inst = D_iw_op == 58;
   assign test_has_ended = 1'b0;
 

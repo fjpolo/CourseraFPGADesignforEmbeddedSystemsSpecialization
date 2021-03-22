@@ -32,7 +32,24 @@ module nios_sys_nios (
 		output wire        debug_mem_slave_waitrequest,         //                          .waitrequest
 		input  wire        debug_mem_slave_write,               //                          .write
 		input  wire [31:0] debug_mem_slave_writedata,           //                          .writedata
-		output wire        dummy_ci_port                        // custom_instruction_master.readra
+		input  wire        E_ci_multi_done,                     // custom_instruction_master.done
+		output wire        E_ci_multi_clk_en,                   //                          .clk_en
+		output wire        E_ci_multi_start,                    //                          .start
+		input  wire [31:0] E_ci_result,                         //                          .result
+		output wire [4:0]  D_ci_a,                              //                          .a
+		output wire [4:0]  D_ci_b,                              //                          .b
+		output wire [4:0]  D_ci_c,                              //                          .c
+		output wire [7:0]  D_ci_n,                              //                          .n
+		output wire        D_ci_readra,                         //                          .readra
+		output wire        D_ci_readrb,                         //                          .readrb
+		output wire        D_ci_writerc,                        //                          .writerc
+		output wire [31:0] E_ci_dataa,                          //                          .dataa
+		output wire [31:0] E_ci_datab,                          //                          .datab
+		output wire        E_ci_multi_clock,                    //                          .clk
+		output wire        E_ci_multi_reset,                    //                          .reset
+		output wire        E_ci_multi_reset_req,                //                          .reset_req
+		output wire        W_ci_estatus,                        //                          .estatus
+		output wire [31:0] W_ci_ipending                        //                          .ipending
 	);
 
 	nios_sys_nios_cpu cpu (
@@ -61,7 +78,24 @@ module nios_sys_nios (
 		.debug_mem_slave_waitrequest         (debug_mem_slave_waitrequest),         //                          .waitrequest
 		.debug_mem_slave_write               (debug_mem_slave_write),               //                          .write
 		.debug_mem_slave_writedata           (debug_mem_slave_writedata),           //                          .writedata
-		.dummy_ci_port                       (dummy_ci_port)                        // custom_instruction_master.readra
+		.E_ci_multi_done                     (E_ci_multi_done),                     // custom_instruction_master.done
+		.E_ci_multi_clk_en                   (E_ci_multi_clk_en),                   //                          .clk_en
+		.E_ci_multi_start                    (E_ci_multi_start),                    //                          .start
+		.E_ci_result                         (E_ci_result),                         //                          .result
+		.D_ci_a                              (D_ci_a),                              //                          .a
+		.D_ci_b                              (D_ci_b),                              //                          .b
+		.D_ci_c                              (D_ci_c),                              //                          .c
+		.D_ci_n                              (D_ci_n),                              //                          .n
+		.D_ci_readra                         (D_ci_readra),                         //                          .readra
+		.D_ci_readrb                         (D_ci_readrb),                         //                          .readrb
+		.D_ci_writerc                        (D_ci_writerc),                        //                          .writerc
+		.E_ci_dataa                          (E_ci_dataa),                          //                          .dataa
+		.E_ci_datab                          (E_ci_datab),                          //                          .datab
+		.E_ci_multi_clock                    (E_ci_multi_clock),                    //                          .clk
+		.E_ci_multi_reset                    (E_ci_multi_reset),                    //                          .reset
+		.E_ci_multi_reset_req                (E_ci_multi_reset_req),                //                          .reset_req
+		.W_ci_estatus                        (W_ci_estatus),                        //                          .estatus
+		.W_ci_ipending                       (W_ci_ipending)                        //                          .ipending
 	);
 
 endmodule

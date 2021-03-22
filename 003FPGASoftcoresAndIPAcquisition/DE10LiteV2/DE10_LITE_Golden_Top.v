@@ -133,17 +133,34 @@ module DE10_LITE_Golden_Top(
 //=======================================================
 //  Structural coding
 //=======================================================
-	 	core u0 (
-      .clk_clk                   		(MAX10_CLK1_50),                   					// clk.clk
-		.reset_reset_n             		(ARDUINO_RESET_N),             						// reset.reset_n
-		.clk_0_clk                 		(ADC_CLK_10),                 						// clk_0.clk
-		.reset_0_reset_n           		(ARDUINO_RESET_N),           							// reset_0.reset_n
-		.pio_0_external_export     		(LEDR),      												// pio_0_external.export
-		.slide_pio_external_export 		(SW), 														// slide_pio_external.export
-		.altpll_0_c1_clk						( ),															// External RAM
-		.altpll_1_areset_conduit_export  (ARDUINO_IO[2]), 											// altpll_1_areset_conduit.export
-		.altpll_1_locked_conduit_export 	(ARDUINO_IO[3])  											// altpll_1_locked_conduit.export
-	);
-
+//	 	core u0 (
+//    .clk_clk                   		(MAX10_CLK1_50),                   					// clk.clk
+//		.reset_reset_n             		(ARDUINO_RESET_N),             						// reset.reset_n
+//		.clk_0_clk                 		(ADC_CLK_10),                 						// clk_0.clk
+//		.reset_0_reset_n           		(ARDUINO_RESET_N),           							// reset_0.reset_n
+//		.pio_0_external_export     		(LEDR),      												// pio_0_external.export
+//		.slide_pio_external_export 		(SW), 														// slide_pio_external.export
+//		.altpll_0_c1_clk						( ),															// External RAM
+//		.altpll_1_areset_conduit_export  (ARDUINO_IO[2]), 											// altpll_1_areset_conduit.export
+//		.altpll_1_locked_conduit_export 	(ARDUINO_IO[3])  											// altpll_1_locked_conduit.export
+//	);
+//	core u0 (
+//			.altpll_0_c1_clk                ( ),                //             altpll_0_c1.clk
+//			.altpll_1_areset_conduit_export (ARDUINO_IO[2]), // altpll_1_areset_conduit.export
+//			.altpll_1_locked_conduit_export (ARDUINO_IO[3]), // altpll_1_locked_conduit.export
+//			.clk_clk                        (MAX10_CLK1_50),                        //                     clk.clk
+//			.clk_0_clk                      (ADC_CLK_10),                      //                   clk_0.clk
+//			.pio_0_external_export          (LEDR),          //          pio_0_external.export
+//			.reset_reset_n                  (ARDUINO_RESET_N),                  //                   reset.reset_n
+//			.reset_0_reset_n                (ARDUINO_RESET_N),                //                 reset_0.reset_n
+//			.slide_pio_external_export      (SW)       //      slide_pio_external.export
+//		);
+	core u0 (
+			  .altpll_0_c1_clk           ( ),           //        altpll_0_c1.clk
+			  .clk_clk                   (MAX10_CLK1_50),                   //                clk.clk
+			  .pio_0_external_export     (LEDR),     //     pio_0_external.export
+			  .reset_reset_n             (ARDUINO_RESET_N),             //              reset.reset_n
+			  .slide_pio_external_export (SW)  // slide_pio_external.export
+		 );
 
 endmodule

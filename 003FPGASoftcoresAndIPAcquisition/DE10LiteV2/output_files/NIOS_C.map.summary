@@ -1,16 +1,16 @@
-Analysis & Elaboration Status : Successful - Tue Mar 09 12:09:36 2021
+Analysis & Synthesis Status : Successful - Tue Mar 09 16:29:19 2021
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : NIOS_C
 Top-level Entity Name : DE10_LITE_Golden_Top
 Family : MAX 10
-Total logic elements : N/A until Partition Merge
-    Total combinational functions : N/A until Partition Merge
-    Dedicated logic registers : N/A until Partition Merge
-Total registers : N/A until Partition Merge
-Total pins : N/A until Partition Merge
-Total virtual pins : N/A until Partition Merge
-Total memory bits : N/A until Partition Merge
-Embedded Multiplier 9-bit elements : N/A until Partition Merge
-Total PLLs : N/A until Partition Merge
-UFM blocks : N/A until Partition Merge
-ADC blocks : N/A until Partition Merge
+Total logic elements : 6,549
+    Total combinational functions : 5,008
+    Dedicated logic registers : 3,874
+Total registers : 3874
+Total pins : 185
+Total virtual pins : 0
+Total memory bits : 179,520
+Embedded Multiplier 9-bit elements : 6
+Total PLLs : 1
+UFM blocks : 1
+ADC blocks : 1

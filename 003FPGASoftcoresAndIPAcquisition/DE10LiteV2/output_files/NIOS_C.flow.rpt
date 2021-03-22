@@ -1,5 +1,5 @@
 Flow report for NIOS_C
-Tue Mar 09 12:09:36 2021
+Tue Mar 09 16:29:19 2021
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,24 +40,24 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Tue Mar 09 12:09:36 2021       ;
+; Flow Status                        ; Successful - Tue Mar 09 16:29:19 2021       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; NIOS_C                                      ;
 ; Top-level Entity Name              ; DE10_LITE_Golden_Top                        ;
 ; Family                             ; MAX 10                                      ;
 ; Device                             ; 10M50DAF484C6GES                            ;
 ; Timing Models                      ; Preliminary                                 ;
-; Total logic elements               ; N/A until Partition Merge                   ;
-;     Total combinational functions  ; N/A until Partition Merge                   ;
-;     Dedicated logic registers      ; N/A until Partition Merge                   ;
-; Total registers                    ; N/A until Partition Merge                   ;
-; Total pins                         ; N/A until Partition Merge                   ;
-; Total virtual pins                 ; N/A until Partition Merge                   ;
-; Total memory bits                  ; N/A until Partition Merge                   ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                   ;
-; Total PLLs                         ; N/A until Partition Merge                   ;
-; UFM blocks                         ; N/A until Partition Merge                   ;
-; ADC blocks                         ; N/A until Partition Merge                   ;
+; Total logic elements               ; 6,549                                       ;
+;     Total combinational functions  ; 5,008                                       ;
+;     Dedicated logic registers      ; 3,874                                       ;
+; Total registers                    ; 3874                                        ;
+; Total pins                         ; 185                                         ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 179,520                                     ;
+; Embedded Multiplier 9-bit elements ; 6                                           ;
+; Total PLLs                         ; 1                                           ;
+; UFM blocks                         ; 1                                           ;
+; ADC blocks                         ; 1                                           ;
 +------------------------------------+---------------------------------------------+
 
 
@@ -66,7 +66,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 03/09/2021 12:08:47 ;
+; Start date & time ; 03/09/2021 16:26:25 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; NIOS_C              ;
 +-------------------+---------------------+
@@ -77,7 +77,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------+--------------------------------------------------------+---------------+----------------------+------------+
 ; Assignment Name                     ; Value                                                  ; Default Value ; Entity Name          ; Section Id ;
 +-------------------------------------+--------------------------------------------------------+---------------+----------------------+------------+
-; COMPILER_SIGNATURE_ID               ; 93186101145607.161528812725088                         ; --            ; --                   ; --         ;
+; COMPILER_SIGNATURE_ID               ; 93186101145607.161530358423124                         ; --            ; --                   ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                                     ; --            ; --                   ; --         ;
 ; MESSAGE_DISABLE                     ; 332060                                                 ; --            ; altera_onchip_flash  ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                                      ; --            ; --                   ; --         ;
@@ -95,36 +95,36 @@ refer to the applicable agreement for further details.
 ; PROJECT_OUTPUT_DIRECTORY            ; output_files                                           ; --            ; --                   ; --         ;
 ; SLD_FILE                            ; core/synthesis/core.regmap                             ; --            ; --                   ; --         ;
 ; SLD_FILE                            ; core/synthesis/core.debuginfo                          ; --            ; --                   ; --         ;
-; SLD_INFO                            ; QSYS_NAME core HAS_SOPCINFO 1 GENERATION_ID 1615287777 ; --            ; core                 ; --         ;
+; SLD_INFO                            ; QSYS_NAME core HAS_SOPCINFO 1 GENERATION_ID 1615303270 ; --            ; core                 ; --         ;
 ; SOPCINFO_FILE                       ; core/synthesis/../../core.sopcinfo                     ; --            ; --                   ; --         ;
 ; SYNTHESIS_ONLY_QIP                  ; On                                                     ; --            ; --                   ; --         ;
 ; TOP_LEVEL_ENTITY                    ; DE10_LITE_Golden_Top                                   ; NIOS_C        ; --                   ; --         ;
 +-------------------------------------+--------------------------------------------------------+---------------+----------------------+------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------+
-; Flow Elapsed Time                                                                                                          ;
-+------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Module Name            ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
-+------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Elaboration ; 00:00:52     ; 1.0                     ; 4763 MB             ; 00:01:01                           ;
-; Total                  ; 00:00:52     ; --                      ; --                  ; 00:01:01                           ;
-+------------------------+--------------+-------------------------+---------------------+------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                        ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Synthesis ; 00:02:45     ; 1.0                     ; 5000 MB             ; 00:03:00                           ;
+; Total                ; 00:02:45     ; --                      ; --                  ; 00:03:00                           ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
-+--------------------------------------------------------------------------------------+
-; Flow OS Summary                                                                      ;
-+------------------------+------------------+------------+------------+----------------+
-; Module Name            ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
-+------------------------+------------------+------------+------------+----------------+
-; Analysis & Elaboration ; HY-RD-17-008LX   ; Windows 10 ; 10.0       ; x86_64         ;
-+------------------------+------------------+------------+------------+----------------+
++------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                    ;
++----------------------+------------------+------------+------------+----------------+
+; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
++----------------------+------------------+------------+------------+----------------+
+; Analysis & Synthesis ; HY-RD-17-008LX   ; Windows 10 ; 10.0       ; x86_64         ;
++----------------------+------------------+------------+------------+----------------+
 
 
 ------------
 ; Flow Log ;
 ------------
-quartus_map --read_settings_files=on --write_settings_files=off NIOS_C -c NIOS_C --analysis_and_elaboration
+quartus_map --read_settings_files=on --write_settings_files=off NIOS_C -c NIOS_C
 
 
 

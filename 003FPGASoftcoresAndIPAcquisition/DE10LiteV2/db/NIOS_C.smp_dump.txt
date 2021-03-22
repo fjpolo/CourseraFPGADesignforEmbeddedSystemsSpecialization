@@ -1,0 +1,101 @@
+
+State Machine - |DE10_LITE_Golden_Top|core:u0|altera_onchip_flash:onchip_flash_0|altera_onchip_flash_avmm_data_controller:avmm_data_controller|avmm_read_valid_state
+Name avmm_read_valid_state.READ_VALID_IDLE avmm_read_valid_state.READ_VALID_PRE_READING avmm_read_valid_state.READ_VALID_READING 
+avmm_read_valid_state.READ_VALID_IDLE 0 0 0 
+avmm_read_valid_state.READ_VALID_READING 1 0 1 
+avmm_read_valid_state.READ_VALID_PRE_READING 1 1 0 
+
+State Machine - |DE10_LITE_Golden_Top|core:u0|altera_onchip_flash:onchip_flash_0|altera_onchip_flash_avmm_data_controller:avmm_data_controller|read_state
+Name read_state.READ_STATE_PULSE_SE read_state.READ_STATE_CLEAR read_state.READ_STATE_FINAL read_state.READ_STATE_READY read_state.READ_STATE_DUMMY read_state.READ_STATE_SETUP read_state.READ_STATE_ADDR read_state.READ_STATE_IDLE 
+read_state.READ_STATE_IDLE 0 0 0 0 0 0 0 0 
+read_state.READ_STATE_ADDR 0 0 0 0 0 0 1 1 
+read_state.READ_STATE_SETUP 0 0 0 0 0 1 0 1 
+read_state.READ_STATE_DUMMY 0 0 0 0 1 0 0 1 
+read_state.READ_STATE_READY 0 0 0 1 0 0 0 1 
+read_state.READ_STATE_FINAL 0 0 1 0 0 0 0 1 
+read_state.READ_STATE_CLEAR 0 1 0 0 0 0 0 1 
+read_state.READ_STATE_PULSE_SE 1 0 0 0 0 0 0 1 
+
+State Machine - |DE10_LITE_Golden_Top|core:u0|altera_onchip_flash:onchip_flash_0|altera_onchip_flash_avmm_data_controller:avmm_data_controller|erase_state
+Name erase_state.ERASE_STATE_ERROR erase_state.ERASE_STATE_RESET erase_state.ERASE_STATE_WAIT_DONE erase_state.ERASE_STATE_WAIT_BUSY erase_state.ERASE_STATE_ADDR erase_state.ERASE_STATE_IDLE 
+erase_state.ERASE_STATE_IDLE 0 0 0 0 0 0 
+erase_state.ERASE_STATE_ADDR 0 0 0 0 1 1 
+erase_state.ERASE_STATE_WAIT_BUSY 0 0 0 1 0 1 
+erase_state.ERASE_STATE_WAIT_DONE 0 0 1 0 0 1 
+erase_state.ERASE_STATE_RESET 0 1 0 0 0 1 
+erase_state.ERASE_STATE_ERROR 1 0 0 0 0 1 
+
+State Machine - |DE10_LITE_Golden_Top|core:u0|altera_onchip_flash:onchip_flash_0|altera_onchip_flash_avmm_data_controller:avmm_data_controller|write_state
+Name write_state.WRITE_STATE_ERROR write_state.WRITE_STATE_RESET write_state.WRITE_STATE_WAIT_DONE write_state.WRITE_STATE_WAIT_BUSY write_state.WRITE_STATE_WRITE write_state.WRITE_STATE_ADDR write_state.WRITE_STATE_IDLE 
+write_state.WRITE_STATE_IDLE 0 0 0 0 0 0 0 
+write_state.WRITE_STATE_ADDR 0 0 0 0 0 1 1 
+write_state.WRITE_STATE_WRITE 0 0 0 0 1 0 1 
+write_state.WRITE_STATE_WAIT_BUSY 0 0 0 1 0 0 1 
+write_state.WRITE_STATE_WAIT_DONE 0 0 1 0 0 0 1 
+write_state.WRITE_STATE_RESET 0 1 0 0 0 0 1 
+write_state.WRITE_STATE_ERROR 1 0 0 0 0 0 1 
+
+State Machine - |DE10_LITE_Golden_Top|core:u0|core_modular_adc_0:modular_adc_0|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|ctrl_state
+Name ctrl_state.SYNC1 ctrl_state.AVRG_CNT ctrl_state.PUTRESP_PEND ctrl_state.WAIT_PEND_DLY1 ctrl_state.WAIT_PEND ctrl_state.PUTRESP_DLY3 ctrl_state.PUTRESP_DLY2 ctrl_state.PUTRESP_DLY1 ctrl_state.PUTRESP ctrl_state.CONV_DLY1 ctrl_state.CONV ctrl_state.PRE_CONV ctrl_state.GETCMD_W ctrl_state.GETCMD ctrl_state.WAIT ctrl_state.PWRUP_SOC ctrl_state.PWRUP_CH ctrl_state.PWRDWN_DONE ctrl_state.PWRDWN_TSEN ctrl_state.PWRDWN ctrl_state.IDLE 
+ctrl_state.IDLE 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+ctrl_state.PWRDWN 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+ctrl_state.PWRDWN_TSEN 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+ctrl_state.PWRDWN_DONE 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+ctrl_state.PWRUP_CH 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+ctrl_state.PWRUP_SOC 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+ctrl_state.WAIT 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+ctrl_state.GETCMD 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+ctrl_state.GETCMD_W 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+ctrl_state.PRE_CONV 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+ctrl_state.CONV 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+ctrl_state.CONV_DLY1 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+ctrl_state.PUTRESP 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+ctrl_state.PUTRESP_DLY1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+ctrl_state.PUTRESP_DLY2 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+ctrl_state.PUTRESP_DLY3 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+ctrl_state.WAIT_PEND 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+ctrl_state.WAIT_PEND_DLY1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+ctrl_state.PUTRESP_PEND 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+ctrl_state.AVRG_CNT 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+ctrl_state.SYNC1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |DE10_LITE_Golden_Top|core:u0|core_master_0:master_0|altera_avalon_packets_to_master:transacto|packets_to_master:p2m|state
+Name state.READ_SEND_WAIT state.READ_SEND_ISSUE state.READ_DATA_WAIT state.READ_CMD_WAIT state.READ_ASSERT state.RETURN_PACKET state.WRITE_WAIT state.GET_WRITE_DATA state.GET_ADDR4 state.GET_ADDR3 state.GET_ADDR2 state.GET_ADDR1 state.GET_SIZE2 state.GET_SIZE1 state.GET_EXTRA state.0000 
+state.0000 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+state.GET_EXTRA 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+state.GET_SIZE1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+state.GET_SIZE2 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+state.GET_ADDR1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+state.GET_ADDR2 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+state.GET_ADDR3 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+state.GET_ADDR4 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+state.GET_WRITE_DATA 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+state.WRITE_WAIT 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+state.RETURN_PACKET 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+state.READ_ASSERT 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+state.READ_CMD_WAIT 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+state.READ_DATA_WAIT 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.READ_SEND_ISSUE 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.READ_SEND_WAIT 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |DE10_LITE_Golden_Top|core:u0|core_master_0:master_0|altera_avalon_st_jtag_interface:jtag_phy_embedded_in_jtag_master|altera_jtag_dc_streaming:normal.jtag_dc_streaming|altera_jtag_streaming:jtag_streaming|read_state
+Name read_state.ST_HEADER read_state.ST_READ_DATA read_state.ST_PADDED 
+read_state.ST_HEADER 0 0 0 
+read_state.ST_PADDED 1 0 1 
+read_state.ST_READ_DATA 1 1 0 
+
+State Machine - |DE10_LITE_Golden_Top|core:u0|core_master_0:master_0|altera_avalon_st_jtag_interface:jtag_phy_embedded_in_jtag_master|altera_jtag_dc_streaming:normal.jtag_dc_streaming|altera_jtag_streaming:jtag_streaming|write_state
+Name write_state.ST_WRITE_DATA write_state.ST_HEADER_2 write_state.ST_HEADER_1 write_state.ST_BYPASS 
+write_state.ST_BYPASS 0 0 0 0 
+write_state.ST_HEADER_1 0 0 1 1 
+write_state.ST_HEADER_2 0 1 0 1 
+write_state.ST_WRITE_DATA 1 0 0 1 
+
+State Machine - |DE10_LITE_Golden_Top|core:u0|core_nios:nios|core_nios_cpu:cpu|core_nios_cpu_nios2_oci:the_core_nios_cpu_nios2_oci|core_nios_cpu_debug_slave_wrapper:the_core_nios_cpu_debug_slave_wrapper|core_nios_cpu_debug_slave_tck:the_core_nios_cpu_debug_slave_tck|DRsize
+Name DRsize.101 DRsize.100 DRsize.011 DRsize.010 DRsize.001 DRsize.000 
+DRsize.000 0 0 0 0 0 0 
+DRsize.001 0 0 0 0 1 1 
+DRsize.010 0 0 0 1 0 1 
+DRsize.011 0 0 1 0 0 1 
+DRsize.100 0 1 0 0 0 1 
+DRsize.101 1 0 0 0 0 1 
