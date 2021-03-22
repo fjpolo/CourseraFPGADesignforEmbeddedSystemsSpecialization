@@ -1,0 +1,7 @@
+#!/bin/csh
+
+if (! -e work) then
+	vlib work
+endif
+
+vlog counter.v tcounter.v

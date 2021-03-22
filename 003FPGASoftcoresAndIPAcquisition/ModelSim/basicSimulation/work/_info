@@ -1,0 +1,52 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/intelFPGA_lite/18.1
+vcounter
+!s110 1615886678
+!i10b 1
+!s100 Z=2nV`Chhg3_MkZHCfm^@0
+I>>T9]Sl0cMKk5>YO>Nnj82
+Z0 VDg1SIo80bB@j0V0VzS_@n1
+Z1 dC:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/ModelSim/basicSimulation
+Z2 w1475690574
+8C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/ModelSim/basicSimulation/counter.v
+FC:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/ModelSim/basicSimulation/counter.v
+L0 10
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+!s108 1615886678.000000
+!s107 C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/ModelSim/basicSimulation/counter.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/ModelSim/basicSimulation/counter.v|
+!i113 1
+Z4 o-work work
+Z5 tCvgOpt 0
+vtest_counter
+!s110 1615886679
+!i10b 1
+!s100 4>j3>?KiNN^B3GYj>G^D<0
+I`>dRCHn@2caCYc]b_lFhR1
+R0
+R1
+R2
+8C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/ModelSim/basicSimulation/tcounter.v
+FC:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/ModelSim/basicSimulation/tcounter.v
+L0 11
+R3
+r1
+!s85 0
+31
+!s108 1615886679.000000
+!s107 C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/ModelSim/basicSimulation/tcounter.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/ModelSim/basicSimulation/tcounter.v|
+!i113 1
+R4
+R5

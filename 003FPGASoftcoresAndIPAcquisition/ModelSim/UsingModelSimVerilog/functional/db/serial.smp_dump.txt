@@ -1,0 +1,6 @@
+
+State Machine - |serial|FSM:my_control|current_state
+Name current_state.WORK_STATE current_state.END_STATE current_state.WAIT_STATE 
+current_state.WAIT_STATE 0 0 0 
+current_state.WORK_STATE 1 0 1 
+current_state.END_STATE 0 1 1 

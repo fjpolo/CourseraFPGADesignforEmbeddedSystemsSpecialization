@@ -1,0 +1,15 @@
+C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/ModelSim/basicSimulation/tcounter.v {1 {vlog -work work -stats=none C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/ModelSim/basicSimulation/tcounter.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module test_counter
+
+Top level modules:
+	test_counter
+
+} {} {}} C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/ModelSim/basicSimulation/counter.v {1 {vlog -work work -stats=none C:/Users/fpolo/Downloads/Franco/Courses/Coursera/CourseraFPGADesignforEmbeddedSystemsSpecialization/003FPGASoftcoresAndIPAcquisition/ModelSim/basicSimulation/counter.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module counter
+
+Top level modules:
+	counter
+
+} {} {}}

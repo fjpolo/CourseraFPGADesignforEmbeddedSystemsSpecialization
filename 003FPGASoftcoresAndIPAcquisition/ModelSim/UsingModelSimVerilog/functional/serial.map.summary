@@ -1,0 +1,16 @@
+Analysis & Synthesis Status : Successful - Mon Mar 22 12:15:12 2021
+Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+Revision Name : serial
+Top-level Entity Name : serial
+Family : MAX 10
+Total logic elements : 37
+    Total combinational functions : 37
+    Dedicated logic registers : 32
+Total registers : 32
+Total pins : 28
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0
+UFM blocks : 0
+ADC blocks : 0
